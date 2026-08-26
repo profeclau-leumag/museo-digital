@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(255, 177, 206); 
+  margin: 0; padding: 0; width: 100%; min-height: 100%;
+}
+.contenedor {
+  display: flex;
+  justify-content: center;
+}
+.mi-imagen {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+ color: rgb(191, 137, 137) ; font-size: 160%; cursor: cell;
+
+}
+h2 {
+  color: rgb(244, 244, 188); font-size: 110%;
+}
+h3{
+  color: rgb(191, 137, 137); font-size: 110%;
+}
+h4 {
+  color: rgb(244, 244, 188) ; font-size: 110%;
+}
+h5 {
+  color: rgb(191, 137, 137);font-size: 110%;
+}
+h6 {
+  color: rgb(244, 244, 188); font-size: 115%;
+}
