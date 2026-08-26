@@ -3,149 +3,1410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Historia del transistor: creación, funcionamiento, fabricación, relación con la computación, evolución, limitaciones e importancia."
+  >
+
   <title>Historia del Transistor</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- Accesibilidad -->
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido principal
+  </a>
+
+  <!-- =====================================================
+       ENCABEZADO
+  ====================================================== -->
+
   <header class="hero">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 03 · Pensamiento Computacional</span>
-    <nav class="nav">
-      <div class="logo">⚡ Transistor</div>
-      <button id="themeBtn" class="theme-btn" aria-label="Cambiar tema">☀️</button>
+
+    <nav class="nav" aria-label="Navegación principal">
+
+      <a href="../../index.html">
+        ← Volver al museo
+      </a>
+
+      <span>
+        Cuadro 03 · Pensamiento Computacional
+      </span>
+
+      <div class="logo">
+        ⚡ Transistor
+      </div>
+
+      <button
+        id="themeBtn"
+        class="theme-btn"
+        type="button"
+        aria-label="Cambiar tema"
+      >
+        ☀️
+      </button>
+
     </nav>
 
+
     <div class="hero-content">
-      <span class="eyebrow">TECNOLOGÍA · ELECTRÓNICA</span>
-      <h1>Historia del <span>Transistor</span></h1>
-      <p>Desde su creación en 1947 hasta convertirse en una pieza fundamental de la tecnología moderna.</p>
-      <a href="#creacion" class="hero-btn">Explorar historia ↓</a>
+
+      <span class="eyebrow">
+        TECNOLOGÍA · ELECTRÓNICA
+      </span>
+
+      <h1>
+        Historia del <span>Transistor</span>
+      </h1>
+
+      <p>
+        Desde su creación en 1947 hasta convertirse en una pieza
+        fundamental de la tecnología moderna.
+      </p>
+
+      <a href="#creacion" class="hero-btn">
+        Explorar historia ↓
+      </a>
+
     </div>
 
-    <div class="hero-orbit">
-      <div class="chip">T</div>
+
+    <div class="hero-orbit" aria-hidden="true">
+
+      <div class="chip">
+        T
+      </div>
+
       <span class="dot dot1"></span>
       <span class="dot dot2"></span>
       <span class="dot dot3"></span>
+
     </div>
+
   </header>
 
-  <main>
-    <section class="section intro" id="creacion">
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+  ====================================================== -->
+
+  <main id="contenido">
+
+
+    <!-- =====================================================
+         01 · CREACIÓN
+    ====================================================== -->
+
+    <section
+      class="section intro"
+      id="creacion"
+      aria-labelledby="titulo-creacion"
+    >
+
       <div class="section-title">
+
         <span>01</span>
+
         <div>
-          <p class="mini-title">EL COMIENZO</p>
-          <h2>Creación del transistor</h2>
+
+          <p class="mini-title">
+            EL COMIENZO
+          </p>
+
+          <h2 id="titulo-creacion">
+            Creación del transistor
+          </h2>
+
         </div>
+
       </div>
+
 
       <div class="story-grid">
+
+
         <article class="info-card featured">
-          <div class="card-icon">1947</div>
-          <h3>Un invento que cambió la tecnología</h3>
-          <p>El transistor fue creado en <strong>1947</strong> en los laboratorios <strong>Bell Telephone Laboratories</strong>, en Estados Unidos.</p>
-          <p>Los científicos <strong>John Bardeen, Walter Brattain y William Shockley</strong> fueron los responsables de su desarrollo. Por este trabajo recibieron el <strong>Premio Nobel de Física en 1956</strong>.</p>
+
+          <div class="card-icon" aria-hidden="true">
+            1947
+          </div>
+
+          <h3>
+            Un invento que cambió la tecnología
+          </h3>
+
+          <p>
+            El transistor fue creado en
+            <strong>1947</strong>
+            en los laboratorios
+            <strong>Bell Telephone Laboratories</strong>,
+            en Estados Unidos.
+          </p>
+
+          <p>
+            Los científicos
+            <strong>John Bardeen, Walter Brattain y William Shockley</strong>
+            fueron los responsables de su desarrollo.
+            Por este trabajo recibieron el
+            <strong>Premio Nobel de Física en 1956</strong>.
+          </p>
+
         </article>
+
 
         <article class="info-card">
-          <div class="card-icon">💡</div>
-          <h3>¿Por qué fue necesario?</h3>
-          <p>Antes de los transistores se utilizaban principalmente <strong>tubos de vacío</strong>, que eran grandes, consumían mucha electricidad y producían bastante calor.</p>
-          <p>El transistor permitió fabricar dispositivos mucho <strong>más pequeños, eficientes y confiables</strong>.</p>
+
+          <div class="card-icon" aria-hidden="true">
+            💡
+          </div>
+
+          <h3>
+            ¿Por qué fue necesario?
+          </h3>
+
+          <p>
+            Antes de los transistores se utilizaban principalmente
+            <strong>tubos de vacío</strong>, que eran grandes,
+            consumían mucha electricidad y producían bastante calor.
+          </p>
+
+          <p>
+            El transistor permitió fabricar dispositivos mucho
+            <strong>más pequeños, eficientes y confiables</strong>.
+          </p>
+
         </article>
+
+
       </div>
+
     </section>
 
-    <section class="section manufacturing" id="fabricacion">
+
+
+    <!-- =====================================================
+         02 · FUNCIONAMIENTO
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="funcionamiento"
+      aria-labelledby="titulo-funcionamiento"
+    >
+
       <div class="section-title">
+
         <span>02</span>
+
         <div>
-          <p class="mini-title">DEL SILICIO AL CHIP</p>
-          <h2>¿Cómo se elaboran actualmente?</h2>
+
+          <p class="mini-title">
+            EL MECANISMO
+          </p>
+
+          <h2 id="titulo-funcionamiento">
+            ¿Cómo funciona un transistor?
+          </h2>
+
         </div>
+
       </div>
 
-      <p class="section-lead">Los transistores se fabrican principalmente utilizando <strong>silicio</strong>, un material semiconductor. El proceso ocurre en instalaciones especiales llamadas <em>fábricas de semiconductores</em> o <em>fabs</em>.</p>
 
-      <div class="steps">
-        <article class="step"><span>01</span><div><h3>Silicio</h3><p>Se obtiene y purifica el silicio.</p></div></article>
-        <article class="step"><span>02</span><div><h3>Wafers</h3><p>Se fabrican obleas muy delgadas de silicio llamadas <strong>wafers</strong>.</p></div></article>
-        <article class="step"><span>03</span><div><h3>Fotolitografía</h3><p>Se crean estructuras microscópicas sobre las obleas.</p></div></article>
-        <article class="step"><span>04</span><div><h3>Modificación</h3><p>Se agregan materiales para modificar las propiedades eléctricas del silicio.</p></div></article>
-        <article class="step"><span>05</span><div><h3>Formación</h3><p>Se forman las distintas partes del transistor.</p></div></article>
-        <article class="step"><span>06</span><div><h3>Conexiones</h3><p>Se colocan conexiones metálicas para permitir el paso de electricidad.</p></div></article>
-        <article class="step"><span>07</span><div><h3>Pruebas</h3><p>Se comprueba que los transistores funcionen correctamente.</p></div></article>
-        <article class="step"><span>08</span><div><h3>Encapsulado</h3><p>Los chips se cortan, se encapsulan y se incorporan a dispositivos electrónicos.</p></div></article>
+      <p class="section-lead">
+
+        Un transistor es un componente electrónico semiconductor
+        que permite <strong>controlar el paso de la corriente eléctrica</strong>.
+        Puede utilizarse principalmente como interruptor o como amplificador
+        de señales.
+
+      </p>
+
+
+      <div class="story-grid">
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔌
+          </div>
+
+          <h3>
+            Control de corriente
+          </h3>
+
+          <p>
+            Una señal eléctrica aplicada al transistor permite controlar
+            el comportamiento de la corriente dentro del circuito.
+          </p>
+
+          <p>
+            Esta capacidad permite utilizar los transistores para
+            controlar señales y realizar operaciones electrónicas.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔀
+          </div>
+
+          <h3>
+            Como interruptor
+          </h3>
+
+          <p>
+            Un transistor puede funcionar como un pequeño interruptor
+            electrónico. Puede encontrarse en un estado que representa
+            encendido o apagado.
+          </p>
+
+          <p>
+            En sistemas digitales estos estados pueden representarse
+            mediante <strong>1 y 0</strong>.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            📈
+          </div>
+
+          <h3>
+            Como amplificador
+          </h3>
+
+          <p>
+            Los transistores también pueden utilizarse para amplificar
+            señales eléctricas, aumentando la intensidad de una señal
+            sin tener que reemplazarla por otra diferente.
+          </p>
+
+          <p>
+            Esta característica fue muy importante para el desarrollo
+            de sistemas de comunicación y electrónica.
+          </p>
+
+        </article>
+
+
       </div>
-    </section>
 
-    <section class="section present" id="actualidad">
-      <div class="section-title">
-        <span>03</span>
-        <div>
-          <p class="mini-title">EL PRESENTE</p>
-          <h2>El transistor en la actualidad</h2>
-        </div>
-      </div>
-
-      <p class="section-lead">Hoy los transistores están prácticamente en todas partes. Son fundamentales para la tecnología que utilizamos diariamente.</p>
-
-      <div class="uses-grid">
-        <div class="use">💻 <span>Computadores<br>y notebooks</span></div>
-        <div class="use">📱 <span>Teléfonos<br>celulares</span></div>
-        <div class="use">🎮 <span>Consolas<br>de videojuegos</span></div>
-        <div class="use">🚗 <span>Automóviles<br>modernos</span></div>
-        <div class="use">📺 <span>Televisores</span></div>
-        <div class="use">🤖 <span>Robots</span></div>
-        <div class="use">🏥 <span>Equipos<br>médicos</span></div>
-        <div class="use">🛰️ <span>Satélites</span></div>
-        <div class="use">🏭 <span>Máquinas<br>industriales</span></div>
-        <div class="use">🧠 <span>Inteligencia<br>artificial</span></div>
-      </div>
 
       <div class="fact">
-        <div class="fact-number">∞</div>
-        <div><strong>Miles de millones</strong><p>Los procesadores modernos contienen miles de millones de transistores en un solo chip.</p></div>
-        <div class="nano">nm</div>
-        <div><strong>Escala nanométrica</strong><p>Los transistores actuales son extremadamente pequeños y se fabrican a escalas de nanómetros.</p></div>
+
+        <div class="fact-number">
+          0/1
+        </div>
+
+        <div>
+
+          <strong>
+            Estados digitales
+          </strong>
+
+          <p>
+            En la electrónica digital, los estados de los circuitos
+            pueden representarse mediante valores binarios:
+            <strong>0 y 1</strong>.
+            Los transistores ayudan a construir los circuitos que
+            permiten trabajar con estos estados.
+          </p>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section class="section timeline-section" id="evolucion">
+
+
+    <!-- =====================================================
+         03 · TRANSISTOR Y COMPUTACIÓN
+    ====================================================== -->
+
+    <section
+      class="section present"
+      id="computacion"
+      aria-labelledby="titulo-computacion"
+    >
+
       <div class="section-title">
-        <span>04</span>
+
+        <span>03</span>
+
         <div>
-          <p class="mini-title">UNA LARGA EVOLUCIÓN</p>
-          <h2>¿Cómo ha evolucionado?</h2>
+
+          <p class="mini-title">
+            PENSAMIENTO COMPUTACIONAL
+          </p>
+
+          <h2 id="titulo-computacion">
+            ¿Qué tiene que ver con la computación?
+          </h2>
+
         </div>
+
       </div>
+
+
+      <p class="section-lead">
+
+        El transistor fue fundamental para el desarrollo de la
+        <strong>electrónica digital</strong> y de los dispositivos
+        computacionales modernos.
+
+      </p>
+
+
+      <div class="story-grid">
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            ⚡
+          </div>
+
+          <h3>
+            1. Transistor
+          </h3>
+
+          <p>
+            El transistor puede utilizarse como un interruptor electrónico
+            que controla el paso de corriente.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔢
+          </div>
+
+          <h3>
+            2. 0 y 1
+          </h3>
+
+          <p>
+            Los circuitos digitales utilizan estados que pueden
+            representarse como <strong>0 y 1</strong>.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            ⚙️
+          </div>
+
+          <h3>
+            3. Circuitos lógicos
+          </h3>
+
+          <p>
+            Al combinar transistores se pueden construir circuitos
+            capaces de realizar operaciones lógicas.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            💻
+          </div>
+
+          <h3>
+            4. Procesadores
+          </h3>
+
+          <p>
+            Los circuitos lógicos forman parte de los procesadores
+            utilizados en computadores, celulares y otros dispositivos.
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="fact">
+
+        <div class="fact-number">
+          →
+        </div>
+
+        <div>
+
+          <strong>
+            Ejemplo de computación
+          </strong>
+
+          <p>
+            Cuando un computador realiza una operación, el procesador
+            utiliza circuitos digitales para procesar información.
+            Estos circuitos están construidos utilizando enormes
+            cantidades de transistores.
+          </p>
+
+          <p>
+            Por eso podemos resumir la relación como:
+            <strong>
+              transistor → 0 y 1 → lógica → procesador → computador.
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 · PARTES Y TIPOS
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="partes"
+      aria-labelledby="titulo-partes"
+    >
+
+      <div class="section-title">
+
+        <span>04</span>
+
+        <div>
+
+          <p class="mini-title">
+            CONOCIENDO EL COMPONENTE
+          </p>
+
+          <h2 id="titulo-partes">
+            Partes y tipos de transistores
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="story-grid">
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔴
+          </div>
+
+          <h3>
+            Emisor, base y colector
+          </h3>
+
+          <p>
+            En un transistor bipolar de unión, conocido como
+            <strong>BJT</strong>, existen tres terminales principales:
+            <strong>emisor, base y colector</strong>.
+          </p>
+
+          <p>
+            La base permite controlar el comportamiento de la corriente
+            entre el emisor y el colector.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔵
+          </div>
+
+          <h3>
+            Transistor BJT
+          </h3>
+
+          <p>
+            El <strong>BJT</strong> es un tipo de transistor que puede
+            utilizarse para amplificar señales y también como interruptor
+            electrónico.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🟣
+          </div>
+
+          <h3>
+            Transistor MOSFET
+          </h3>
+
+          <p>
+            El <strong>MOSFET</strong> es otro tipo de transistor muy
+            utilizado en circuitos integrados y sistemas electrónicos.
+            Controla la corriente mediante un campo eléctrico.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 · FABRICACIÓN
+    ====================================================== -->
+
+    <section
+      class="section manufacturing"
+      id="fabricacion"
+      aria-labelledby="titulo-fabricacion"
+    >
+
+      <div class="section-title">
+
+        <span>05</span>
+
+        <div>
+
+          <p class="mini-title">
+            DEL SILICIO AL CHIP
+          </p>
+
+          <h2 id="titulo-fabricacion">
+            ¿Cómo se elaboran actualmente?
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <p class="section-lead">
+
+        Los transistores se fabrican principalmente utilizando
+        <strong>silicio</strong>, un material semiconductor.
+        El proceso ocurre en instalaciones especiales llamadas
+        <em>fábricas de semiconductores</em> o <em>fabs</em>.
+
+      </p>
+
+
+      <!-- Lista ordenada para cumplir el criterio de HTML semántico -->
+
+      <ol class="steps">
+
+
+        <li class="step">
+
+          <span>01</span>
+
+          <div>
+
+            <h3>
+              Silicio
+            </h3>
+
+            <p>
+              Se obtiene y purifica el silicio.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>02</span>
+
+          <div>
+
+            <h3>
+              Wafers
+            </h3>
+
+            <p>
+              Se fabrican obleas muy delgadas de silicio
+              llamadas <strong>wafers</strong>.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>03</span>
+
+          <div>
+
+            <h3>
+              Fotolitografía
+            </h3>
+
+            <p>
+              Se crean estructuras microscópicas sobre las obleas.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>04</span>
+
+          <div>
+
+            <h3>
+              Modificación
+            </h3>
+
+            <p>
+              Se agregan materiales o se modifican regiones del
+              semiconductor para obtener las propiedades eléctricas necesarias.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>05</span>
+
+          <div>
+
+            <h3>
+              Formación
+            </h3>
+
+            <p>
+              Se forman las distintas estructuras del transistor.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>06</span>
+
+          <div>
+
+            <h3>
+              Conexiones
+            </h3>
+
+            <p>
+              Se colocan conexiones metálicas para permitir
+              el paso de electricidad.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>07</span>
+
+          <div>
+
+            <h3>
+              Pruebas
+            </h3>
+
+            <p>
+              Se comprueba que los transistores funcionen correctamente.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li class="step">
+
+          <span>08</span>
+
+          <div>
+
+            <h3>
+              Encapsulado
+            </h3>
+
+            <p>
+              Los chips se cortan, se encapsulan y se incorporan
+              a dispositivos electrónicos.
+            </p>
+
+          </div>
+
+        </li>
+
+
+      </ol>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 · ACTUALIDAD
+    ====================================================== -->
+
+    <section
+      class="section present"
+      id="actualidad"
+      aria-labelledby="titulo-actualidad"
+    >
+
+      <div class="section-title">
+
+        <span>06</span>
+
+        <div>
+
+          <p class="mini-title">
+            EL PRESENTE
+          </p>
+
+          <h2 id="titulo-actualidad">
+            El transistor en la actualidad
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <p class="section-lead">
+
+        Hoy los transistores están prácticamente en todas partes.
+        Son fundamentales para la tecnología que utilizamos diariamente.
+
+      </p>
+
+
+      <div class="uses-grid">
+
+        <div class="use">
+          💻
+          <span>
+            Computadores<br>
+            y notebooks
+          </span>
+        </div>
+
+        <div class="use">
+          📱
+          <span>
+            Teléfonos<br>
+            celulares
+          </span>
+        </div>
+
+        <div class="use">
+          🎮
+          <span>
+            Consolas<br>
+            de videojuegos
+          </span>
+        </div>
+
+        <div class="use">
+          🚗
+          <span>
+            Automóviles<br>
+            modernos
+          </span>
+        </div>
+
+        <div class="use">
+          📺
+          <span>
+            Televisores
+          </span>
+        </div>
+
+        <div class="use">
+          🤖
+          <span>
+            Robots
+          </span>
+        </div>
+
+        <div class="use">
+          🏥
+          <span>
+            Equipos<br>
+            médicos
+          </span>
+        </div>
+
+        <div class="use">
+          🛰️
+          <span>
+            Satélites
+          </span>
+        </div>
+
+        <div class="use">
+          🏭
+          <span>
+            Máquinas<br>
+            industriales
+          </span>
+        </div>
+
+        <div class="use">
+          🧠
+          <span>
+            Inteligencia<br>
+            artificial
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="fact">
+
+        <div class="fact-number">
+          ∞
+        </div>
+
+        <div>
+
+          <strong>
+            Miles de millones
+          </strong>
+
+          <p>
+            Los procesadores modernos contienen miles de millones
+            de transistores en un solo chip.
+          </p>
+
+        </div>
+
+
+        <div class="nano">
+          nm
+        </div>
+
+        <div>
+
+          <strong>
+            Escala nanométrica
+          </strong>
+
+          <p>
+            Los transistores actuales son extremadamente pequeños
+            y se fabrican utilizando procesos a escalas nanométricas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 · LIMITACIONES
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="limitaciones"
+      aria-labelledby="titulo-limitaciones"
+    >
+
+      <div class="section-title">
+
+        <span>07</span>
+
+        <div>
+
+          <p class="mini-title">
+            SUS DESAFÍOS
+          </p>
+
+          <h2 id="titulo-limitaciones">
+            Limitaciones del transistor
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="story-grid">
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🌡️
+          </div>
+
+          <h3>
+            Generación de calor
+          </h3>
+
+          <p>
+            Los circuitos electrónicos generan calor y necesitan
+            mecanismos adecuados para controlar su temperatura.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            🔬
+          </div>
+
+          <h3>
+            Fabricación compleja
+          </h3>
+
+          <p>
+            Mientras más pequeños son los transistores, más precisa
+            y compleja debe ser su fabricación.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <div class="card-icon" aria-hidden="true">
+            ⚡
+          </div>
+
+          <h3>
+            Límites físicos
+          </h3>
+
+          <p>
+            La reducción del tamaño de los componentes encuentra
+            dificultades relacionadas con la física, el consumo
+            energético y los procesos de fabricación.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 · EVOLUCIÓN
+    ====================================================== -->
+
+    <section
+      class="section timeline-section"
+      id="evolucion"
+      aria-labelledby="titulo-evolucion"
+    >
+
+      <div class="section-title">
+
+        <span>08</span>
+
+        <div>
+
+          <p class="mini-title">
+            UNA LARGA EVOLUCIÓN
+          </p>
+
+          <h2 id="titulo-evolucion">
+            ¿Cómo ha evolucionado?
+          </h2>
+
+        </div>
+
+      </div>
+
 
       <div class="timeline">
-        <div class="timeline-item"><div class="year">1947</div><div class="timeline-card"><h3>Primer transistor</h3><p>Se crea el primer transistor en Bell Telephone Laboratories.</p></div></div>
-        <div class="timeline-item"><div class="year">1950–60</div><div class="timeline-card"><h3>Más pequeños y confiables</h3><p>Los transistores comienzan a mejorar en tamaño, eficiencia y confiabilidad.</p></div></div>
-        <div class="timeline-item"><div class="year">1960–70</div><div class="timeline-card"><h3>Circuitos integrados</h3><p>Aparecen los circuitos integrados, que reúnen múltiples componentes en un mismo chip.</p></div></div>
-        <div class="timeline-item"><div class="year">1970–90</div><div class="timeline-card"><h3>Microprocesadores</h3><p>Los microprocesadores se vuelven cada vez más pequeños y potentes.</p></div></div>
-        <div class="timeline-item"><div class="year">2000–HOY</div><div class="timeline-card"><h3>Miles de millones</h3><p>Los chips modernos integran miles de millones de transistores.</p></div></div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            1947
+          </div>
+
+          <div class="timeline-card">
+
+            <h3>
+              Primer transistor
+            </h3>
+
+            <p>
+              Se crea el primer transistor en Bell Telephone Laboratories.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            1950–60
+          </div>
+
+          <div class="timeline-card">
+
+            <h3>
+              Más pequeños y confiables
+            </h3>
+
+            <p>
+              Los transistores comienzan a mejorar en tamaño,
+              eficiencia y confiabilidad.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            1960–70
+          </div>
+
+          <div class="timeline-card">
+
+            <h3>
+              Circuitos integrados
+            </h3>
+
+            <p>
+              Aparecen los circuitos integrados, que reúnen
+              múltiples componentes en un mismo chip.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            1970–90
+          </div>
+
+          <div class="timeline-card">
+
+            <h3>
+              Microprocesadores
+            </h3>
+
+            <p>
+              Los microprocesadores se vuelven cada vez
+              más pequeños y potentes.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            2000–HOY
+          </div>
+
+          <div class="timeline-card">
+
+            <h3>
+              Miles de millones
+            </h3>
+
+            <p>
+              Los chips modernos integran miles de millones
+              de transistores.
+            </p>
+
+          </div>
+
+        </div>
+
+
       </div>
+
     </section>
 
-    <section class="section importance" id="importancia">
+
+
+    <!-- =====================================================
+         09 · IMPORTANCIA Y LEGADO
+    ====================================================== -->
+
+    <section
+      class="section importance"
+      id="importancia"
+      aria-labelledby="titulo-importancia"
+    >
+
       <div class="importance-box">
-        <span class="mini-title">05 · IMPORTANCIA</span>
-        <h2>¿Por qué es tan importante?</h2>
-        <p>El transistor fue uno de los inventos que permitió el desarrollo de la <strong>electrónica moderna</strong>. Sin él, sería muy difícil tener computadores, smartphones, Internet, inteligencia artificial y muchos de los dispositivos que utilizamos actualmente.</p>
-        <p>Comenzó como una alternativa pequeña y eficiente a los tubos de vacío y terminó convirtiéndose en uno de los componentes fundamentales de prácticamente toda la tecnología moderna.</p>
-        <div class="quote">“Un componente diminuto que hizo posible un mundo enorme.”</div>
+
+        <span class="mini-title">
+          09 · IMPORTANCIA Y LEGADO
+        </span>
+
+        <h2 id="titulo-importancia">
+          ¿Por qué es tan importante?
+        </h2>
+
+        <p>
+          El transistor fue uno de los inventos que permitió el desarrollo
+          de la <strong>electrónica moderna</strong>.
+        </p>
+
+        <p>
+          Sin el transistor, sería mucho más difícil construir los
+          computadores, teléfonos celulares, circuitos integrados,
+          microprocesadores y muchos de los dispositivos electrónicos
+          que utilizamos actualmente.
+        </p>
+
+        <p>
+          Su evolución permitió pasar de componentes electrónicos grandes
+          a dispositivos cada vez más pequeños y potentes.
+        </p>
+
+        <p>
+          Su legado puede resumirse en:
+          <strong>
+            transistor → circuitos integrados → microprocesadores
+            → dispositivos digitales modernos.
+          </strong>
+        </p>
+
+        <div class="quote">
+          “Un componente diminuto que hizo posible un mundo enorme.”
+        </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- =====================================================
+         10 · FUENTES, CRÉDITOS E IA
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="fuentes"
+      aria-labelledby="titulo-fuentes"
+    >
+
+      <div class="section-title">
+
+        <span>10</span>
+
+        <div>
+
+          <p class="mini-title">
+            INFORMACIÓN Y REFERENCIAS
+          </p>
+
+          <h2 id="titulo-fuentes">
+            Fuentes y créditos
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <article class="info-card">
+
+
+        <h3>
+          Fuentes consultadas
+        </h3>
+
+
+        <p>
+          Para elaborar y comprobar la información histórica se
+          consultaron fuentes confiables.
+        </p>
+
+
+        <ol>
+
+
+          <li>
+
+            <strong>
+              Nobel Prize
+            </strong>
+
+            <p>
+              Información sobre el Premio Nobel de Física de 1956
+              y el trabajo de John Bardeen, Walter Brattain
+              y William Shockley.
+            </p>
+
+            <a
+              href="https://www.nobelprize.org/prizes/physics/1956/summary/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver fuente oficial del Nobel
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <strong>
+              Nobel Prize — William Shockley
+            </strong>
+
+            <p>
+              Información sobre William Shockley y su contribución
+              al desarrollo del transistor.
+            </p>
+
+            <a
+              href="https://www.nobelprize.org/prizes/physics/1956/shockley/facts/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver fuente oficial
+            </a>
+
+          </li>
+
+
+        </ol>
+
+
+        <h3>
+          Créditos
+        </h3>
+
+
+        <p>
+          Los textos, estructura y código de esta página fueron
+          organizados y revisados para el proyecto del Museo Digital.
+          Las fuentes utilizadas para comprobar la información
+          se indican en esta sección.
+        </p>
+
+
+        <h3>
+          Declaración de uso de inteligencia artificial
+        </h3>
+
+
+        <p>
+          Se utilizó inteligencia artificial como herramienta de apoyo
+          para revisar, organizar y mejorar parte del código y del contenido.
+          La información fue revisada y contrastada con las fuentes
+          indicadas en esta página.
+        </p>
+
+
+      </article>
+
+    </section>
+
+
   </main>
 
+
+
+  <!-- =====================================================
+       PIE DE PÁGINA
+  ====================================================== -->
+
   <footer>
-    <div><strong>⚡ HISTORIA DEL TRANSISTOR</strong><span> · Tecnología que cambió el mundo.</span></div>
-    <button id="topBtn">↑ Volver arriba</button>
+
+    <div>
+
+      <strong>
+        ⚡ HISTORIA DEL TRANSISTOR
+      </strong>
+
+      <span>
+        · Tecnología que cambió el mundo.
+      </span>
+
+    </div>
+
+
+    <button
+      id="topBtn"
+      type="button"
+      aria-label="Volver arriba"
+    >
+      ↑ Volver arriba
+    </button>
+
   </footer>
 
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
