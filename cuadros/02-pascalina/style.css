@@ -1,13 +1,13 @@
-/* Paleta Uniforme en Gama Rosa */
+/* Paleta de Colores Turquesa Mística y Neón */
 :root {
-  --pink-primary: #FFC9E8;    /* Rosa principal para títulos y acentos */
-  --pink-soft: #E0A9C8;       /* Rosa suave para bordes y detalles */
-  --pink-dark: #A35C87;       /* Rosa oscuro para fondos y contrastes */
-  --bg-dark: #120A10;         /* Fondo base oscuro con matiz purpúreo */
-  --panel-bg: #1F121C;        /* Fondo principal de paneles */
-  --card-bg: #2B1A27;         /* Fondo de tarjetas informativas */
-  --text-main: #FCEEF6;       /* Texto claro */
-  --text-muted: #D1B3C4;      /* Texto secundario */
+  --turquoise-bright: #00F5D4; /* Turquesa neón para acentos principales y títulos */
+  --turquoise-soft: #70EE9C;   /* Turquesa suave / verde menta para detalles */
+  --turquoise-dark: #00B4D8;   /* Azul turquesa para degradados */
+  --bg-dark: #05161A;         /* Fondo profundo estilo cian oscuro */
+  --panel-bg: #0C2229;        /* Fondo de paneles */
+  --card-bg: #142E35;         /* Fondo de tarjetas */
+  --text-main: #E0FBFC;       /* Texto claro y brillante */
+  --text-muted: #8ECAE6;      /* Texto secundario */
 }
 
 * {
@@ -24,25 +24,27 @@ body {
 
 /* Encabezado */
 header {
-  background: linear-gradient(180deg, #0A0509 0%, var(--panel-bg) 100%);
+  background: linear-gradient(180deg, #020C0E 0%, var(--panel-bg) 100%);
   padding: 25px 20px;
   text-align: center;
-  border-bottom: 3px solid var(--pink-soft);
+  border-bottom: 3px solid var(--turquoise-bright);
+  box-shadow: 0 4px 20px rgba(0, 245, 212, 0.15);
 }
 
-/* Títulos en #FFC9E8 */
+/* Títulos en Turquesa Neón */
 h1, h2, h3, h4 {
-  color: var(--pink-primary);
+  color: var(--turquoise-bright);
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
 }
 
 h1 {
   margin: 0;
   font-size: 2.2rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 h2 {
-  border-bottom: 1px solid var(--pink-dark);
+  border-bottom: 1px solid var(--turquoise-dark);
   padding-bottom: 8px;
   margin-top: 0;
 }
@@ -51,37 +53,38 @@ h2 {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #0A0509;
+  background-color: #020C0E;
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid #2B1A27;
+  border-bottom: 1px solid var(--card-bg);
 }
 
 .nav-tabs {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .tab-btn {
   text-decoration: none;
-  border: 1px solid var(--pink-soft);
-  color: var(--pink-primary);
-  padding: 10px 16px;
+  border: 1px solid var(--turquoise-bright);
+  color: var(--turquoise-bright);
+  padding: 10px 18px;
   font-size: 0.95rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  background-color: rgba(163, 92, 135, 0.1);
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 245, 212, 0.05);
 }
 
 .tab-btn:hover {
-  background-color: var(--pink-primary);
-  color: #120A10;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(255, 201, 232, 0.4);
+  background-color: var(--turquoise-bright);
+  color: #020C0E;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.6);
+  transform: translateY(-2px);
 }
 
 .container {
@@ -94,10 +97,16 @@ nav {
 .section {
   display: none;
   background: var(--panel-bg);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid rgba(224, 169, 200, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .active-default {
@@ -115,63 +124,106 @@ nav {
 /* Tarjetas Informativas */
 .card {
   background: var(--card-bg);
-  padding: 15px 20px;
-  border-radius: 8px;
+  padding: 18px 22px;
+  border-radius: 10px;
   margin-top: 15px;
-  border-left: 4px solid var(--pink-soft);
+  border-left: 4px solid var(--turquoise-soft);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card.highlight {
-  border-left: 4px solid var(--pink-primary);
-  background: linear-gradient(90deg, #382033 0%, var(--card-bg) 100%);
+  border-left: 4px solid var(--turquoise-bright);
+  background: linear-gradient(90deg, #093943 0%, var(--card-bg) 100%);
 }
+
+/* ========================================================
+   SIMULADOR INTERACTIVO 3D DE LA PASCALINA (TURQUESA)
+   ======================================================== */
 
 .pascalina-widget {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
+  gap: 30px;
+  margin: 35px 0;
+  padding: 20px;
+  background: rgba(2, 12, 14, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 245, 212, 0.15);
 }
 
 .dial-container {
   text-align: center;
-  color: var(--pink-soft);
+  color: var(--turquoise-soft);
+  font-weight: bold;
 }
 
-/* LÓGICA DE INTERACTIVIDAD DE DISCOS EN ROSA */
+.dial-container small {
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Rueda Mecánica */
 .interactive-dial {
   position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 5px auto;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 5px;
+  background: conic-gradient(from 0deg, var(--turquoise-bright), var(--turquoise-dark), var(--bg-dark), var(--turquoise-bright));
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.2);
+}
+
+/* Indicador superior de lectura (Flecha de encuadre) */
+.interactive-dial::before {
+  content: "▼";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--turquoise-bright);
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px var(--turquoise-bright);
+  z-index: 10;
 }
 
 .interactive-dial input {
   display: none;
 }
 
+/* Botones de Engranaje Circular */
 .dial-btn {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 75px;
-  height: 75px;
+  top: 5px;
+  left: 5px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 3px solid var(--pink-primary);
-  background: radial-gradient(circle, #3D2237, #120A10);
+  border: 3px solid var(--turquoise-bright);
+  background: radial-gradient(circle, #103B44 0%, #020C0E 100%);
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: var(--pink-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--turquoise-bright);
   cursor: pointer;
   user-select: none;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 12px rgba(255, 201, 232, 0.25);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: inset 0 0 10px rgba(0, 245, 212, 0.3), 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Conmutación dinámica del dígito visible */
+.dial-btn:hover {
+  transform: scale(1.08);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.6);
+}
+
+/* Conmutación dinámica del dígito activo */
 .interactive-dial input#c0:checked ~ .b0, .interactive-dial input#d0:checked ~ .b0, .interactive-dial input#u0:checked ~ .b0,
 .interactive-dial input#c1:checked ~ .b1, .interactive-dial input#d1:checked ~ .b1, .interactive-dial input#u1:checked ~ .b1,
 .interactive-dial input#c2:checked ~ .b2, .interactive-dial input#d2:checked ~ .b2, .interactive-dial input#u2:checked ~ .b2,
@@ -185,24 +237,28 @@ nav {
   display: flex;
 }
 
+/* Efecto mecánico de giro al hacer clic */
 .dial-btn:active {
-  transform: rotate(36deg);
+  transform: rotate(360deg) scale(0.95);
+  transition: transform 0.2s ease;
 }
 
 /* Bloques de Código */
 .code-block {
-  background-color: #0A0509;
-  color: var(--pink-primary);
-  border: 1px solid var(--pink-dark);
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-family: monospace;
+  background-color: #020C0E;
+  color: var(--turquoise-bright);
+  border: 1px solid var(--turquoise-dark);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-family: 'Consolas', monospace;
   margin-top: 10px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   color: var(--text-muted);
   font-size: 0.85rem;
+  border-top: 1px solid rgba(0, 245, 212, 0.1);
 }
