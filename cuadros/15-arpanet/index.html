@@ -1,54 +1,536 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 15: ARPANET">
-  <title>ARPANET · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a celulares, tablets y computadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARPANET - Historia de Internet</title>
+
+    <style>
+        /* Configuración general de toda la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Encabezado principal */
+        header {
+            background: #12355b;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 52px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 21px;
+            margin-top: 10px;
+        }
+
+        /* Contenedor que mantiene el contenido ordenado */
+        .contenedor {
+            width: 88%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        /* Cada tarjeta contiene una sección de información */
+        .tarjeta {
+            background: white;
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px #aaaaaa;
+        }
+
+        h2 {
+            color: #1769aa;
+            margin-top: 0;
+        }
+
+        /* Destaca información importante */
+        .destacado {
+            background: #d9f0ff;
+            padding: 18px;
+            border-left: 6px solid #1769aa;
+            border-radius: 8px;
+        }
+
+        /* Estilo para los años */
+        .año {
+            font-size: 34px;
+            font-weight: bold;
+            color: #d62828;
+        }
+
+        /* Línea vertical de la línea de tiempo */
+        .linea-tiempo {
+            border-left: 5px solid #1769aa;
+            padding-left: 25px;
+        }
+
+        .evento {
+            margin-bottom: 25px;
+        }
+
+        .evento h3 {
+            color: #d62828;
+            margin-bottom: 5px;
+        }
+
+        /* Diseño para las cajas de datos */
+        .datos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dato {
+            background: #f1f7fb;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 5px solid #1769aa;
+        }
+
+        .dato h3 {
+            color: #1769aa;
+        }
+
+        /* Pie de página */
+        footer {
+            background: #12355b;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 15 · Pensamiento Computacional</span>
-  </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>ARPANET</h1>
-        <p class="fecha">1969</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+    <!-- Encabezado principal de la página -->
+    <header>
+        <h1>🌐 ARPANET</h1>
+        <p>El origen de Internet</p>
+    </header>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
+    <div class="contenedor">
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+        <!-- SECCIÓN 1: CUÁNDO SE CREÓ -->
+        <div class="tarjeta">
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+            <h2>📅 ¿Cuándo se creó?</h2>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.lk.cs.ucla.edu/internet_first_words.html">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=ARPANET">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
+            <p class="año">1969</p>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
-  </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+            <p>
+                ARPANET comenzó a funcionar en 1969 en Estados Unidos.
+                Fue desarrollada por ARPA, una agencia de investigación
+                del Departamento de Defensa de Estados Unidos.
+            </p>
+
+            <div class="destacado">
+                <strong>Dato importante:</strong>
+                ARPANET es considerada uno de los principales antecedentes
+                de Internet.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 2: POR QUÉ SE CREÓ -->
+        <div class="tarjeta">
+
+            <h2>🎯 ¿Por qué se creó ARPANET?</h2>
+
+            <p>
+                ARPANET fue creada para conectar computadores de diferentes
+                universidades y centros de investigación.
+            </p>
+
+            <p>
+                La idea era que los investigadores pudieran compartir
+                información, recursos y comunicarse utilizando una red
+                de computadores.
+            </p>
+
+            <div class="destacado">
+                El objetivo principal era crear una forma más eficiente
+                de comunicación entre diferentes computadores y centros
+                de investigación.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 3: EN QUÉ SE INSPIRARON -->
+        <div class="tarjeta">
+
+            <h2>💡 ¿En qué se inspiraron?</h2>
+
+            <p>
+                Uno de los conceptos fundamentales utilizados fue la
+                <strong>conmutación de paquetes</strong>.
+            </p>
+
+            <p>
+                Esta idea permitía dividir la información en pequeños
+                paquetes. Estos paquetes podían viajar por diferentes
+                caminos y luego reunirse nuevamente al llegar a su destino.
+            </p>
+
+            <div class="destacado">
+                📦 <strong>Conmutación de paquetes:</strong>
+                la información se divide en pequeños paquetes que pueden
+                viajar por diferentes rutas dentro de una red.
+            </div>
+
+            <p>
+                El desarrollo de esta tecnología estuvo relacionado con
+                investigaciones de científicos como Paul Baran y Donald Davies,
+                quienes trabajaron en ideas relacionadas con las redes y la
+                conmutación de paquetes.
+            </p>
+
+        </div>
+
+
+        <!-- SECCIÓN 4: CÓMO FUE CREADA -->
+        <div class="tarjeta">
+
+            <h2>🖥️ ¿Cómo fue creada?</h2>
+
+            <p>
+                Para construir ARPANET se conectaron computadores de
+                diferentes instituciones mediante líneas de comunicación.
+            </p>
+
+            <p>
+                A finales de 1969, la red tenía cuatro nodos principales:
+                UCLA, Stanford Research Institute, UC Santa Barbara y
+                la Universidad de Utah.
+            </p>
+
+            <p>
+                Para conectar los computadores se utilizaron dispositivos
+                llamados <strong>IMP</strong> (Interface Message Processor).
+            </p>
+
+            <div class="destacado">
+                Los IMP ayudaban a enviar y recibir los paquetes de
+                información entre los computadores conectados a la red.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 5: PRIMER MENSAJE -->
+        <div class="tarjeta">
+
+            <h2>💬 El primer mensaje de ARPANET</h2>
+
+            <p>
+                El <strong>29 de octubre de 1969</strong> se realizó una de
+                las primeras transmisiones entre computadores de ARPANET.
+            </p>
+
+            <p>
+                La comunicación se realizó entre la Universidad de California,
+                Los Ángeles (UCLA), y el Stanford Research Institute.
+            </p>
+
+            <p>
+                Se intentó enviar la palabra <strong>LOGIN</strong>, pero el
+                sistema tuvo un problema y solamente se transmitieron las
+                primeras letras: <strong>LO</strong>.
+            </p>
+
+            <div class="destacado">
+                📡 Este acontecimiento es considerado uno de los momentos
+                más importantes en la historia de ARPANET.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 6: CÓMO FUNCIONABA -->
+        <div class="tarjeta">
+
+            <h2>⚙️ ¿Cómo funcionaba?</h2>
+
+            <p>
+                ARPANET utilizaba la conmutación de paquetes para enviar
+                información.
+            </p>
+
+            <p>
+                En lugar de enviar toda la información como un solo bloque,
+                los datos se dividían en pequeños paquetes.
+            </p>
+
+            <p>
+                Cada paquete podía viajar por una ruta diferente hasta llegar
+                al computador de destino.
+            </p>
+
+            <div class="datos">
+
+                <div class="dato">
+                    <h3>1️⃣ Dividir</h3>
+                    <p>
+                        La información se dividía en pequeños paquetes.
+                    </p>
+                </div>
+
+                <div class="dato">
+                    <h3>2️⃣ Enviar</h3>
+                    <p>
+                        Los paquetes viajaban por la red.
+                    </p>
+                </div>
+
+                <div class="dato">
+                    <h3>3️⃣ Recibir</h3>
+                    <p>
+                        Los paquetes llegaban al computador de destino.
+                    </p>
+                </div>
+
+                <div class="dato">
+                    <h3>4️⃣ Unir</h3>
+                    <p>
+                        Los paquetes se organizaban nuevamente para formar
+                        la información original.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 7: TCP/IP -->
+        <div class="tarjeta">
+
+            <h2>🌐 TCP/IP</h2>
+
+            <p>
+                En <strong>1983</strong>, ARPANET adoptó el conjunto de
+                protocolos <strong>TCP/IP</strong>.
+            </p>
+
+            <p>
+                TCP/IP permitió que diferentes redes pudieran comunicarse
+                entre sí de una manera estandarizada.
+            </p>
+
+            <div class="destacado">
+                🔗 TCP/IP fue fundamental para el desarrollo de Internet,
+                ya que permitió conectar diferentes redes.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 8: RELACIÓN CON INTERNET -->
+        <div class="tarjeta">
+
+            <h2>🌎 ¿Qué relación tiene ARPANET con Internet?</h2>
+
+            <p>
+                ARPANET no era exactamente Internet, pero fue uno de sus
+                principales antecedentes.
+            </p>
+
+            <p>
+                Muchas de las tecnologías y conceptos desarrollados
+                durante ARPANET ayudaron a establecer las bases de Internet.
+            </p>
+
+            <p>
+                Gracias a la evolución de las redes y de protocolos como
+                TCP/IP, fue posible conectar diferentes redes a escala mundial.
+            </p>
+
+            <div class="destacado">
+                💻 ARPANET fue uno de los principales pasos hacia la
+                creación de la Internet que utilizamos actualmente.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 9: CRECIMIENTO -->
+        <div class="tarjeta">
+
+            <h2>📈 ¿Cómo fue creciendo?</h2>
+
+            <p>
+                Después de su creación, ARPANET comenzó a incorporar
+                más universidades y centros de investigación.
+            </p>
+
+            <p>
+                Con el paso de los años, la cantidad de computadores
+                conectados aumentó y la red se hizo cada vez más importante
+                para compartir información.
+            </p>
+
+            <p>
+                Su crecimiento permitió desarrollar nuevas tecnologías
+                que posteriormente serían utilizadas en Internet.
+            </p>
+
+        </div>
+
+
+        <!-- SECCIÓN 10: LÍNEA DE TIEMPO -->
+        <div class="tarjeta">
+
+            <h2>🕐 Línea de tiempo de ARPANET</h2>
+
+            <div class="linea-tiempo">
+
+                <div class="evento">
+                    <h3>1969</h3>
+                    <p>
+                        ARPANET comienza a funcionar y se conectan
+                        sus primeros cuatro nodos.
+                    </p>
+                </div>
+
+                <div class="evento">
+                    <h3>29 de octubre de 1969</h3>
+                    <p>
+                        Se realiza una de las primeras transmisiones
+                        entre UCLA y Stanford Research Institute.
+                    </p>
+                </div>
+
+                <div class="evento">
+                    <h3>Década de 1970</h3>
+                    <p>
+                        ARPANET continúa creciendo y conecta más
+                        universidades y centros de investigación.
+                    </p>
+                </div>
+
+                <div class="evento">
+                    <h3>1983</h3>
+                    <p>
+                        ARPANET adopta TCP/IP, permitiendo una mejor
+                        comunicación entre diferentes redes.
+                    </p>
+                </div>
+
+                <div class="evento">
+                    <h3>1990</h3>
+                    <p>
+                        ARPANET deja de funcionar oficialmente.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 11: IMPORTANCIA -->
+        <div class="tarjeta">
+
+            <h2>⭐ ¿Por qué fue importante?</h2>
+
+            <p>
+                ARPANET fue importante porque demostró que diferentes
+                computadores podían comunicarse mediante una red.
+            </p>
+
+            <p>
+                También ayudó al desarrollo de tecnologías y protocolos
+                que posteriormente serían fundamentales para Internet.
+            </p>
+
+            <div class="destacado">
+                🚀 ARPANET fue uno de los grandes pasos tecnológicos
+                que llevaron al desarrollo de Internet.
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN 12: DATOS IMPORTANTES -->
+        <div class="tarjeta">
+
+            <h2>📚 Datos importantes</h2>
+
+            <div class="datos">
+
+                <div class="dato">
+                    <h3>📅 Año de creación</h3>
+                    <p>1969</p>
+                </div>
+
+                <div class="dato">
+                    <h3>🇺🇸 País</h3>
+                    <p>Estados Unidos</p>
+                </div>
+
+                <div class="dato">
+                    <h3>🏛️ Agencia</h3>
+                    <p>ARPA</p>
+                </div>
+
+                <div class="dato">
+                    <h3>🔗 Protocolo</h3>
+                    <p>TCP/IP desde 1983</p>
+                </div>
+
+                <div class="dato">
+                    <h3>💬 Primer mensaje</h3>
+                    <p>LO</p>
+                </div>
+
+                <div class="dato">
+                    <h3>🏁 Final</h3>
+                    <p>1990</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>🌐 ARPANET | Historia y origen de Internet</p>
+        <p>1969 - 1990</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
