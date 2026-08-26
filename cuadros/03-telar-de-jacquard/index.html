@@ -1,54 +1,1203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 03: Telar de Jacquard">
-  <title>Telar de Jacquard · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Museo Digital | Telar de Jacquard</title>
+
+    <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 03 · Pensamiento Computacional</span>
-  </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Telar de Jacquard</h1>
-        <p class="fecha">1804</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+    <!-- =========================================
+         MENÚ
+    ========================================== -->
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
+    <header class="topbar">
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+        <div class="logo">
+            MUSEO<span>DIGITAL</span>
+        </div>
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#autor">Jacquard</a>
+            <a href="#historia">Historia</a>
+            <a href="#mecanismo">Funcionamiento</a>
+            <a href="#legado">Legado</a>
+        </nav>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.sciencemuseum.org.uk/objects-and-stories/women-computing">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=Telar%20de%20Jacquard">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
+    </header>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
-  </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+
+    <main>
+
+
+        <!-- =========================================
+             PORTADA
+        ========================================== -->
+
+        <section id="inicio" class="portada">
+
+            <div class="portada-imagen">
+
+                <img
+                    src="https://www.scienceandindustrymuseum.org.uk/sites/default/files/styles/smg_carousel_zoom/public/255360920.jpg"
+                    alt="Telar histórico relacionado con el sistema Jacquard">
+
+            </div>
+
+
+            <div class="portada-texto">
+
+                <p class="numero">
+                    MUSEO DIGITAL · HISTORIA DE LA TECNOLOGÍA
+                </p>
+
+                <h1>
+                    Telar de
+                    <em>Jacquard</em>
+                </h1>
+
+                <p class="intro">
+                    La máquina que transformó la industria textil
+                    y ayudó a introducir una idea fundamental:
+                    las máquinas podían seguir instrucciones.
+                </p>
+
+                <a href="#autor" class="boton">
+                    Explorar la pieza ↓
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             INTRODUCCIÓN
+        ========================================== -->
+
+        <section class="introduccion">
+
+            <div class="introduccion-numero">
+                1801
+            </div>
+
+
+            <div>
+
+                <p class="etiqueta">
+                    LA INVENCIÓN
+                </p>
+
+                <h2>
+                    Una máquina
+                    que podía "leer".
+                </h2>
+
+            </div>
+
+
+            <div class="introduccion-texto">
+
+                <p>
+                    El telar de Jacquard fue un dispositivo mecánico
+                    desarrollado por Joseph-Marie Jacquard entre
+                    1801 y 1805.
+                </p>
+
+                <p>
+                    Utilizaba tarjetas de cartón perforado para
+                    controlar automáticamente qué hilos debían
+                    subir y cuáles permanecer abajo.
+                </p>
+
+                <strong>
+                    Una tarjeta → una instrucción → un patrón.
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             AUTOR
+        ========================================== -->
+
+        <section id="autor" class="autor">
+
+            <div class="autor-imagen">
+
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Joseph_Marie_Jacquard-portrait.jpg"
+                    alt="Retrato histórico de Joseph-Marie Jacquard">
+
+                <p>
+                    Retrato histórico de Joseph-Marie Jacquard.
+                </p>
+
+            </div>
+
+
+            <div class="autor-info">
+
+                <p class="etiqueta">
+                    01 / EL INVENTOR
+                </p>
+
+                <h2>
+                    Joseph-Marie
+                    Jacquard
+                </h2>
+
+                <p class="fecha">
+                    Lyon, Francia · 1752–1834
+                </p>
+
+                <p>
+                    Joseph-Marie Jacquard fue un tejedor e inventor
+                    francés. Nació en Lyon el 7 de julio de 1752.
+                </p>
+
+                <p>
+                    Su trabajo buscaba solucionar uno de los
+                    problemas más difíciles de la industria textil:
+                    producir diseños complejos de manera rápida,
+                    precisa y repetible.
+                </p>
+
+                <p>
+                    Jacquard perfeccionó un sistema que utilizaba
+                    tarjetas perforadas para controlar los hilos
+                    del telar.
+                </p>
+
+
+                <div class="dato">
+
+                    <span>1801</span>
+
+                    <p>
+                        Presentó una versión preliminar de su sistema.
+                    </p>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>1804–05</span>
+
+                    <p>
+                        Perfeccionó el mecanismo que posteriormente
+                        sería conocido como telar de Jacquard.
+                    </p>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>1806</span>
+
+                    <p>
+                        El Estado francés declaró el invento
+                        propiedad pública y reconoció a Jacquard
+                        mediante una pensión y regalías.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HISTORIA
+        ========================================== -->
+
+        <section id="historia" class="historia">
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">
+                    02 / CONTEXTO HISTÓRICO
+                </p>
+
+                <h2>
+                    Antes de Jacquard,
+                    tejer era mucho más difícil.
+                </h2>
+
+            </div>
+
+
+            <div class="historia-contenido">
+
+
+                <div class="historia-texto">
+
+                    <h3>
+                        El problema
+                    </h3>
+
+                    <p>
+                        Los tejidos como el damasco y el brocado
+                        requerían patrones extremadamente complejos.
+                    </p>
+
+                    <p>
+                        Antes del telar de Jacquard, los trabajadores
+                        tenían que controlar manualmente una gran
+                        cantidad de hilos.
+                    </p>
+
+                    <p>
+                        Esto hacía que producir diseños complejos
+                        fuera lento, costoso y propenso a errores.
+                    </p>
+
+                    <p>
+                        Jacquard tomó ideas de inventores anteriores
+                        y las convirtió en un mecanismo mucho más
+                        eficiente.
+                    </p>
+
+                </div>
+
+
+                <div class="historia-imagen">
+
+                    <img
+                        src="https://proyectoidis.org/wp-content/uploads/1801/05/Telar-del-telar-jacquar-auto.jpg"
+                        alt="Ilustración histórica de un telar de Jacquard">
+
+                    <span>
+                        Representación histórica del telar de Jacquard.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LÍNEA DEL TIEMPO -->
+
+            <div class="linea-tiempo">
+
+                <div class="evento">
+
+                    <span>1725</span>
+
+                    <h3>
+                        Basile Bouchon
+                    </h3>
+
+                    <p>
+                        Experimenta con mecanismos controlados
+                        mediante papel perforado.
+                    </p>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <span>1728</span>
+
+                    <h3>
+                        Jean-Baptiste Falcon
+                    </h3>
+
+                    <p>
+                        Perfecciona el uso de tarjetas perforadas.
+                    </p>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <span>1740</span>
+
+                    <h3>
+                        Jacques Vaucanson
+                    </h3>
+
+                    <p>
+                        Continúa desarrollando mecanismos
+                        de automatización textil.
+                    </p>
+
+                </div>
+
+
+                <div class="evento destacado">
+
+                    <span>1801–1805</span>
+
+                    <h3>
+                        Joseph-Marie Jacquard
+                    </h3>
+
+                    <p>
+                        Perfecciona y populariza el mecanismo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             TARJETAS PERFORADAS
+        ========================================== -->
+
+        <section id="mecanismo" class="mecanismo">
+
+            <div class="titulo-seccion claro">
+
+                <p class="etiqueta">
+                    03 / LAS TARJETAS PERFORADAS
+                </p>
+
+                <h2>
+                    El diseño se
+                    convertía en instrucciones.
+                </h2>
+
+                <p>
+                    Las tarjetas de cartón eran el elemento
+                    fundamental para controlar el telar.
+                </p>
+
+            </div>
+
+
+            <div class="tarjetas-explicacion">
+
+
+                <div class="tarjetas-imagen">
+
+                    <img
+                        src="https://images.computerhistory.org/storageengine/1801_Cards_P1.jpg"
+                        alt="Tarjetas perforadas utilizadas para controlar un telar de Jacquard">
+
+                    <p>
+                        Tarjetas perforadas utilizadas en el sistema
+                        de control del telar.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjetas-texto">
+
+                    <h3>
+                        Un sistema parecido a un código binario
+                    </h3>
+
+                    <p>
+                        Cada tarjeta tenía agujeros en posiciones
+                        específicas.
+                    </p>
+
+                    <p>
+                        La presencia o ausencia de un agujero
+                        determinaba qué ocurría con un hilo.
+                    </p>
+
+
+                    <div class="regla">
+
+
+                        <div>
+
+                            <span class="agujero"></span>
+
+                            <strong>
+                                HAY AGUJERO
+                            </strong>
+
+                            <p>
+                                La aguja atraviesa la tarjeta y
+                                permite activar el mecanismo.
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="sin-agujero"></span>
+
+                            <strong>
+                                NO HAY AGUJERO
+                            </strong>
+
+                            <p>
+                                La aguja encuentra el cartón y
+                                el mecanismo no se activa.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASOS DEL FUNCIONAMIENTO -->
+
+            <div class="pasos">
+
+                <article>
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h3>
+                            Diseñar
+                        </h3>
+
+                        <p>
+                            El patrón se dibuja sobre una cuadrícula.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h3>
+                            Perforar
+                        </h3>
+
+                        <p>
+                            Se hacen agujeros en posiciones
+                            determinadas.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h3>
+                            Leer
+                        </h3>
+
+                        <p>
+                            Las agujas detectan la presencia
+                            o ausencia de agujeros.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>04</span>
+
+                    <div>
+
+                        <h3>
+                            Levantar
+                        </h3>
+
+                        <p>
+                            Los ganchos correspondientes
+                            levantan determinados hilos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>05</span>
+
+                    <div>
+
+                        <h3>
+                            Tejer
+                        </h3>
+
+                        <p>
+                            La lanzadera pasa y crea el patrón.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             MECANISMO / FABRICACIÓN
+        ========================================== -->
+
+        <section class="pieza">
+
+            <div class="pieza-imagen">
+
+                <img
+                    src="https://www.scienceandindustrymuseum.org.uk/sites/default/files/styles/embedded_image/public/2019-06/card-maker.jpg?itok=3C32LIhz"
+                    alt="Máquina relacionada con la fabricación de tarjetas para el telar">
+
+            </div>
+
+
+            <div class="pieza-texto">
+
+                <p class="etiqueta">
+                    04 / EL MECANISMO
+                </p>
+
+                <h2>
+                    La máquina
+                    seguía las instrucciones.
+                </h2>
+
+                <p>
+                    Las tarjetas se unían formando una cadena
+                    continua que avanzaba sobre el telar.
+                </p>
+
+                <p>
+                    Las agujas presionaban contra cada tarjeta.
+                    Cuando encontraban un agujero podían
+                    atravesarla; cuando encontraban cartón,
+                    no podían hacerlo.
+                </p>
+
+                <p>
+                    De esta manera, las tarjetas determinaban
+                    qué hilos debían subir y cuáles permanecer
+                    abajo.
+                </p>
+
+
+                <div class="comparacion">
+
+                    <div>
+
+                        <strong>
+                            AGUJERO
+                        </strong>
+
+                        <span>
+                            La aguja pasa.
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            CARTÓN
+                        </strong>
+
+                        <span>
+                            La aguja se detiene.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ANALOGÍA
+        ========================================== -->
+
+        <section class="analogia">
+
+
+            <div class="analogia-texto">
+
+                <p class="etiqueta">
+                    05 / UNA ANALOGÍA
+                </p>
+
+                <h2>
+                    Como una caja musical,
+                    pero para tejidos.
+                </h2>
+
+                <p>
+                    Una caja musical utiliza perforaciones para
+                    determinar qué notas deben sonar.
+                </p>
+
+                <p>
+                    El telar utilizaba un principio similar:
+                    las perforaciones determinaban qué hilos
+                    debían moverse.
+                </p>
+
+
+                <div class="analogias">
+
+                    <div>
+
+                        <strong>
+                            CAJA MUSICAL
+                        </strong>
+
+                        <span>
+                            Perforación → nota
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            TELAR
+                        </strong>
+
+                        <span>
+                            Perforación → movimiento
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="analogia-imagen">
+
+                <img
+                    src="https://images.computerhistory.org/storageengine/1801_Cards_P1.jpg"
+                    alt="Detalle de tarjetas perforadas relacionadas con el sistema Jacquard">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             IMPACTO SOCIAL
+        ========================================== -->
+
+        <section id="impacto" class="impacto">
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">
+                    06 / IMPACTO
+                </p>
+
+                <h2>
+                    Una innovación
+                    que generó resistencia.
+                </h2>
+
+            </div>
+
+
+            <div class="impacto-grid">
+
+
+                <article class="impacto-card">
+
+                    <span>
+                        LIMITACIONES
+                    </span>
+
+                    <h3>
+                        No era una tecnología perfecta.
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Alto costo de instalación.
+                        </li>
+
+                        <li>
+                            Muchas piezas móviles.
+                        </li>
+
+                        <li>
+                            Desgaste de las tarjetas.
+                        </li>
+
+                        <li>
+                            Errores de alineación.
+                        </li>
+
+                        <li>
+                            La fabricación de tarjetas podía
+                            tardar semanas.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="impacto-card oscuro">
+
+                    <span>
+                        IMPACTO SOCIAL
+                    </span>
+
+                    <h3>
+                        Los trabajadores temían perder sus empleos.
+                    </h3>
+
+                    <p>
+                        Algunos tejedores de seda de Lyon se
+                        opusieron a la nueva tecnología porque
+                        podía reducir la cantidad de mano de
+                        obra necesaria.
+                    </p>
+
+                    <p>
+                        Hubo protestas y ataques contra Jacquard
+                        y sus máquinas.
+                    </p>
+
+                    <p>
+                        A pesar de la resistencia, la eficiencia
+                        del mecanismo favoreció su expansión.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LEGADO COMPUTACIONAL
+        ========================================== -->
+
+        <section id="legado" class="legado">
+
+
+            <div class="titulo-seccion claro">
+
+                <p class="etiqueta">
+                    07 / LEGADO COMPUTACIONAL
+                </p>
+
+                <h2>
+                    Del telar
+                    a la computadora.
+                </h2>
+
+                <p>
+                    El gran legado del telar Jacquard fue demostrar
+                    que una máquina podía ejecutar instrucciones
+                    almacenadas fuera de ella.
+                </p>
+
+            </div>
+
+
+
+            <!-- HARDWARE / INSTRUCCIONES -->
+
+            <div class="idea-central">
+
+
+                <div class="hardware">
+
+                    <span>
+                        HARDWARE
+                    </span>
+
+                    <strong>
+                        La máquina
+                    </strong>
+
+                    <p>
+                        Agujas, ganchos, hilos y mecanismos.
+                    </p>
+
+                </div>
+
+
+                <div class="signo">
+                    +
+                </div>
+
+
+                <div class="software">
+
+                    <span>
+                        INSTRUCCIONES
+                    </span>
+
+                    <strong>
+                        Las tarjetas
+                    </strong>
+
+                    <p>
+                        Información sobre qué movimientos realizar.
+                    </p>
+
+                </div>
+
+
+                <div class="signo">
+                    =
+                </div>
+
+
+                <div class="resultado">
+
+                    <span>
+                        CONCEPTO
+                    </span>
+
+                    <strong>
+                        Programación
+                    </strong>
+
+                    <p>
+                        Una máquina ejecuta instrucciones.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PERSONAJES -->
+
+            <div class="personajes">
+
+
+                <article>
+
+                    <span>
+                        1832
+                    </span>
+
+                    <h3>
+                        Semen Korsakov
+                    </h3>
+
+                    <p>
+                        Utilizó tarjetas perforadas para organizar
+                        y buscar información.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        1837
+                    </span>
+
+                    <h3>
+                        Charles Babbage
+                    </h3>
+
+                    <p>
+                        Incorporó tarjetas perforadas en el diseño
+                        de su Máquina Analítica.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        1846
+                    </span>
+
+                    <h3>
+                        Alexander Bain
+                    </h3>
+
+                    <p>
+                        Aplicó el principio de perforaciones
+                        al telégrafo.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        1890
+                    </span>
+
+                    <h3>
+                        Herman Hollerith
+                    </h3>
+
+                    <p>
+                        Utilizó tarjetas perforadas para procesar
+                        el censo estadounidense.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+
+            <div class="frase-final">
+
+                <p>
+                    Una tarjeta podía decirle a una máquina
+                    qué hacer.
+                </p>
+
+                <span>
+                    Esa idea sería fundamental para la historia
+                    de la programación.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FUENTES
+        ========================================== -->
+
+        <section class="fuentes">
+
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">
+                    08 / INVESTIGACIÓN
+                </p>
+
+                <h2>
+                    Fuentes y créditos
+                </h2>
+
+            </div>
+
+
+
+            <div class="fuentes-grid">
+
+
+                <article>
+
+                    <h3>
+                        Encyclopaedia Britannica
+                    </h3>
+
+                    <p>
+                        Fuente utilizada para contrastar información
+                        histórica y biográfica sobre Jacquard.
+                    </p>
+
+                    <a
+                        href="https://www.britannica.com/technology/Jacquard-loom"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Consultar fuente →
+
+                    </a>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>
+                        Computer History Museum
+                    </h3>
+
+                    <p>
+                        Fuente utilizada para investigar las tarjetas
+                        perforadas y su relación con la computación.
+                    </p>
+
+                    <a
+                        href="https://www.computerhistory.org/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Consultar fuente →
+
+                    </a>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>
+                        Textile Learner
+                    </h3>
+
+                    <p>
+                        Fuente utilizada para contrastar información
+                        técnica sobre el mecanismo Jacquard.
+                    </p>
+
+                    <a
+                        href="https://textilelearner.net/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Consultar fuente →
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- CRÉDITOS DE IMÁGENES -->
+
+            <div class="creditos-imagenes">
+
+                <h3>
+                    Créditos de imágenes
+                </h3>
+
+                <p>
+                    Las imágenes utilizadas pertenecen a sus
+                    respectivos museos, archivos o repositorios.
+                    Se mantienen los enlaces de procedencia para
+                    identificar su origen.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Science Museum Group — imágenes del telar
+                        y tarjetas.
+                    </li>
+
+                    <li>
+                        Computer History Museum — tarjetas perforadas.
+                    </li>
+
+                    <li>
+                        Proyecto IDIS — ilustración histórica del telar.
+                    </li>
+
+                    <li>
+                        Wikimedia Commons — retrato histórico de
+                        Joseph-Marie Jacquard.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- DECLARACIÓN IA -->
+
+            <div class="credito">
+
+                <h3>
+                    Declaración de uso de IA
+                </h3>
+
+                <p>
+                    Se utilizó inteligencia artificial como apoyo
+                    para organizar la información, estructurar
+                    el contenido y desarrollar el código HTML y CSS.
+                    La información histórica fue revisada y
+                    contrastada con las fuentes indicadas.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <div class="logo">
+            MUSEO<span>DIGITAL</span>
+        </div>
+
+        <p>
+            Telar de Jacquard · Historia de la tecnología
+        </p>
+
+    </footer>
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+
 </html>
