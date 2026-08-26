@@ -1,54 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 11: Transistor">
-  <title>Transistor · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia del Transistor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 11 · Pensamiento Computacional</span>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">⚡ Transistor</div>
+      <button id="themeBtn" class="theme-btn" aria-label="Cambiar tema">☀️</button>
+    </nav>
+
+    <div class="hero-content">
+      <span class="eyebrow">TECNOLOGÍA · ELECTRÓNICA</span>
+      <h1>Historia del <span>Transistor</span></h1>
+      <p>Desde su creación en 1947 hasta convertirse en una pieza fundamental de la tecnología moderna.</p>
+      <a href="#creacion" class="hero-btn">Explorar historia ↓</a>
+    </div>
+
+    <div class="hero-orbit">
+      <div class="chip">T</div>
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>
+      <span class="dot dot3"></span>
+    </div>
   </header>
+
   <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Transistor</h1>
-        <p class="fecha">1947</p>
+    <section class="section intro" id="creacion">
+      <div class="section-title">
+        <span>01</span>
+        <div>
+          <p class="mini-title">EL COMIENZO</p>
+          <h2>Creación del transistor</h2>
+        </div>
+      </div>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+      <div class="story-grid">
+        <article class="info-card featured">
+          <div class="card-icon">1947</div>
+          <h3>Un invento que cambió la tecnología</h3>
+          <p>El transistor fue creado en <strong>1947</strong> en los laboratorios <strong>Bell Telephone Laboratories</strong>, en Estados Unidos.</p>
+          <p>Los científicos <strong>John Bardeen, Walter Brattain y William Shockley</strong> fueron los responsables de su desarrollo. Por este trabajo recibieron el <strong>Premio Nobel de Física en 1956</strong>.</p>
+        </article>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
+        <article class="info-card">
+          <div class="card-icon">💡</div>
+          <h3>¿Por qué fue necesario?</h3>
+          <p>Antes de los transistores se utilizaban principalmente <strong>tubos de vacío</strong>, que eran grandes, consumían mucha electricidad y producían bastante calor.</p>
+          <p>El transistor permitió fabricar dispositivos mucho <strong>más pequeños, eficientes y confiables</strong>.</p>
+        </article>
+      </div>
+    </section>
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+    <section class="section manufacturing" id="fabricacion">
+      <div class="section-title">
+        <span>02</span>
+        <div>
+          <p class="mini-title">DEL SILICIO AL CHIP</p>
+          <h2>¿Cómo se elaboran actualmente?</h2>
+        </div>
+      </div>
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+      <p class="section-lead">Los transistores se fabrican principalmente utilizando <strong>silicio</strong>, un material semiconductor. El proceso ocurre en instalaciones especiales llamadas <em>fábricas de semiconductores</em> o <em>fabs</em>.</p>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.nobelprize.org/prizes/physics/1956/brattain/facts/">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=Transistor">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
+      <div class="steps">
+        <article class="step"><span>01</span><div><h3>Silicio</h3><p>Se obtiene y purifica el silicio.</p></div></article>
+        <article class="step"><span>02</span><div><h3>Wafers</h3><p>Se fabrican obleas muy delgadas de silicio llamadas <strong>wafers</strong>.</p></div></article>
+        <article class="step"><span>03</span><div><h3>Fotolitografía</h3><p>Se crean estructuras microscópicas sobre las obleas.</p></div></article>
+        <article class="step"><span>04</span><div><h3>Modificación</h3><p>Se agregan materiales para modificar las propiedades eléctricas del silicio.</p></div></article>
+        <article class="step"><span>05</span><div><h3>Formación</h3><p>Se forman las distintas partes del transistor.</p></div></article>
+        <article class="step"><span>06</span><div><h3>Conexiones</h3><p>Se colocan conexiones metálicas para permitir el paso de electricidad.</p></div></article>
+        <article class="step"><span>07</span><div><h3>Pruebas</h3><p>Se comprueba que los transistores funcionen correctamente.</p></div></article>
+        <article class="step"><span>08</span><div><h3>Encapsulado</h3><p>Los chips se cortan, se encapsulan y se incorporan a dispositivos electrónicos.</p></div></article>
+      </div>
+    </section>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
+    <section class="section present" id="actualidad">
+      <div class="section-title">
+        <span>03</span>
+        <div>
+          <p class="mini-title">EL PRESENTE</p>
+          <h2>El transistor en la actualidad</h2>
+        </div>
+      </div>
+
+      <p class="section-lead">Hoy los transistores están prácticamente en todas partes. Son fundamentales para la tecnología que utilizamos diariamente.</p>
+
+      <div class="uses-grid">
+        <div class="use">💻 <span>Computadores<br>y notebooks</span></div>
+        <div class="use">📱 <span>Teléfonos<br>celulares</span></div>
+        <div class="use">🎮 <span>Consolas<br>de videojuegos</span></div>
+        <div class="use">🚗 <span>Automóviles<br>modernos</span></div>
+        <div class="use">📺 <span>Televisores</span></div>
+        <div class="use">🤖 <span>Robots</span></div>
+        <div class="use">🏥 <span>Equipos<br>médicos</span></div>
+        <div class="use">🛰️ <span>Satélites</span></div>
+        <div class="use">🏭 <span>Máquinas<br>industriales</span></div>
+        <div class="use">🧠 <span>Inteligencia<br>artificial</span></div>
+      </div>
+
+      <div class="fact">
+        <div class="fact-number">∞</div>
+        <div><strong>Miles de millones</strong><p>Los procesadores modernos contienen miles de millones de transistores en un solo chip.</p></div>
+        <div class="nano">nm</div>
+        <div><strong>Escala nanométrica</strong><p>Los transistores actuales son extremadamente pequeños y se fabrican a escalas de nanómetros.</p></div>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="evolucion">
+      <div class="section-title">
+        <span>04</span>
+        <div>
+          <p class="mini-title">UNA LARGA EVOLUCIÓN</p>
+          <h2>¿Cómo ha evolucionado?</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item"><div class="year">1947</div><div class="timeline-card"><h3>Primer transistor</h3><p>Se crea el primer transistor en Bell Telephone Laboratories.</p></div></div>
+        <div class="timeline-item"><div class="year">1950–60</div><div class="timeline-card"><h3>Más pequeños y confiables</h3><p>Los transistores comienzan a mejorar en tamaño, eficiencia y confiabilidad.</p></div></div>
+        <div class="timeline-item"><div class="year">1960–70</div><div class="timeline-card"><h3>Circuitos integrados</h3><p>Aparecen los circuitos integrados, que reúnen múltiples componentes en un mismo chip.</p></div></div>
+        <div class="timeline-item"><div class="year">1970–90</div><div class="timeline-card"><h3>Microprocesadores</h3><p>Los microprocesadores se vuelven cada vez más pequeños y potentes.</p></div></div>
+        <div class="timeline-item"><div class="year">2000–HOY</div><div class="timeline-card"><h3>Miles de millones</h3><p>Los chips modernos integran miles de millones de transistores.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section importance" id="importancia">
+      <div class="importance-box">
+        <span class="mini-title">05 · IMPORTANCIA</span>
+        <h2>¿Por qué es tan importante?</h2>
+        <p>El transistor fue uno de los inventos que permitió el desarrollo de la <strong>electrónica moderna</strong>. Sin él, sería muy difícil tener computadores, smartphones, Internet, inteligencia artificial y muchos de los dispositivos que utilizamos actualmente.</p>
+        <p>Comenzó como una alternativa pequeña y eficiente a los tubos de vacío y terminó convirtiéndose en uno de los componentes fundamentales de prácticamente toda la tecnología moderna.</p>
+        <div class="quote">“Un componente diminuto que hizo posible un mundo enorme.”</div>
+      </div>
+    </section>
   </main>
-  <footer>La verdad a través de la razón</footer>
+
+  <footer>
+    <div><strong>⚡ HISTORIA DEL TRANSISTOR</strong><span> · Tecnología que cambió el mundo.</span></div>
+    <button id="topBtn">↑ Volver arriba</button>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
