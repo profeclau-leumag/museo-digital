@@ -1,54 +1,1407 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 09: Z3">
-  <title>Z3 · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Museo digital sobre la Zuse Z3, una de las primeras computadoras programables de la historia.">
+
+    <title>Zuse Z3 | Museo Digital</title>
+
+    <style>
+
+        /* =====================================================
+           CONFIGURACIÓN GENERAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eef8ff;
+            color: #183247;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: #075985;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
+        /* =====================================================
+           ACCESIBILIDAD
+        ===================================================== */
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            background: white;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            left: 10px;
+        }
+
+        /* =====================================================
+           ENCABEZADO
+        ===================================================== */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #83d5f5,
+                #dff7ff
+            );
+
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid #3ca6d5;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background-color: #12506e;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            color: #103c56;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #244f67;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           NAVEGACIÓN
+        ===================================================== */
+
+        nav {
+            background-color: #103c56;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 8px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #287da3;
+        }
+
+        /* =====================================================
+           CONTENEDOR
+        ===================================================== */
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 80px;
+        }
+
+        section > h2 {
+            color: #12506e;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 7px solid #3ca6d5;
+            padding-left: 14px;
+        }
+
+        /* =====================================================
+           INTRODUCCIÓN
+        ===================================================== */
+
+        .introduccion {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(20, 90, 120, 0.12);
+        }
+
+        .introduccion p {
+            margin-bottom: 15px;
+        }
+
+        .destacado {
+            font-size: 1.15rem;
+            background-color: #dff7ff;
+            border-left: 6px solid #3ca6d5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* =====================================================
+           TARJETAS
+        ===================================================== */
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(20, 90, 120, 0.12);
+            border-top: 5px solid #3ca6d5;
+            transition: transform 0.2s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta .icono {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta h3 {
+            color: #12506e;
+            margin-bottom: 10px;
+        }
+
+        /* =====================================================
+           ILUSTRACIÓN DE LA Z3
+        ===================================================== */
+
+        .z3-contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            background-color: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(20, 90, 120, 0.12);
+        }
+
+        .z3-maquina {
+            min-height: 300px;
+            background-color: #244f63;
+            border: 12px solid #183746;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 12px 12px 0 #9bd8eb;
+        }
+
+        .z3-maquina .titulo-z3 {
+            font-size: 4rem;
+            color: #9de5ff;
+            font-weight: bold;
+        }
+
+        .panel {
+            width: 85%;
+            background-color: #d8edf4;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .panel span {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background-color: #183746;
+            margin: 3px;
+            border-radius: 2px;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #456576;
+        }
+
+        /* =====================================================
+           FUNCIONAMIENTO
+        ===================================================== */
+
+        .funcionamiento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .paso {
+            background-color: white;
+            padding: 25px 18px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(20, 90, 120, 0.10);
+        }
+
+        .numero {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            background-color: #3ca6d5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .paso h3 {
+            color: #12506e;
+            margin-bottom: 8px;
+        }
+
+        /* =====================================================
+           CONCEPTOS COMPUTACIONALES
+        ===================================================== */
+
+        .conceptos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .concepto {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3ca6d5;
+        }
+
+        .concepto h3 {
+            color: #12506e;
+            margin-bottom: 8px;
+        }
+
+        /* =====================================================
+           LÍNEA DE TIEMPO
+        ===================================================== */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #3ca6d5;
+        }
+
+        .evento {
+            position: relative;
+            width: 50%;
+            padding: 15px 35px;
+        }
+
+        .evento:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .evento:nth-child(even) {
+            left: 50%;
+        }
+
+        .evento::after {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-color: #12506e;
+            border: 4px solid #bdefff;
+            border-radius: 50%;
+            top: 30px;
+            z-index: 2;
+        }
+
+        .evento:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .evento:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .evento-contenido {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(20, 90, 120, 0.12);
+        }
+
+        .año {
+            color: #14749b;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           LIMITACIÓN Y LEGADO
+        ===================================================== */
+
+        .caja-especial {
+            background-color: #dff7ff;
+            border-radius: 18px;
+            padding: 30px;
+            border-left: 7px solid #3ca6d5;
+        }
+
+        .caja-especial h3 {
+            color: #12506e;
+            margin-bottom: 10px;
+        }
+
+        /* =====================================================
+           LÍNEAS DE CÓDIGO EXPLICADAS
+        ===================================================== */
+
+        .codigo-explicado {
+            background-color: #152b38;
+            color: #e7f8ff;
+            padding: 25px;
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+
+        .codigo-explicado code {
+            font-family: "Courier New", monospace;
+        }
+
+        .explicacion-codigo {
+            background-color: white;
+            color: #183247;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .explicacion-codigo h3 {
+            color: #12506e;
+            margin-bottom: 8px;
+        }
+
+        /* =====================================================
+           FUENTES
+        ===================================================== */
+
+        .fuentes {
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(20, 90, 120, 0.10);
+        }
+
+        .fuentes li {
+            margin-bottom: 12px;
+            margin-left: 25px;
+        }
+
+        .fuentes a {
+            color: #075985;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           CRÉDITOS
+        ===================================================== */
+
+        .creditos {
+            background-color: #e6f6fc;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* =====================================================
+           PIE DE PÁGINA
+        ===================================================== */
+
+        footer {
+            background-color: #103c56;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* =====================================================
+           RESPONSIVE - TABLET
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .tarjetas {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .funcionamiento {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .z3-contenedor {
+                grid-template-columns: 1fr;
+            }
+
+            .conceptos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =====================================================
+           RESPONSIVE - CELULAR
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 45px 15px;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tarjetas,
+            .funcionamiento {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 12px;
+            }
+
+            .evento,
+            .evento:nth-child(odd),
+            .evento:nth-child(even) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .evento::after,
+            .evento:nth-child(odd)::after,
+            .evento:nth-child(even)::after {
+                left: 3px;
+            }
+
+            .z3-maquina {
+                min-height: 230px;
+            }
+
+            .z3-maquina .titulo-z3 {
+                font-size: 3rem;
+            }
+
+            section > h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* =====================================================
+           PERSONAS QUE PREFIEREN MENOS ANIMACIONES
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .tarjeta {
+                transition: none;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 09 · Pensamiento Computacional</span>
-  </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Z3</h1>
-        <p class="fecha">1941</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+    <!-- Enlace para usuarios que navegan con teclado -->
+    <a class="skip-link" href="#contenido">
+        Saltar al contenido principal
+    </a>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+    <header>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.deutsches-museum.de/en/museumsinsel/ausstellung/computers">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=Z3">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
+        <span class="etiqueta">
+            MUSEO DIGITAL DE LA COMPUTACIÓN
+        </span>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
-  </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+        <h1>ZUSE Z3</h1>
+
+        <p>
+            La máquina que ayudó a demostrar que una computadora
+            podía ejecutar instrucciones de manera automática.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         NAVEGACIÓN
+    ====================================================== -->
+
+    <nav aria-label="Navegación principal">
+
+        <ul>
+
+            <li>
+                <a href="#que-es">¿Qué es?</a>
+            </li>
+
+            <li>
+                <a href="#creador">Creador</a>
+            </li>
+
+            <li>
+                <a href="#funcion">Función</a>
+            </li>
+
+            <li>
+                <a href="#como-funcionaba">Funcionamiento</a>
+            </li>
+
+            <li>
+                <a href="#timeline">Línea de tiempo</a>
+            </li>
+
+            <li>
+                <a href="#limitacion">Limitación</a>
+            </li>
+
+            <li>
+                <a href="#legado">Legado</a>
+            </li>
+
+            <li>
+                <a href="#fuentes">Fuentes</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main id="contenido">
+
+
+        <!-- =================================================
+             ¿QUÉ ES?
+        ================================================== -->
+
+        <section id="que-es">
+
+            <h2>¿Qué es la Zuse Z3?</h2>
+
+            <div class="introduccion">
+
+                <p>
+                    La <strong>Zuse Z3</strong> fue una computadora
+                    electromecánica creada por el ingeniero alemán
+                    <strong>Konrad Zuse</strong>.
+                </p>
+
+                <p>
+                    Fue completada en <strong>1941</strong> y es reconocida
+                    como uno de los primeros computadores digitales,
+                    automáticos y programables de la historia.
+                </p>
+
+                <p>
+                    A diferencia de los computadores actuales, la Z3 no
+                    tenía pantalla, teclado ni mouse. Utilizaba relés
+                    electromecánicos y una cinta perforada para recibir
+                    las instrucciones.
+                </p>
+
+                <div class="destacado">
+
+                    <strong>Idea principal:</strong>
+
+                    La Z3 podía recibir un conjunto de instrucciones
+                    y ejecutarlas automáticamente para realizar
+                    cálculos matemáticos.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CREADOR Y DATOS
+        ================================================== -->
+
+        <section id="creador">
+
+            <h2>¿Quién la creó?</h2>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+
+                    <div class="icono">👨‍💻</div>
+
+                    <h3>Konrad Zuse</h3>
+
+                    <p>
+                        Ingeniero alemán considerado uno de los pioneros
+                        de la computación. Diseñó y construyó la Z3.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <div class="icono">📅</div>
+
+                    <h3>1941</h3>
+
+                    <p>
+                        La Z3 fue terminada y presentada el
+                        <strong>12 de mayo de 1941</strong>.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <div class="icono">🇩🇪</div>
+
+                    <h3>Alemania</h3>
+
+                    <p>
+                        Fue desarrollada en Berlín, Alemania,
+                        durante la Segunda Guerra Mundial.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ILUSTRACIÓN
+        ================================================== -->
+
+        <section>
+
+            <h2>La Z3 por dentro</h2>
+
+            <figure class="z3-contenedor">
+
+                <div
+                    class="z3-maquina"
+                    role="img"
+                    aria-label="Ilustración educativa de una computadora Zuse Z3 con relés electromecánicos"
+                >
+
+                    <span class="titulo-z3">
+                        Z3
+                    </span>
+
+                    <div class="panel">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Una computadora muy diferente
+                    </h3>
+
+                    <p>
+                        La Z3 utilizaba aproximadamente
+                        <strong>2.300 relés electromecánicos</strong>.
+                        Estos dispositivos funcionaban como interruptores
+                        eléctricos para procesar información.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        La máquina trabajaba con información representada
+                        mediante el <strong>sistema binario</strong>.
+                    </p>
+
+                </div>
+
+                <figcaption>
+                    Ilustración educativa de la Zuse Z3.
+                    No corresponde a una fotografía original.
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!-- =================================================
+             FUNCIÓN
+        ================================================== -->
+
+        <section id="funcion">
+
+            <h2>¿Cuál era su función?</h2>
+
+            <div class="introduccion">
+
+                <p>
+                    La principal función de la Z3 era realizar
+                    <strong>cálculos matemáticos automáticamente</strong>.
+                </p>
+
+                <p>
+                    Fue desarrollada para resolver problemas de
+                    ingeniería y cálculos relacionados con la
+                    <strong>aerodinámica</strong>.
+                </p>
+
+                <p>
+                    Podía realizar operaciones como:
+                </p>
+
+                <ul style="margin: 15px 0 0 30px;">
+
+                    <li>Sumas</li>
+                    <li>Restas</li>
+                    <li>Multiplicaciones</li>
+                    <li>Divisiones</li>
+                    <li>Raíces cuadradas</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROBLEMA
+        ================================================== -->
+
+        <section id="problema">
+
+            <h2>¿Qué problema buscaba resolver?</h2>
+
+            <div class="caja-especial">
+
+                <p>
+                    La Z3 buscaba automatizar cálculos matemáticos que
+                    podían ser largos y repetitivos cuando se realizaban
+                    manualmente. Konrad Zuse la desarrolló para facilitar
+                    problemas relacionados con la ingeniería y la
+                    aerodinámica. Al poder seguir automáticamente un
+                    programa, la Z3 permitía realizar operaciones
+                    matemáticas sin que una persona tuviera que realizar
+                    cada cálculo paso a paso.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUNCIONAMIENTO
+        ================================================== -->
+
+        <section id="como-funcionaba">
+
+            <h2>¿Cómo funcionaba?</h2>
+
+            <div class="funcionamiento">
+
+
+                <article class="paso">
+
+                    <div class="numero">1</div>
+
+                    <h3>Programa</h3>
+
+                    <p>
+                        Las instrucciones se introducían mediante
+                        una cinta perforada.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <div class="numero">2</div>
+
+                    <h3>Lectura</h3>
+
+                    <p>
+                        La máquina leía los agujeros de la cinta
+                        para interpretar las instrucciones.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <div class="numero">3</div>
+
+                    <h3>Procesamiento</h3>
+
+                    <p>
+                        Los relés electromecánicos procesaban
+                        los datos y realizaban las operaciones.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <div class="numero">4</div>
+
+                    <h3>Resultado</h3>
+
+                    <p>
+                        La máquina entregaba el resultado del
+                        cálculo realizado.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONCEPTOS COMPUTACIONALES
+        ================================================== -->
+
+        <section>
+
+            <h2>Conceptos computacionales</h2>
+
+            <div class="conceptos">
+
+
+                <article class="concepto">
+
+                    <h3>🔢 Sistema binario</h3>
+
+                    <p>
+                        Es un sistema numérico que utiliza principalmente
+                        dos valores: <strong>0 y 1</strong>. Los computadores
+                        modernos también utilizan este sistema para
+                        representar y procesar información.
+                    </p>
+
+                </article>
+
+
+                <article class="concepto">
+
+                    <h3>⚡ Relé electromecánico</h3>
+
+                    <p>
+                        Es un dispositivo que funciona como un interruptor
+                        controlado eléctricamente. En la Z3, miles de relés
+                        permitían realizar operaciones y representar
+                        información.
+                    </p>
+
+                </article>
+
+
+                <article class="concepto">
+
+                    <h3>📜 Programa</h3>
+
+                    <p>
+                        Un programa es un conjunto de instrucciones que
+                        indica a una máquina qué debe hacer. La Z3 podía
+                        ejecutar instrucciones introducidas mediante
+                        una cinta perforada.
+                    </p>
+
+                </article>
+
+
+                <article class="concepto">
+
+                    <h3>🤖 Automatización</h3>
+
+                    <p>
+                        Significa que una tarea puede realizarse
+                        automáticamente siguiendo instrucciones,
+                        sin que una persona tenga que controlar
+                        cada operación.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LÍNEA DE TIEMPO
+        ================================================== -->
+
+        <section id="timeline">
+
+            <h2>Línea de tiempo</h2>
+
+            <div class="timeline">
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            1938
+                        </div>
+
+                        <h3>Z1</h3>
+
+                        <p>
+                            Konrad Zuse construye la Z1,
+                            una máquina experimental que
+                            utilizaba el sistema binario.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            1940
+                        </div>
+
+                        <h3>Z2</h3>
+
+                        <p>
+                            Zuse desarrolla la Z2, incorporando
+                            relés telefónicos para mejorar
+                            el funcionamiento de la máquina.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            1941
+                        </div>
+
+                        <h3>Nace la Z3</h3>
+
+                        <p>
+                            El 12 de mayo se presenta la Z3,
+                            una máquina automática y programable.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            1943
+                        </div>
+
+                        <h3>Destrucción</h3>
+
+                        <p>
+                            La Z3 original es destruida durante
+                            un bombardeo en Berlín.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            Década de 1960
+                        </div>
+
+                        <h3>Reconstrucción</h3>
+
+                        <p>
+                            Se construye una reconstrucción de la Z3
+                            bajo la supervisión de Konrad Zuse.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento">
+
+                    <div class="evento-contenido">
+
+                        <div class="año">
+                            Actualidad
+                        </div>
+
+                        <h3>Legado</h3>
+
+                        <p>
+                            La Z3 es reconocida como un hito
+                            importante en la historia de la computación.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LIMITACIÓN
+        ================================================== -->
+
+        <section id="limitacion">
+
+            <h2>Una limitación o tensión</h2>
+
+            <div class="caja-especial">
+
+                <h3>¿Qué no podía hacer?</h3>
+
+                <p>
+                    La Z3 era muy limitada comparada con los computadores
+                    actuales. Era grande, pesada y dependía de miles de
+                    componentes electromecánicos que podían fallar.
+                    Además, estaba principalmente orientada a cálculos
+                    matemáticos y no podía realizar la enorme variedad
+                    de tareas que puede realizar un computador moderno.
+                </p>
+
+                <br>
+
+                <h3>¿Qué ocurrió con ella?</h3>
+
+                <p>
+                    La máquina original fue destruida en 1943 durante
+                    un bombardeo sobre Berlín en la Segunda Guerra Mundial.
+                    Por esta razón, la Z3 original no se conserva.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LEGADO
+        ================================================== -->
+
+        <section id="legado">
+
+            <h2>Su legado hoy</h2>
+
+            <div class="caja-especial">
+
+                <p>
+                    La Z3 dejó un importante legado porque demostró que
+                    una máquina podía recibir instrucciones y ejecutarlas
+                    automáticamente. Esta idea se encuentra en el centro
+                    de la computación moderna.
+                </p>
+
+                <br>
+
+                <p>
+                    Hoy, computadores, celulares, tablets y servidores
+                    funcionan ejecutando programas escritos mediante
+                    <strong>lenguajes de programación</strong>.
+                    Aunque la tecnología actual es muchísimo más avanzada,
+                    la idea fundamental de entregar instrucciones a una
+                    máquina sigue siendo esencial.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DOS LÍNEAS DE CÓDIGO EXPLICADAS
+        ================================================== -->
+
+        <section id="codigo">
+
+            <h2>Explicación de dos líneas de código</h2>
+
+            <div class="codigo-explicado">
+
+<pre><code>&lt;h1&gt;ZUSE Z3&lt;/h1&gt;
+
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+            </div>
+
+
+            <div class="explicacion-codigo">
+
+                <h3>1. &lt;h1&gt;ZUSE Z3&lt;/h1&gt;</h3>
+
+                <p>
+                    Esta línea crea el título principal de la página.
+                    La etiqueta <strong>h1</strong> indica que es el
+                    encabezado más importante del contenido.
+                </p>
+
+            </div>
+
+
+            <div class="explicacion-codigo">
+
+                <h3>2. meta viewport</h3>
+
+                <p>
+                    Esta línea permite que la página se adapte
+                    correctamente al tamaño de la pantalla,
+                    especialmente en celulares y tablets.
+                    Por eso es importante para el diseño
+                    <strong>responsive</strong>.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUENTES
+        ================================================== -->
+
+        <section id="fuentes">
+
+            <h2>Fuentes utilizadas</h2>
+
+            <div class="fuentes">
+
+                <p>
+                    Para realizar este museo digital se utilizaron
+                    fuentes especializadas en historia de la computación:
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>
+                        Computer History Museum:
+                        <a
+                            href="https://www.computerhistory.org/timeline/1941/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Timeline of Computer History
+                        </a>
+                    </li>
+
+                    <li>
+                        Deutsches Museum:
+                        <a
+                            href="https://www.deutsches-museum.de/en/museumsinsel/exhibitions/computers"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Computers – History of Computing
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="creditos">
+
+                    <h3>Créditos</h3>
+
+                    <p>
+                        La ilustración utilizada en esta página fue
+                        creada específicamente para representar de forma
+                        educativa la Zuse Z3 y no corresponde a una
+                        fotografía histórica original.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Uso de IA:</strong>
+                        se utilizó inteligencia artificial como apoyo
+                        para organizar y desarrollar parte del código
+                        HTML y CSS del proyecto. La información histórica
+                        fue contrastada con las fuentes indicadas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            <strong>Museo Digital: Zuse Z3</strong>
+        </p>
+
+        <p>
+            Proyecto de Pensamiento Computacional y Programación
+        </p>
+
+        <p>
+            Historia de la computación
+        </p>
+
+    </footer>
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+
 </html>
