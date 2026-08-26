@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link type="text/css" rel="stylesheet" href="style.css"/>
   <a href="../../index.html">← Volver al museo</a>
   <span>Cuadro 03 · Pensamiento Computacional</span>
   <meta charset="UTF-8">
@@ -17,29 +16,25 @@
       margin: 0;
     }
 
-    /* Contenedor principal semántico */
     main.tarjeta {
       background-color: #333333;
       width: 90%;
       max-width: 650px;
+      min-height: 520px;
       margin: 20px auto;
       padding: 25px;
       border-radius: 10px;
       border: 2px solid #555555;
       text-align: left;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    /* Control de diapositivas */
-    article.diapositiva {
-      display: none;
-    }
+    article.diapositiva { display: none; }
+    article.activa { display: block; }
 
-    article.activa {
-      display: block;
-    }
-
-    /* Estilos de texto */
     .etiqueta {
       color: #00aaff;
       font-weight: bold;
@@ -47,44 +42,84 @@
       font-size: 14px;
     }
 
-    h1, h2 {
-      color: #ffffff;
+    h1, h2 { color: #ffffff; margin-top: 10px; }
+    p { color: #cccccc; line-height: 1.5; }
+    ul { margin-left: 20px; line-height: 1.8; }
+    .destacado { color: #00aaff; font-weight: bold; }
+
+    /* ESTILOS DEL SIMULADOR INTERACTIVO */
+    .simulador-container {
+      background-color: #1a1a1a;
+      border: 2px solid #00aaff;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
       margin-top: 10px;
     }
 
-    p {
-      color: #cccccc;
-      line-height: 1.5;
+    .tarjeta-perforada {
+      width: 220px;
+      height: 100px;
+      background-color: #d2b48c;
+      margin: 10px auto;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+      border: 2px solid #8b4513;
     }
 
-    ul {
-      margin-left: 20px;
-      line-height: 1.8;
+    .agujero {
+      width: 24px;
+      height: 24px;
+      background-color: #8b4513;
+      border-radius: 50%;
+      position: absolute;
+      top: 38px;
+      left: 98px;
+      line-height: 24px;
+      font-size: 10px;
+      color: #fff;
     }
 
-    .destacado {
-      color: #00aaff;
+    .agujero.perforado {
+      background-color: #1a1a1a;
+      border: 2px dashed #00aaff;
+    }
+
+    .reloj-contador {
+      font-size: 28px;
       font-weight: bold;
+      color: #00ff88;
+      background: #000;
+      padding: 5px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 10px 0;
+      border: 1px solid #333;
     }
 
-    /* Imagen responsiva y accesible */
-    img.imagen-museo {
-      width: 100%;
-      height: auto;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin: 15px 0;
-      border: 1px solid #555;
+    .btn-accion {
+      background-color: #ff9900;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
-    /* Botones y navegación */
-    nav.botones {
-      margin-top: 20px;
-      text-align: center;
+    .btn-accion:hover { background-color: #e68a00; }
+
+    #explicacion-mecanismo {
+      font-size: 13px;
+      color: #00aaff;
+      margin-top: 8px;
+      min-height: 35px;
     }
 
-    button {
+    /* NAVEGACIÓN */
+    nav.botones { margin-top: 20px; text-align: center; }
+    .nav-btn {
       background-color: #00aaff;
       color: white;
       border: none;
@@ -94,126 +129,125 @@
       cursor: pointer;
       margin: 0 5px;
     }
-
-    button:hover {
-      background-color: #0088cc;
-    }
-
-    #contador {
-      margin-top: 15px;
-      color: #aaaaaa;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    /* Sección de fuentes y transparencia */
-    footer.creditos {
-      margin-top: 15px;
-      border-top: 1px solid #444444;
-      padding-top: 10px;
-      font-size: 0.85em;
-      color: #bbbbbb;
-    }
-
-    footer.creditos a {
-      color: #00aaff;
-      text-decoration: underline;
-    }
+    #contador { margin-top: 10px; color: #aaaaaa; text-align: center; font-size: 14px; }
+    footer.creditos { margin-top: 10px; border-top: 1px solid #444; padding-top: 10px; font-size: 0.8em; color: #bbb; }
+    footer.creditos a { color: #00aaff; }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado general del sitio -->
   <header>
-    <p style="color: #00aaff; font-weight: bold;">MUSEO DIGITAL </p>
+    <p style="color: #00aaff; font-weight: bold;">MUSEO DIGITAL DE INFORMÁTICA</p>
   </header>
 
-  <!-- Tarjeta contenedora semántica -->
   <main class="tarjeta">
     
-    <!-- Diapositiva 1 -->
-    <article class="diapositiva activa">
-      <span class="etiqueta">Historia de la Computación</span>
-      <h1>La Tabuladora de Hollerith</h1>
-      <p>El nacimiento del procesamiento automatizado de datos y la chispa que dio origen a la era digital moderna.</p>
-      <ul>
-        <li><b>Creador:</b> Herman Hollerith (1860 - 1929)</li>
-        <li><b>Innovación:</b> Uso de tarjetas perforadas para procesar datos</li>
-        <li><b>Impacto:</b> Base tecnológica de lo que hoy es IBM</li>
-      </ul>
-    </article>
-
-    <!-- Diapositiva 2 -->
-    <article class="diapositiva">
-      <span class="etiqueta">El Desafío Histórico</span>
-      <h2>El Censo de EE. UU. de 1890</h2>
-      <p>A finales del siglo XIX, Estados Unidos enfrentaba un grave problema de escala en la recolección de información demográfica.</p>
-      <ul>
-        <li>El censo de 1880 tardó <span class="destacado">8 años</span> en procesarse a mano.</li>
-        <li>Se estimaba que el censo de 1890 tardaría más de 10 años por el aumento de población.</li>
-        <li>Los datos corrían el riesgo de quedar obsoletos antes de ser publicados.</li>
-      </ul>
-    </article>
-
-    <!-- Diapositiva 3 -->
-    <article class="diapositiva">
-      <span class="etiqueta">Mecanismo y Limitaciones</span>
-      <h2>Funcionamiento y Limitación Técnica</h2>
-      <p>Hollerith aplicó un sistema electromecánico electromagnético para resolver el problema:</p>
-      <ul>
-        <li><span class="destacado">Mecanismo:</span> Un panel con agujas descendía sobre la tarjeta perforada. Si había un orificio, la aguja tocaba un baño de mercurio, cerrando un circuito eléctrico que sumaba 1 al contador.</li>
-        <li><span class="destacado">Limitación:</span> Las tarjetas de cartón se desgastaban con facilidad, el mercurio emitía vapores peligrosos y la máquina solo servía para contar, sin capacidad de ejecutar operaciones lógicas complejas.</li>
-      </ul>
-    </article>
-
-    <!-- Diapositiva 4 -->
-    <article class="diapositiva">
-      <span class="etiqueta">Resultados y Legado</span>
-      <h2>De la Tabuladora a IBM</h2>
-      <p>El éxito de la máquina superó las expectativas y transformó el tratamiento de datos:</p>
-      <ul>
-        <li>El recuento total del censo se completó en solo <span class="destacado">6 semanas</span>.</li>
-        <li>Ahorró al gobierno de EE. UU. más de <span class="destacado">5 millones de dólares</span>.</li>
-        <li>En 1896, Hollerith fundó la <i>Tabulating Machine Company</i>, que en 1924 se renombró como <span class="destacado">IBM</span>.</li>
-      </ul>
-    </article>
-
-    <!-- Diapositiva 5: Imagen, Accesibilidad, Fuentes e IA -->
-    <article class="diapositiva">
-      <span class="etiqueta">Créditos y Transparencia</span>
-      <h2>Fuentes, Imagen y Declaración</h2>
-      
-      <!-- Imagen con texto alternativo (Accesibilidad) -->
-      
-      
-      <footer class="creditos">
-        <p><b>Fuentes consultadas:</b></p>
+    <div class="contenido-slide">
+      <!-- Diapositiva 1 -->
+      <article class="diapositiva activa">
+        <span class="etiqueta">Historia de la Computación</span>
+        <h1>La Tabuladora de Hollerith</h1>
+        <p>El nacimiento del procesamiento automatizado de datos y la chispa que dio origen a la era digital moderna.</p>
         <ul>
-          <li><a href="https://es.wikipedia.org/wiki/M%C3%A1quina_tabuladora" target="_blank" rel="noopener">Wikipedia - Máquina tabuladora</a></li>
-          <li><a href="https://www.ibm.com/ibm/history" target="_blank" rel="noopener">IBM History Archives</a> (Archivo Oficial)</li>
-          <li><a href="https://www.britannica.com/biography/Herman-Hollerith" target="_blank" rel="noopener">Enciclopedia Britannica - Herman Hollerith</a></li>
+          <li><b>Creador:</b> Herman Hollerith (1860 - 1929)</li>
+          <li><b>Innovación:</b> Uso de tarjetas perforadas para procesar datos</li>
+          <li><b>Impacto:</b> Base tecnológica de lo que hoy es IBM</li>
         </ul>
-        <p style="margin-top: 10px;"><b>Declaración de uso de IA:</b> Se utilizó un modelo de IA (Gemini) para asistir en el diseño de la estructura HTML/CSS y optimización del código, revisando y validando manualmente los contenidos históricos expuestos.</p>
-      </footer>
-    </article>
+      </article>
 
-    <!-- Navegación por botones -->
-    <nav class="botones">
-      <button onclick="atras()">Anterior</button>
-      <button onclick="siguiente()">Siguiente</button>
-    </nav>
+      <!-- Diapositiva 2 -->
+      <article class="diapositiva">
+        <span class="etiqueta">El Desafío Histórico</span>
+        <h2>El Censo de EE. UU. de 1890</h2>
+        <p>A finales del siglo XIX, Estados Unidos enfrentaba un grave problema de escala en la recolección de información demográfica.</p>
+        <ul>
+          <li>El censo de 1880 tardó <span class="destacado">8 años</span> en procesarse a mano.</li>
+          <li>Se estimaba que el censo de 1890 tardaría más de 10 años por el aumento de población.</li>
+          <li>Los datos corrían el riesgo de quedar obsoletos antes de ser publicados.</li>
+        </ul>
+      </article>
 
-    <!-- Contador de estado -->
-    <div id="contador">Diapositiva 1 de 5</div>
+      <!-- Diapositiva 3: SIMULADOR INTERACTIVO DEL MECANISMO -->
+      <article class="diapositiva">
+        <span class="etiqueta">Simulador Interactivo</span>
+        <h2>¿Cómo funcionaba el mecanismo?</h2>
+        <p>Haz clic en la tarjeta para perforarla y luego baja la prensa de agujas para probar el circuito electromecánico:</p>
+        
+        <div class="simulador-container">
+          <div class="tarjeta-perforada" onclick="alternarPerforacion()">
+            <div id="agujero-demo" class="agujero">Clic</div>
+          </div>
+          
+          <button class="btn-accion" onclick="procesarTarjeta()">Bajar Agujas de Prensa</button>
+          
+          <div>
+            <span>Contador Electromecánico: </span>
+            <div id="reloj" class="reloj-contador">000</div>
+          </div>
+          
+          <div id="explicacion-mecanismo">Paso 1: Haz clic sobre la tarjeta de cartón para perforarla.</div>
+        </div>
+      </article>
+
+      <!-- Diapositiva 4 -->
+      <article class="diapositiva">
+        <span class="etiqueta">Limitaciones Técnicas</span>
+        <h2>Problemas y Desventajas de la Época</h2>
+        <p>A pesar de su éxito, la máquina tenía importantes limitaciones tecnológicas:</p>
+        <ul>
+          <li><span class="destacado">Peligro químico:</span> El baño de mercurio liberaba vapores tóxicos para los operadores.</li>
+          <li><span class="destacado">Desgaste físico:</span> Las tarjetas de cartón se doblaban o dañaban, causando lecturas erróneas.</li>
+          <li><span class="destacado">Sin programación:</span> Solo podía contar datos, no realizaba cálculos complejos ni guardaba memoria.</li>
+        </ul>
+      </article>
+
+      <!-- Diapositiva 5 -->
+      <article class="diapositiva">
+        <span class="etiqueta">Resultados y Legado</span>
+        <h2>De la Tabuladora a IBM</h2>
+        <p>El éxito de la máquina superó las expectativas y transformó el tratamiento de datos:</p>
+        <ul>
+          <li>El recuento total del censo se completó en solo <span class="destacado">6 semanas</span>.</li>
+          <li>Ahorró al gobierno de EE. UU. más de <span class="destacado">5 millones de dólares</span>.</li>
+          <li>En 1896, Hollerith fundó la <i>Tabulating Machine Company</i>, que en 1924 se renombró como <span class="destacado">IBM</span>.</li>
+        </ul>
+      </article>
+
+      <!-- Diapositiva 6: Fuentes e IA -->
+      <article class="diapositiva">
+        <span class="etiqueta">Créditos y Transparencia</span>
+        <h2>Fuentes y Declaración</h2>
+        <footer class="creditos">
+          <p><b>Fuentes consultadas:</b></p>
+          <ul>
+            <li><a href="https://es.wikipedia.org/wiki/M%C3%A1quina_tabuladora" target="_blank" rel="noopener">Wikipedia - Máquina tabuladora</a></li>
+            <li><a href="https://www.ibm.com/ibm/history" target="_blank" rel="noopener">IBM History Archives</a></li>
+            <li><a href="https://www.britannica.com/biography/Herman-Hollerith" target="_blank" rel="noopener">Enciclopedia Britannica</a></li>
+          </ul>
+          <p style="margin-top: 5px;"><b>Declaración de uso de IA:</b> Se utilizó Gemini para estructurar el código del museo y el simulador interactivo del mecanismo de mercurio.</p>
+        </footer>
+      </article>
+    </div>
+
+    <!-- Navegación -->
+    <div class="zona-inferior">
+      <nav class="botones">
+        <button class="nav-btn" onclick="atras()">Anterior</button>
+        <button class="nav-btn" onclick="siguiente()">Siguiente</button>
+      </nav>
+      <div id="contador">Diapositiva 1 de 6</div>
+    </div>
 
   </main>
 
   <script>
-    // Variables para el control de tarjetas
     let numeroSlide = 0;
     let paginas = document.getElementsByClassName("diapositiva");
+    
+    // Variables del simulador
+    let estaPerforada = false;
+    let conteo = 0;
 
-    // Función que cambia de diapositiva
     function mostrarSlide(posicion) {
       for (let i = 0; i < paginas.length; i++) {
         paginas[i].className = "diapositiva";
@@ -222,8 +256,56 @@
       document.getElementById("contador").innerHTML = "Diapositiva " + (posicion + 1) + " de " + paginas.length;
     }
 
-    // Botón Siguiente
     function siguiente() {
+      if (numeroSlide < paginas.length - 1) {
+        numeroSlide++;
+        mostrarSlide(numeroSlide);
+      }
+    }
+
+    function atras() {
+      if (numeroSlide > 0) {
+        numeroSlide--;
+        mostrarSlide(numeroSlide);
+      }
+    }
+
+    /* LÓGICA DEL SIMULADOR DEL MECANISMO */
+    function alternarPerforacion() {
+      let agujero = document.getElementById("agujero-demo");
+      let texto = document.getElementById("explicacion-mecanismo");
+      
+      estaPerforada = !estaPerforada;
+      
+      if (estaPerforada) {
+        agujero.className = "agujero perforado";
+        agujero.innerHTML = "";
+        texto.innerHTML = "¡Tarjeta perforada! Ahora presiona 'Bajar Agujas de Prensa'.";
+      } else {
+        agujero.className = "agujero";
+        agujero.innerHTML = "Clic";
+        texto.innerHTML = "Tarjeta sellada (sin orificio).";
+      }
+    }
+
+    function procesarTarjeta() {
+      let texto = document.getElementById("explicacion-mecanismo");
+      let reloj = document.getElementById("reloj");
+
+      if (estaPerforada) {
+        conteo++;
+        reloj.innerHTML = conteo.toString().padStart(3, '0');
+        texto.innerHTML = "⚡ ¡La aguja atravesó el orificio, tocó el baño de mercurio y cerró el circuito! (+1 al contador)";
+        texto.style.color = "#00ff88";
+      } else {
+        texto.innerHTML = "❌ La aguja chocó con el cartón intacto. No hubo contacto con el mercurio (Circuito abierto, no suma).";
+        texto.style.color = "#ff4444";
+      }
+    }
+  </script>
+
+</body>
+</html>
       if (numeroSlide < paginas.length - 1) {
         numeroSlide = numeroSlide + 1;
         mostrarSlide(numeroSlide);
