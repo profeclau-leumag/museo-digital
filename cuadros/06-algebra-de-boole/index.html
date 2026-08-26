@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Álgebra de Boole</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =================================
+       FONDO MATRIX
+  ================================== -->
+
+  <canvas id="matrix"></canvas>
+
+
+  <!-- =================================
+       CONTENIDO PRINCIPAL
+  ================================== -->
+
+  <div class="pagina">
+
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+      <div class="simbolo">
+        Autor:Sebastian Tiznado y la IA
+      </div>
+
+      <h1>ÁLGEBRA DE BOOLE</h1>
+
+      <h2>
+        La lógica detrás de los computadores
+      </h2>
+
+      <p>
+
+        Explora los principios de la lógica booleana
+        mediante ejemplos interactivos.
+
+      </p>
+
+    </header>
+
+
+
+    <!-- =================================
+         MENÚ PRINCIPAL
+    ================================== -->
+
+    <main>
+
+      <section class="menu">
+
+
+        <!-- ¿QUÉ ES? -->
+
+        <button
+          class="tarjeta"
+          onclick="abrirModal('modalQueEs')"
+        >
+
+          <span class="icono">
+        
+          </span>
+
+          <span class="titulo-tarjeta">
+            ¿QUÉ ES?
+          </span>
+
+          <span class="descripcion-tarjeta">
+            Conceptos fundamentales
+          </span>
+
+        </button>
+
+
+
+        <!-- OPERACIONES -->
+
+        <button
+          class="tarjeta"
+          onclick="abrirModal('modalOperaciones')"
+        >
+
+          <span class="icono">
+            [AND]
+          </span>
+
+          <span class="titulo-tarjeta">
+            OPERACIONES
+          </span>
+
+          <span class="descripcion-tarjeta">
+            AND · OR · NOT
+          </span>
+
+        </button>
+
+
+
+        <!-- TABLAS -->
+
+        <button
+          class="tarjeta"
+          onclick="abrirModal('modalTablas')"
+        >
+
+          <span class="icono">
+          
+          </span>
+
+          <span class="titulo-tarjeta">
+            TABLAS DE VERDAD
+          </span>
+
+          <span class="descripcion-tarjeta">
+            Todas las posibilidades
+          </span>
+
+        </button>
+
+
+
+        <!-- PUERTAS -->
+
+        <button
+          class="tarjeta"
+          onclick="abrirModal('modalPuertas')"
+        >
+
+          <span class="icono">
+            &lt; / &gt;
+          </span>
+
+          <span class="titulo-tarjeta">
+            PUERTAS LÓGICAS
+          </span>
+
+          <span class="descripcion-tarjeta">
+            Lógica dentro del hardware
+          </span>
+
+        </button>
+
+
+
+        <!-- EJEMPLOS -->
+
+        <button
+          class="tarjeta tarjeta-ancha"
+          onclick="abrirModal('modalEjemplos')"
+        >
+
+          <span class="icono">
+            
+          </span>
+
+          <span class="titulo-tarjeta">
+            EJEMPLOS COTIDIANOS
+          </span>
+
+          <span class="descripcion-tarjeta">
+            La lógica booleana en la vida real
+          </span>
+
+        </button>
+
+
+      </section>
+
+    </main>
+
+
+
+    <!-- =================================
+         MODAL ¿QUÉ ES?
+    ================================== -->
+
+    <div
+      id="modalQueEs"
+      class="modal"
+    >
+
+      <div class="modal-contenido">
+
+
+        <button
+          class="cerrar"
+          onclick="cerrarModal('modalQueEs')"
+        >
+
+          ×
+
+        </button>
+
+
+        <div class="modal-icono">
+          01
+        </div>
+
+
+        <h2>
+          ¿QUÉ ES EL ÁLGEBRA DE BOOLE?
+        </h2>
+
+
+        <p>
+
+          El <strong>Álgebra de Boole</strong> es un sistema
+          matemático desarrollado por George Boole.
+
+        </p>
+
+
+        <p>
+
+          Este sistema trabaja principalmente con dos
+          estados lógicos:
+
+        </p>
+
+
+        <div class="codigo">
+
+          VERDADERO = 1
+
+          <br>
+
+          FALSO = 0
+
+        </div>
+
+
+        <div class="caja-destacada">
+
+          <h3>
+            &gt; EN INFORMÁTICA
+          </h3>
+
+          <p>
+
+            Estos dos estados permiten representar
+            decisiones, condiciones y estados de
+            dispositivos.
+
+          </p>
+
+        </div>
+
+
+        <div class="ejemplo">
+
+          <h3>
+            &gt; EJEMPLO
+          </h3>
+
+          <p>
+
+            Supongamos la condición:
+
+          </p>
+
+
+          <div class="terminal">
+
+            &gt; A = Tengo dinero
+
+            <br><br>
+
+            A = VERDADERO
+
+          </div>
+
+
+          <p>
+
+            La condición puede estar activa o inactiva.
+
+          </p>
+
+        </div>
+
+
+        <div class="idea">
+
+          <strong>
+            [ IDEA PRINCIPAL ]
+          </strong>
+
+          <p>
+
+            El Álgebra de Boole permite combinar
+            condiciones para que un sistema pueda
+            tomar decisiones.
+
+          </p>
+
+        </div>
+
+
+        <button
+          class="boton-cerrar"
+          onclick="cerrarModal('modalQueEs')"
+        >
+
+          [ CERRAR ]
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MODAL OPERACIONES
+    ================================== -->
+
+    <div
+      id="modalOperaciones"
+      class="modal"
+    >
+
+      <div class="modal-contenido modal-grande">
+
+
+        <button
+          class="cerrar"
+          onclick="cerrarModal('modalOperaciones')"
+        >
+
+          ×
+
+        </button>
+
+
+        <div class="modal-icono">
+          LOGIC
+        </div>
+
+
+        <h2>
+          OPERACIONES LÓGICAS
+        </h2>
+
+
+        <p>
+
+          Las tres operaciones fundamentales son:
+
+        </p>
+
+
+        <div class="codigo">
+
+          AND &nbsp;&nbsp; OR &nbsp;&nbsp; NOT
+
+        </div>
+
+
+
+        <!-- AND -->
+
+        <div class="operacion">
+
+          <h3>
+            [ AND ]
+          </h3>
+
+
+          <p>
+
+            AND significa <strong>"Y"</strong>.
+
+            <br>
+
+            Todas las condiciones deben cumplirse.
+
+          </p>
+
+
+          <div class="situacion">
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                id="dinero"
+              >
+
+              A = Tengo dinero
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                id="tienda"
+              >
+
+              B = La tienda está abierta
+
+            </label>
+
+
+          </div>
+
+
+          <div class="resultado">
+
+            <strong>
+              &gt; RESULTADO:
+            </strong>
+
+
+            <p id="resultadoAND">
+
+              No puedo comprar.
+
+            </p>
+
+          </div>
+
+
+          <div class="formula">
+
+            A AND B
+
+            <br>
+
+            ↓
+
+            <br>
+
+            ¿Puedo comprar?
+
+          </div>
+
+        </div>
+
+
+
+        <!-- OR -->
+
+        <div class="operacion">
+
+          <h3>
+            [ OR ]
+          </h3>
+
+
+          <p>
+
+            OR significa <strong>"O"</strong>.
+
+            <br>
+
+            Basta con que una condición sea verdadera.
+
+          </p>
+
+
+          <div class="situacion">
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                id="tarjeta"
+              >
+
+              A = Tengo una tarjeta
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                id="efectivo"
+              >
+
+              B = Tengo efectivo
+
+            </label>
+
+
+          </div>
+
+
+          <div class="resultado">
+
+            <strong>
+              &gt; RESULTADO:
+            </strong>
+
+
+            <p id="resultadoOR">
+
+              No puedo pagar.
+
+            </p>
+
+          </div>
+
+
+          <div class="formula">
+
+            A OR B
+
+            <br>
+
+            ↓
+
+            <br>
+
+            ¿Puedo pagar?
+
+          </div>
+
+        </div>
+
+
+
+        <!-- NOT -->
+
+        <div class="operacion">
+
+          <h3>
+            [ NOT ]
+          </h3>
+
+
+          <p>
+
+            NOT invierte el estado de una condición.
+
+          </p>
+
+
+          <div class="situacion">
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                id="lluvia"
+              >
+
+              A = Está lloviendo
+
+            </label>
+
+
+          </div>
+
+
+          <div class="resultado">
+
+            <strong>
+              &gt; RESULTADO:
+            </strong>
+
+
+            <p id="resultadoNOT">
+
+              No está lloviendo.
+
+            </p>
+
+          </div>
+
+
+          <div class="formula">
+
+            NOT A
+
+            <br>
+
+            ↓
+
+            <br>
+
+            Estado contrario
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="boton-cerrar"
+          onclick="cerrarModal('modalOperaciones')"
+        >
+
+          [ CERRAR ]
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MODAL TABLAS
+    ================================== -->
+
+    <div
+      id="modalTablas"
+      class="modal"
+    >
+
+      <div class="modal-contenido modal-grande">
+
+
+        <button
+          class="cerrar"
+          onclick="cerrarModal('modalTablas')"
+        >
+
+          ×
+
+        </button>
+
+
+        <div class="modal-icono">
+          0101
+        </div>
+
+
+        <h2>
+          TABLAS DE VERDAD
+        </h2>
+
+
+        <p>
+
+          Las tablas de verdad muestran todas las
+          combinaciones posibles de las condiciones.
+
+        </p>
+
+
+
+        <h3>
+          &gt; AND
+        </h3>
+
+
+        <table>
+
+          <tr>
+
+            <th>
+              Tengo dinero
+            </th>
+
+            <th>
+              Tienda abierta
+            </th>
+
+            <th>
+              ¿Puedo comprar?
+            </th>
+
+          </tr>
+
+
+          <tr>
+
+            <td>NO</td>
+
+            <td>NO</td>
+
+            <td>NO</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>NO</td>
+
+            <td>SÍ</td>
+
+            <td>NO</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>SÍ</td>
+
+            <td>NO</td>
+
+            <td>NO</td>
+
+          </tr>
+
+
+          <tr class="verdadero">
+
+            <td>SÍ</td>
+
+            <td>SÍ</td>
+
+            <td>SÍ</td>
+
+          </tr>
+
+        </table>
+
+
+
+        <h3>
+          &gt; OR
+        </h3>
+
+
+        <table>
+
+          <tr>
+
+            <th>
+              Tengo tarjeta
+            </th>
+
+            <th>
+              Tengo efectivo
+            </th>
+
+            <th>
+              ¿Puedo pagar?
+            </th>
+
+          </tr>
+
+
+          <tr>
+
+            <td>NO</td>
+
+            <td>NO</td>
+
+            <td>NO</td>
+
+          </tr>
+
+
+          <tr class="verdadero">
+
+            <td>NO</td>
+
+            <td>SÍ</td>
+
+            <td>SÍ</td>
+
+          </tr>
+
+
+          <tr class="verdadero">
+
+            <td>SÍ</td>
+
+            <td>NO</td>
+
+            <td>SÍ</td>
+
+          </tr>
+
+
+          <tr class="verdadero">
+
+            <td>SÍ</td>
+
+            <td>SÍ</td>
+
+            <td>SÍ</td>
+
+          </tr>
+
+        </table>
+
+
+
+        <h3>
+          &gt; NOT
+        </h3>
+
+
+        <table>
+
+          <tr>
+
+            <th>
+              Está lloviendo
+            </th>
+
+            <th>
+              NOT
+            </th>
+
+          </tr>
+
+
+          <tr>
+
+            <td>NO</td>
+
+            <td>SÍ</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>SÍ</td>
+
+            <td>NO</td>
+
+          </tr>
+
+        </table>
+
+
+        <button
+          class="boton-cerrar"
+          onclick="cerrarModal('modalTablas')"
+        >
+
+          [ CERRAR ]
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MODAL PUERTAS LÓGICAS
+    ================================== -->
+
+    <div
+      id="modalPuertas"
+      class="modal"
+    >
+
+      <div class="modal-contenido modal-grande">
+
+
+        <button
+          class="cerrar"
+          onclick="cerrarModal('modalPuertas')"
+        >
+
+          ×
+
+        </button>
+
+
+        <div class="modal-icono">
+          I/O
+        </div>
+
+
+        <h2>
+          PUERTAS LÓGICAS
+        </h2>
+
+
+        <p>
+
+          Las puertas lógicas son circuitos electrónicos
+          que realizan operaciones booleanas.
+
+        </p>
+
+
+
+        <div class="puerta">
+
+          <h3>
+            [ AND ]
+          </h3>
+
+
+          <div class="puerta-grafica">
+
+A ───┐
+     ├── AND ──→ SALIDA
+B ───┘
+
+          </div>
+
+
+          <p>
+
+            La salida es verdadera solamente cuando
+            ambas entradas son verdaderas.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="puerta">
+
+          <h3>
+            [ OR ]
+          </h3>
+
+
+          <div class="puerta-grafica">
+
+A ───┐
+     ├── OR ───→ SALIDA
+B ───┘
+
+          </div>
+
+
+          <p>
+
+            La salida es verdadera cuando al menos
+            una entrada es verdadera.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="puerta">
+
+          <h3>
+            [ NOT ]
+          </h3>
+
+
+          <div class="puerta-grafica">
+
+A ───→ NOT ───→ SALIDA
+
+          </div>
+
+
+          <p>
+
+            La salida representa el estado contrario
+            de la entrada.
+
+          </p>
+
+        </div>
+
+
+        <div class="idea">
+
+          <strong>
+            &gt; OTRAS PUERTAS
+          </strong>
+
+          <p>
+
+            NAND · NOR · XOR · XNOR
+
+          </p>
+
+        </div>
+
+
+        <button
+          class="boton-cerrar"
+          onclick="cerrarModal('modalPuertas')"
+        >
+
+          [ CERRAR ]
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MODAL EJEMPLOS
+    ================================== -->
+
+    <div
+      id="modalEjemplos"
+      class="modal"
+    >
+
+      <div class="modal-contenido modal-grande">
+
+
+        <button
+          class="cerrar"
+          onclick="cerrarModal('modalEjemplos')"
+        >
+
+          ×
+
+        </button>
+
+
+        <div class="modal-icono">
+          EX
+        </div>
+
+
+        <h2>
+          EJEMPLOS COTIDIANOS
+        </h2>
+
+
+        <p>
+
+          La lógica booleana aparece en muchas
+          decisiones de nuestra vida cotidiana.
+
+        </p>
+
+
+
+        <div class="ejemplo">
+
+          <h3>
+            &gt; EJEMPLO 01
+          </h3>
+
+
+          <p>
+
+            Una puerta se abre solamente cuando:
+
+          </p>
+
+
+          <div class="terminal">
+
+            A = Tengo tarjeta
+
+            <br>
+
+            B = Conozco la contraseña
+
+            <br><br>
+
+            A AND B
+
+            <br><br>
+
+            ↓
+
+            <br><br>
+
+            PUERTA ABIERTA
+
+          </div>
+
+        </div>
+
+
+
+        <div class="ejemplo">
+
+          <h3>
+            &gt; EJEMPLO 02
+          </h3>
+
+
+          <p>
+
+            Puedo pagar si tengo efectivo
+            <strong>O</strong> tengo una tarjeta.
+
+          </p>
+
+
+          <div class="terminal">
+
+            A = Tengo efectivo
+
+            <br>
+
+            B = Tengo tarjeta
+
+            <br><br>
+
+            A OR B
+
+            <br><br>
+
+            ↓
+
+            <br><br>
+
+            PUEDO PAGAR
+
+          </div>
+
+        </div>
+
+
+
+        <div class="ejemplo">
+
+          <h3>
+            &gt; EJEMPLO 03
+          </h3>
+
+
+          <p>
+
+            Para entrar a un evento necesito
+            una entrada y que el evento esté abierto.
+
+          </p>
+
+
+          <div class="terminal">
+
+            A = Tengo entrada
+
+            <br>
+
+            B = Evento abierto
+
+            <br><br>
+
+            A AND B
+
+            <br><br>
+
+            ↓
+
+            <br><br>
+
+            PUEDO ENTRAR
+
+          </div>
+
+        </div>
+
+
+
+        <div class="ejemplo">
+
+          <h3>
+            &gt; EJEMPLO 04
+          </h3>
+
+
+          <p>
+
+            Si está lloviendo llevo paraguas.
+            Si no está lloviendo, no lo necesito.
+
+          </p>
+
+
+          <div class="terminal">
+
+            A = Está lloviendo
+
+            <br><br>
+
+            NOT A
+
+            <br><br>
+
+            ↓
+
+            <br><br>
+
+            NO ESTÁ LLOVIENDO
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="boton-cerrar"
+          onclick="cerrarModal('modalEjemplos')"
+        >
+
+          [ CERRAR ]
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         DECLARACIÓN DE IA
+    ================================== -->
+
+    <footer class="declaracion-ia">
+
+      <p>
+
+        <strong>
+          &gt; DECLARACIÓN DE USO DE IA
+        </strong>
+
+      </p>
+
+
+      <p>
+
+        Para la elaboración de esta página web se utilizó
+        Inteligencia Artificial como herramienta de apoyo
+        para generar, revisar y mejorar parte del código,
+        el diseño y los contenidos.
+
+      </p>
+
+
+      <p>
+
+        El proyecto fue revisado y adaptado por el autor.
+
+      </p>
+
+    </footer>
+
+
+  </div>
+
+
+
+  <!-- =================================
+       JAVASCRIPT
+  ================================== -->
+
+  <script>
+
+
+    /* =================================
+       SISTEMA DE MODALES
+    ================================== */
+
+    function abrirModal(id) {
+
+
+      const modales =
+        document.querySelectorAll(".modal");
+
+
+      modales.forEach(function(modal) {
+
+        modal.classList.remove("activo");
+
+      });
+
+
+      const modal =
+        document.getElementById(id);
+
+
+      modal.classList.add("activo");
+
+
+      document.body.classList.add(
+        "modal-abierto"
+      );
+
+
+    }
+
+
+
+    function cerrarModal(id) {
+
+
+      const modal =
+        document.getElementById(id);
+
+
+      modal.classList.remove("activo");
+
+
+      document.body.classList.remove(
+        "modal-abierto"
+      );
+
+
+    }
+
+
+
+    /* =================================
+       CERRAR HACIENDO CLIC AFUERA
+    ================================== */
+
+    document
+      .querySelectorAll(".modal")
+      .forEach(function(modal) {
+
+
+        modal.addEventListener(
+          "click",
+          function(event) {
+
+
+            if (
+              event.target === modal
+            ) {
+
+              cerrarModal(modal.id);
+
+            }
+
+
+          }
+        );
+
+
+      });
+
+
+
+    /* =================================
+       CERRAR CON ESC
+    ================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+
+        if (
+          event.key === "Escape"
+        ) {
+
+
+          document
+            .querySelectorAll(
+              ".modal.activo"
+            )
+            .forEach(function(modal) {
+
+
+              cerrarModal(
+                modal.id
+              );
+
+
+            });
+
+
+        }
+
+
+      }
+    );
+
+
+
+    /* =================================
+       AND
+    ================================== */
+
+    function actualizarAND() {
+
+
+      const dinero =
+        document.getElementById(
+          "dinero"
+        ).checked;
+
+
+      const tienda =
+        document.getElementById(
+          "tienda"
+        ).checked;
+
+
+      const resultado =
+        document.getElementById(
+          "resultadoAND"
+        );
+
+
+      if (
+        dinero &&
+        tienda
+      ) {
+
+
+        resultado.textContent =
+          "SÍ puedo comprar.";
+
+
+      } else {
+
+
+        resultado.textContent =
+          "NO puedo comprar.";
+
+
+      }
+
+
+    }
+
+
+
+    /* =================================
+       OR
+    ================================== */
+
+    function actualizarOR() {
+
+
+      const tarjeta =
+        document.getElementById(
+          "tarjeta"
+        ).checked;
+
+
+      const efectivo =
+        document.getElementById(
+          "efectivo"
+        ).checked;
+
+
+      const resultado =
+        document.getElementById(
+          "resultadoOR"
+        );
+
+
+      if (
+        tarjeta ||
+        efectivo
+      ) {
+
+
+        resultado.textContent =
+          "SÍ puedo pagar.";
+
+
+      } else {
+
+
+        resultado.textContent =
+          "NO puedo pagar.";
+
+
+      }
+
+
+    }
+
+
+
+    /* =================================
+       NOT
+    ================================== */
+
+    function actualizarNOT() {
+
+
+      const lluvia =
+        document.getElementById(
+          "lluvia"
+        ).checked;
+
+
+      const resultado =
+        document.getElementById(
+          "resultadoNOT"
+        );
+
+
+      if (lluvia) {
+
+
+        resultado.textContent =
+          "SÍ está lloviendo.";
+
+
+      } else {
+
+
+        resultado.textContent =
+          "NO está lloviendo.";
+
+
+      }
+
+
+    }
+
+
+
+    /* =================================
+       EVENTOS DE LOS CHECKBOX
+    ================================== */
+
+    document
+      .getElementById("dinero")
+      .addEventListener(
+        "change",
+        actualizarAND
+      );
+
+
+    document
+      .getElementById("tienda")
+      .addEventListener(
+        "change",
+        actualizarAND
+      );
+
+
+    document
+      .getElementById("tarjeta")
+      .addEventListener(
+        "change",
+        actualizarOR
+      );
+
+
+    document
+      .getElementById("efectivo")
+      .addEventListener(
+        "change",
+        actualizarOR
+      );
+
+
+    document
+      .getElementById("lluvia")
+      .addEventListener(
+        "change",
+        actualizarNOT
+      );
+
+
+
+    /* =================================
+       MATRIX
+    ================================== */
+
+    const canvas =
+      document.getElementById(
+        "matrix"
+      );
+
+
+    const ctx =
+      canvas.getContext("2d");
+
+
+    let ancho;
+
+    let alto;
+
+
+    const caracteres =
+      "01";
+
+
+    const tamaño =
+      18;
+
+
+    let columnas;
+
+    let gotas = [];
+
+
+
+    function configurarMatrix() {
+
+
+      ancho =
+        canvas.width =
+        window.innerWidth;
+
+
+      alto =
+        canvas.height =
+        window.innerHeight;
+
+
+      columnas =
+        Math.floor(
+          ancho / tamaño
+        );
+
+
+      gotas = [];
+
+
+      for (
+        let i = 0;
+        i < columnas;
+        i++
+      ) {
+
+
+        gotas[i] =
+          Math.random() * -100;
+
+
+      }
+
+
+    }
+
+
+
+    function dibujarMatrix() {
+
+
+      /*
+        Fondo ligeramente transparente.
+
+        Esto crea el efecto de que los
+        números anteriores dejan una estela.
+      */
+
+      ctx.fillStyle =
+        "rgba(0, 0, 0, 0.08)";
+
+
+      ctx.fillRect(
+        0,
+        0,
+        ancho,
+        alto
+      );
+
+
+      ctx.font =
+        tamaño + "px monospace";
+
+
+      for (
+        let i = 0;
+        i < gotas.length;
+        i++
+      ) {
+
+
+        const caracter =
+          caracteres[
+            Math.floor(
+              Math.random() *
+              caracteres.length
+            )
+          ];
+
+
+        const x =
+          i * tamaño;
+
+
+        const y =
+          gotas[i] * tamaño;
+
+
+        /*
+          Algunos caracteres tendrán
+          un brillo más intenso.
+        */
+
+        if (
+          Math.random() > 0.92
+        ) {
+
+          ctx.fillStyle =
+            "#ffffff";
+
+        } else {
+
+          ctx.fillStyle =
+            "#00ff41";
+
+        }
+
+
+        ctx.fillText(
+          caracter,
+          x,
+          y
+        );
+
+
+        /*
+          Cuando llega abajo,
+          vuelve a comenzar.
+        */
+
+        if (
+          y > alto &&
+          Math.random() > 0.975
+        ) {
+
+
+          gotas[i] = 0;
+
+
+        }
+
+
+        /*
+          Cada columna avanza
+          a una velocidad ligeramente
+          diferente.
+        */
+
+        gotas[i] +=
+          0.5 +
+          Math.random() * 0.8;
+
+
+      }
+
+
+      requestAnimationFrame(
+        dibujarMatrix
+      );
+
+
+    }
+
+
+
+    /* =================================
+       INICIAR MATRIX
+    ================================== */
+
+    configurarMatrix();
+
+    dibujarMatrix();
+
+
+
+    /* =================================
+       REDIMENSIONAR VENTANA
+    ================================== */
+
+    window.addEventListener(
+      "resize",
+      configurarMatrix
+    );
+
+
+  </script>
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+
+</html>
