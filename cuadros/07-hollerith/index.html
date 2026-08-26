@@ -1,54 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 07: Hollerith">
-  <title>Hollerith · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  <a href="../../index.html">← Volver al museo</a>
+  <span>Cuadro 03 · Pensamiento Computacional</span>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Tabuladora de Hollerith - Museo Digital</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222222;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    /* Contenedor principal semántico */
+    main.tarjeta {
+      background-color: #333333;
+      width: 90%;
+      max-width: 650px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid #555555;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Control de diapositivas */
+    article.diapositiva {
+      display: none;
+    }
+
+    article.activa {
+      display: block;
+    }
+
+    /* Estilos de texto */
+    .etiqueta {
+      color: #00aaff;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    h1, h2 {
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    p {
+      color: #cccccc;
+      line-height: 1.5;
+    }
+
+    ul {
+      margin-left: 20px;
+      line-height: 1.8;
+    }
+
+    .destacado {
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    /* Imagen responsiva y accesible */
+    img.imagen-museo {
+      width: 100%;
+      height: auto;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin: 15px 0;
+      border: 1px solid #555;
+    }
+
+    /* Botones y navegación */
+    nav.botones {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    button:hover {
+      background-color: #0088cc;
+    }
+
+    #contador {
+      margin-top: 15px;
+      color: #aaaaaa;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Sección de fuentes y transparencia */
+    footer.creditos {
+      margin-top: 15px;
+      border-top: 1px solid #444444;
+      padding-top: 10px;
+      font-size: 0.85em;
+      color: #bbbbbb;
+    }
+
+    footer.creditos a {
+      color: #00aaff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 07 · Pensamiento Computacional</span>
+
+  <!-- Encabezado general del sitio -->
+  <header>
+    <p style="color: #00aaff; font-weight: bold;">MUSEO DIGITAL </p>
   </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Hollerith</h1>
-        <p class="fecha">1890</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
-
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
-
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
-
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
-
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.census.gov/about/history/bureau-history/census-innovations/technology/hollerith-machine.html">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=Hollerith">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
-
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
+  <!-- Tarjeta contenedora semántica -->
+  <main class="tarjeta">
+    
+    <!-- Diapositiva 1 -->
+    <article class="diapositiva activa">
+      <span class="etiqueta">Historia de la Computación</span>
+      <h1>La Tabuladora de Hollerith</h1>
+      <p>El nacimiento del procesamiento automatizado de datos y la chispa que dio origen a la era digital moderna.</p>
+      <ul>
+        <li><b>Creador:</b> Herman Hollerith (1860 - 1929)</li>
+        <li><b>Innovación:</b> Uso de tarjetas perforadas para procesar datos</li>
+        <li><b>Impacto:</b> Base tecnológica de lo que hoy es IBM</li>
+      </ul>
     </article>
+
+    <!-- Diapositiva 2 -->
+    <article class="diapositiva">
+      <span class="etiqueta">El Desafío Histórico</span>
+      <h2>El Censo de EE. UU. de 1890</h2>
+      <p>A finales del siglo XIX, Estados Unidos enfrentaba un grave problema de escala en la recolección de información demográfica.</p>
+      <ul>
+        <li>El censo de 1880 tardó <span class="destacado">8 años</span> en procesarse a mano.</li>
+        <li>Se estimaba que el censo de 1890 tardaría más de 10 años por el aumento de población.</li>
+        <li>Los datos corrían el riesgo de quedar obsoletos antes de ser publicados.</li>
+      </ul>
+    </article>
+
+    <!-- Diapositiva 3 -->
+    <article class="diapositiva">
+      <span class="etiqueta">Mecanismo y Limitaciones</span>
+      <h2>Funcionamiento y Limitación Técnica</h2>
+      <p>Hollerith aplicó un sistema electromecánico electromagnético para resolver el problema:</p>
+      <ul>
+        <li><span class="destacado">Mecanismo:</span> Un panel con agujas descendía sobre la tarjeta perforada. Si había un orificio, la aguja tocaba un baño de mercurio, cerrando un circuito eléctrico que sumaba 1 al contador.</li>
+        <li><span class="destacado">Limitación:</span> Las tarjetas de cartón se desgastaban con facilidad, el mercurio emitía vapores peligrosos y la máquina solo servía para contar, sin capacidad de ejecutar operaciones lógicas complejas.</li>
+      </ul>
+    </article>
+
+    <!-- Diapositiva 4 -->
+    <article class="diapositiva">
+      <span class="etiqueta">Resultados y Legado</span>
+      <h2>De la Tabuladora a IBM</h2>
+      <p>El éxito de la máquina superó las expectativas y transformó el tratamiento de datos:</p>
+      <ul>
+        <li>El recuento total del censo se completó en solo <span class="destacado">6 semanas</span>.</li>
+        <li>Ahorró al gobierno de EE. UU. más de <span class="destacado">5 millones de dólares</span>.</li>
+        <li>En 1896, Hollerith fundó la <i>Tabulating Machine Company</i>, que en 1924 se renombró como <span class="destacado">IBM</span>.</li>
+      </ul>
+    </article>
+
+    <!-- Diapositiva 5: Imagen, Accesibilidad, Fuentes e IA -->
+    <article class="diapositiva">
+      <span class="etiqueta">Créditos y Transparencia</span>
+      <h2>Fuentes, Imagen y Declaración</h2>
+      
+      <!-- Imagen con texto alternativo (Accesibilidad) -->
+      
+      
+      <footer class="creditos">
+        <p><b>Fuentes consultadas:</b></p>
+        <ul>
+          <li><a href="https://es.wikipedia.org/wiki/M%C3%A1quina_tabuladora" target="_blank" rel="noopener">Wikipedia - Máquina tabuladora</a></li>
+          <li><a href="https://www.ibm.com/ibm/history" target="_blank" rel="noopener">IBM History Archives</a> (Archivo Oficial)</li>
+          <li><a href="https://www.britannica.com/biography/Herman-Hollerith" target="_blank" rel="noopener">Enciclopedia Britannica - Herman Hollerith</a></li>
+        </ul>
+        <p style="margin-top: 10px;"><b>Declaración de uso de IA:</b> Se utilizó un modelo de IA (Gemini) para asistir en el diseño de la estructura HTML/CSS y optimización del código, revisando y validando manualmente los contenidos históricos expuestos.</p>
+      </footer>
+    </article>
+
+    <!-- Navegación por botones -->
+    <nav class="botones">
+      <button onclick="atras()">Anterior</button>
+      <button onclick="siguiente()">Siguiente</button>
+    </nav>
+
+    <!-- Contador de estado -->
+    <div id="contador">Diapositiva 1 de 5</div>
+
   </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+
+  <script>
+    // Variables para el control de tarjetas
+    let numeroSlide = 0;
+    let paginas = document.getElementsByClassName("diapositiva");
+
+    // Función que cambia de diapositiva
+    function mostrarSlide(posicion) {
+      for (let i = 0; i < paginas.length; i++) {
+        paginas[i].className = "diapositiva";
+      }
+      paginas[posicion].className = "diapositiva activa";
+      document.getElementById("contador").innerHTML = "Diapositiva " + (posicion + 1) + " de " + paginas.length;
+    }
+
+    // Botón Siguiente
+    function siguiente() {
+      if (numeroSlide < paginas.length - 1) {
+        numeroSlide = numeroSlide + 1;
+        mostrarSlide(numeroSlide);
+      }
+    }
+
+    // Botón Anterior
+    function atras() {
+      if (numeroSlide > 0) {
+        numeroSlide = numeroSlide - 1;
+        mostrarSlide(numeroSlide);
+      }
+    }
+  </script>
+
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
