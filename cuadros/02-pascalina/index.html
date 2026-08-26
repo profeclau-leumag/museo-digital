@@ -1,54 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 02: Pascalina">
-  <title>Pascalina · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Pascalina - Museo Digital</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 02 · Pensamiento Computacional</span>
+
+  <!-- Cabecera -->
+  <header>
+    <h1>LA PASCALINA</h1>
+    <p>Exposición Digital: El Legado de Blaise Pascal (1642)</p>
   </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Pascalina</h1>
-        <p class="fecha">1642</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+  <!-- Pestañas de Navegación -->
+  <nav aria-label="Navegación principal">
+    <div class="nav-tabs">
+      <a href="#historia" class="tab-btn">Historia y Contexto</a>
+      <a href="#mecanismo" class="tab-btn">Mecanismo y Cómputo</a>
+      <a href="#creditos" class="tab-btn">Créditos e IA</a>
+    </div>
+  </nav>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
+  <main class="container">
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+    <!-- Mensaje Inicial -->
+    <div id="inicio" class="section active-default">
+      <h2>Bienvenido al Museo Digital</h2>
+      <p>Por favor, haz clic en cualquiera de las pestañas superiores para visualizar únicamente su contenido correspondiente.</p>
+    </div>
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+    <!-- Sección Historia y Fuentes -->
+    <section id="historia" class="section">
+      <h2>Contexto Histórico, Problema y Legado</h2>
+      
+      <article class="card">
+        <h3>Origen y Propósito (1642)</h3>
+        <p>Diseñada por Blaise Pascal a los 19 años para ayudar a su padre en la recaudación de impuestos. El sistema monetario no decimal de la época hacía que los cálculos manuales fueran propensos a errores y muy agotadores.</p>
+      </article>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://collection.sciencemuseum.org.uk/objects/co60769/replica-of-pascals-calculator-replica-calculating-machine">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=Pascalina">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
+      <article class="card">
+        <h3>Funcionamiento y Limitaciones</h3>
+        <p>Operaba con ruedas dentadas del 0 al 9. Ejecutaba sumas y restas de forma directa, pero las multiplicaciones y divisiones requerían operaciones sucesivas. Su fabricación exigía una precisión mecánica casi inalcanzable en el siglo XVII.
+          
+          La Pascalina dejó como legado la idea de que una máquina puede realizar cálculos matemáticos de forma rápida y sin errores humanos.
+        </p>
+      </article>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
+      <article class="card highlight">
+        <h3>Contraste de Fuentes Históricas</h3>
+        <p><strong>Musée des Arts et Métiers:</strong> Destaca la creación de 50 prototipos y resalta el trinquete (<i>Sautoir</i>) como su principal innovación mecánica.</p>
+        <p><strong>Stanford Encyclopedia of Philosophy:</strong> Se centra en su impacto computacional como el primer antecedente de la arquitectura de cálculo con acarreo automático.</p>
+      </article>
+    </section>
+
+    <!-- Sección Mecanismo e Interactividad CSS -->
+    <section id="mecanismo" class="section">
+      <h2>Conceptos Computacionales y Simulación Interactiva</h2>
+      <p>La Pascalina introdujo el <strong>mecanismo de acarreo automático (Carry Operation)</strong> a través del <i>Sautoir</i>, el cual transfiere el movimiento a la rueda contigua al completar una vuelta. Este principio equivale al bit de acarreo en una ALU y a los registros de memoria modernos.</p>
+
+      <p><strong>Simulador Mecánico (Haz clic en las ruedas para girar el dígito):</strong></p>
+
+      <div class="pascalina-widget">
+        
+        <!-- Disco 1: Centenas -->
+        <div class="dial-container">
+          <small>Centenas</small>
+          <div class="interactive-dial">
+            <input type="radio" name="centenas" id="c0" checked>
+            <input type="radio" name="centenas" id="c1">
+            <input type="radio" name="centenas" id="c2">
+            <input type="radio" name="centenas" id="c3">
+            <input type="radio" name="centenas" id="c4">
+            <input type="radio" name="centenas" id="c5">
+            <input type="radio" name="centenas" id="c6">
+            <input type="radio" name="centenas" id="c7">
+            <input type="radio" name="centenas" id="c8">
+            <input type="radio" name="centenas" id="c9">
+
+            <label for="c1" class="dial-btn b0">0</label>
+            <label for="c2" class="dial-btn b1">1</label>
+            <label for="c3" class="dial-btn b2">2</label>
+            <label for="c4" class="dial-btn b3">3</label>
+            <label for="c5" class="dial-btn b4">4</label>
+            <label for="c6" class="dial-btn b5">5</label>
+            <label for="c7" class="dial-btn b6">6</label>
+            <label for="c8" class="dial-btn b7">7</label>
+            <label for="c9" class="dial-btn b8">8</label>
+            <label for="c0" class="dial-btn b9">9</label>
+          </div>
+        </div>
+
+        <!-- Disco 2: Decenas -->
+        <div class="dial-container">
+          <small>Decenas</small>
+          <div class="interactive-dial">
+            <input type="radio" name="decenas" id="d0" checked>
+            <input type="radio" name="decenas" id="d1">
+            <input type="radio" name="decenas" id="d2">
+            <input type="radio" name="decenas" id="d3">
+            <input type="radio" name="decenas" id="d4">
+            <input type="radio" name="decenas" id="d5">
+            <input type="radio" name="decenas" id="d6">
+            <input type="radio" name="decenas" id="d7">
+            <input type="radio" name="decenas" id="d8">
+            <input type="radio" name="decenas" id="d9">
+
+            <label for="d1" class="dial-btn b0">0</label>
+            <label for="d2" class="dial-btn b1">1</label>
+            <label for="d3" class="dial-btn b2">2</label>
+            <label for="d4" class="dial-btn b3">3</label>
+            <label for="d5" class="dial-btn b4">4</label>
+            <label for="d6" class="dial-btn b5">5</label>
+            <label for="d7" class="dial-btn b6">6</label>
+            <label for="d8" class="dial-btn b7">7</label>
+            <label for="d9" class="dial-btn b8">8</label>
+            <label for="d0" class="dial-btn b9">9</label>
+          </div>
+        </div>
+
+        <!-- Disco 3: Unidades -->
+        <div class="dial-container">
+          <small>Unidades</small>
+          <div class="interactive-dial">
+            <input type="radio" name="unidades" id="u0" checked>
+            <input type="radio" name="unidades" id="u1">
+            <input type="radio" name="unidades" id="u2">
+            <input type="radio" name="unidades" id="u3">
+            <input type="radio" name="unidades" id="u4">
+            <input type="radio" name="unidades" id="u5">
+            <input type="radio" name="unidades" id="u6">
+            <input type="radio" name="unidades" id="u7">
+            <input type="radio" name="unidades" id="u8">
+            <input type="radio" name="unidades" id="u9">
+
+            <label for="u1" class="dial-btn b0">0</label>
+            <label for="u2" class="dial-btn b1">1</label>
+            <label for="u3" class="dial-btn b2">2</label>
+            <label for="u4" class="dial-btn b3">3</label>
+            <label for="u5" class="dial-btn b4">4</label>
+            <label for="u6" class="dial-btn b5">5</label>
+            <label for="u7" class="dial-btn b6">6</label>
+            <label for="u8" class="dial-btn b7">7</label>
+            <label for="u9" class="dial-btn b8">8</label>
+            <label for="u0" class="dial-btn b9">9</label>
+          </div>
+        </div>
+
+      </div>
+
+      <p><i>Ejemplo:</i> Haz clic en los discos para simular la rotación de 36° que incrementa cada posición numérica.</p>
+    </section>
+
+    
+
+    <!-- Sección Créditos e IA -->
+    <section id="creditos" class="section">
+      <h2>Créditos y Declaración de IA</h2>
+      <p><strong>Accesibilidad:</strong> Atributos semánticos y contrastes visuales adecuados para facilitar la lectura.</p>
+      
+      <div class="card">
+        <h3>Declaración de Uso de IA</h3>
+        <p>Se utilizó Inteligencia Artificial (Gemini) para maquetar la estructura HTML/CSS y sintetizar la información histórica, la cual fue posteriormente verificada con fuentes de referencia.</p>
+      </div>
+    </section>
+
   </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+
+  <footer>
+    <p>&copy; 2026 Museo Digital de la Pascalina. Proyecto Educativo.</p>
+  </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

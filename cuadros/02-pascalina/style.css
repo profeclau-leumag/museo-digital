@@ -1,0 +1,208 @@
+/* Paleta Uniforme en Gama Rosa */
+:root {
+  --pink-primary: #FFC9E8;    /* Rosa principal para títulos y acentos */
+  --pink-soft: #E0A9C8;       /* Rosa suave para bordes y detalles */
+  --pink-dark: #A35C87;       /* Rosa oscuro para fondos y contrastes */
+  --bg-dark: #120A10;         /* Fondo base oscuro con matiz purpúreo */
+  --panel-bg: #1F121C;        /* Fondo principal de paneles */
+  --card-bg: #2B1A27;         /* Fondo de tarjetas informativas */
+  --text-main: #FCEEF6;       /* Texto claro */
+  --text-muted: #D1B3C4;      /* Texto secundario */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(180deg, #0A0509 0%, var(--panel-bg) 100%);
+  padding: 25px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--pink-soft);
+}
+
+/* Títulos en #FFC9E8 */
+h1, h2, h3, h4 {
+  color: var(--pink-primary);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  border-bottom: 1px solid var(--pink-dark);
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+/* Navegación y Pestañas */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #0A0509;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #2B1A27;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-btn {
+  text-decoration: none;
+  border: 1px solid var(--pink-soft);
+  color: var(--pink-primary);
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background-color: rgba(163, 92, 135, 0.1);
+}
+
+.tab-btn:hover {
+  background-color: var(--pink-primary);
+  color: #120A10;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 201, 232, 0.4);
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* SISTEMA ESTRICTO DE PESTAÑAS EXCLUSIVAS (CSS ONLY) */
+.section {
+  display: none;
+  background: var(--panel-bg);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(224, 169, 200, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.active-default {
+  display: block;
+}
+
+.container:has(:target) .active-default {
+  display: none !important;
+}
+
+.section:target {
+  display: block !important;
+}
+
+/* Tarjetas Informativas */
+.card {
+  background: var(--card-bg);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid var(--pink-soft);
+}
+
+.card.highlight {
+  border-left: 4px solid var(--pink-primary);
+  background: linear-gradient(90deg, #382033 0%, var(--card-bg) 100%);
+}
+
+.pascalina-widget {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.dial-container {
+  text-align: center;
+  color: var(--pink-soft);
+}
+
+/* LÓGICA DE INTERACTIVIDAD DE DISCOS EN ROSA */
+.interactive-dial {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 5px auto;
+}
+
+.interactive-dial input {
+  display: none;
+}
+
+.dial-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid var(--pink-primary);
+  background: radial-gradient(circle, #3D2237, #120A10);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--pink-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 201, 232, 0.25);
+}
+
+/* Conmutación dinámica del dígito visible */
+.interactive-dial input#c0:checked ~ .b0, .interactive-dial input#d0:checked ~ .b0, .interactive-dial input#u0:checked ~ .b0,
+.interactive-dial input#c1:checked ~ .b1, .interactive-dial input#d1:checked ~ .b1, .interactive-dial input#u1:checked ~ .b1,
+.interactive-dial input#c2:checked ~ .b2, .interactive-dial input#d2:checked ~ .b2, .interactive-dial input#u2:checked ~ .b2,
+.interactive-dial input#c3:checked ~ .b3, .interactive-dial input#d3:checked ~ .b3, .interactive-dial input#u3:checked ~ .b3,
+.interactive-dial input#c4:checked ~ .b4, .interactive-dial input#d4:checked ~ .b4, .interactive-dial input#u4:checked ~ .b4,
+.interactive-dial input#c5:checked ~ .b5, .interactive-dial input#d5:checked ~ .b5, .interactive-dial input#u5:checked ~ .b5,
+.interactive-dial input#c6:checked ~ .b6, .interactive-dial input#d6:checked ~ .b6, .interactive-dial input#u6:checked ~ .b6,
+.interactive-dial input#c7:checked ~ .b7, .interactive-dial input#d7:checked ~ .b7, .interactive-dial input#u7:checked ~ .b7,
+.interactive-dial input#c8:checked ~ .b8, .interactive-dial input#d8:checked ~ .b8, .interactive-dial input#u8:checked ~ .b8,
+.interactive-dial input#c9:checked ~ .b9, .interactive-dial input#d9:checked ~ .b9, .interactive-dial input#u9:checked ~ .b9 {
+  display: flex;
+}
+
+.dial-btn:active {
+  transform: rotate(36deg);
+}
+
+/* Bloques de Código */
+.code-block {
+  background-color: #0A0509;
+  color: var(--pink-primary);
+  border: 1px solid var(--pink-dark);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: monospace;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
