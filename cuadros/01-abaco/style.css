@@ -1,0 +1,102 @@
+:root {
+  --primary: #e3b1c8;
+  --accent: #fdcae1;
+  --bg: #ffffff;
+  --card-bg: #ffe5f0;
+  --text: #c999af;
+}
+
+body {
+  font-family: monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+nav {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: rgb(255, 255, 255);
+}
+
+.content-section {
+  display: none;
+  background: var(--card-bg);
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgb(193, 94, 128);
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* Ábaco Interactivo en CSS */
+.abacus-frame {
+  width: 300px;
+  background: #bb679b;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+.wire {
+  height: 30px;
+  background: #dba4ce;
+  margin: 10px 0;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.bead {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-right: 2px;
+}
+
+.bead.moved {
+  transform: translateX(180px);
+}
