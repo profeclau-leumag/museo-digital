@@ -1,54 +1,7875 @@
-<!doctype html>
+ 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 04: Máquina Analítica">
-  <title>Máquina Analítica · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- Tipografías -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+   :root {
+     --beige: #f7f1eb;
+     --beige-dark: #e9ddd2;
+     --white: #fffdf9;
+     --pink: #e8cbd0;
+     --pink-dark: #c99ca6;
+     --pink-light: #f3dfe2;
+     --brown: #514844;
+     --brown-light: #796d67;
+     --line: #dfd1c8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+   /* ---------------- NAVEGACIÓN ---------------- */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: rgba(255, 253, 249, 0.92);
+     backdrop-filter: blur(10px);
+     border-bottom: 1px solid rgba(223, 209, 200, 0.6);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+   /* ---------------- PORTADA ---------------- */
+
+
+   .hero {
+     min-height: 100vh;
+     padding: 150px 8% 80px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+     width: 420px;
+     height: 420px;
+     background: var(--pink-light);
+     border-radius: 50%;
+     position: absolute;
+     right: -150px;
+     top: 100px;
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(65px, 9vw, 120px);
+     line-height: 0.85;
+     font-weight: 600;
+     letter-spacing: -3px;
+     margin-bottom: 30px;
+   }
+
+
+   .hero h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+     font-size: 17px;
+     color: var(--brown-light);
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+     padding: 9px 18px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* IMAGEN PRINCIPAL */
+
+
+   .hero-image {
+     height: 560px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 5px;
+     padding: 15px;
+     transform: rotate(2deg);
+     box-shadow: 0 20px 50px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: sepia(12%);
+     border-radius: 2px;
+   }
+
+
+   /* ---------------- SECCIONES ---------------- */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 11px;
+     margin-bottom: 10px;
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(45px, 6vw, 75px);
+     line-height: 1;
+     font-weight: 600;
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+     font-size: 18px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- QUÉ FUE ---------------- */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+     padding: 25px 30px;
+     margin-top: 30px;
+     font-family: "Playfair Display", serif;
+     font-size: 22px;
+     font-style: italic;
+     background: var(--beige);
+   }
+
+
+   /* ---------------- COMPONENTES ---------------- */
+
+
+   .components {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+     padding: 35px 25px;
+     border: 1px solid var(--line);
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     background: var(--pink-light);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 24px;
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 28px;
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- LÍNEA DEL TIEMPO ---------------- */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+     max-width: 950px;
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+     position: absolute;
+     left: 50%;
+     top: 0;
+     bottom: 0;
+     width: 1px;
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+     padding: 0 45px 60px;
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+     width: 13px;
+     height: 13px;
+     border-radius: 50%;
+     background: var(--pink-dark);
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 42px;
+     color: var(--pink-dark);
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+     font-size: 20px;
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+     font-size: 14px;
+   }
+
+
+   /* ---------------- TARJETAS PERFORADAS ---------------- */
+
+
+   .cards-section {
+     background: var(--white);
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+     margin: 50px auto 0;
+     background: #efe4db;
+     padding: 30px;
+     position: relative;
+     box-shadow: 0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+     grid-template-columns: repeat(20, 1fr);
+     gap: 8px;
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+     background: var(--brown);
+     border-radius: 50%;
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+   }
+
+
+   /* ---------------- ADA ---------------- */
+
+
+   .ada {
+     display: grid;
+     grid-template-columns: 0.8fr 1.2fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .ada-image {
+     height: 500px;
+     background: var(--pink-light);
+     padding: 15px;
+     border: 1px solid var(--line);
+   }
+
+
+   .ada-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+     background: var(--pink-light);
+     padding: 25px 30px;
+     font-family: "Playfair Display", serif;
+     font-style: italic;
+     font-size: 20px;
+   }
+
+
+   /* ---------------- LEGADO ---------------- */
+
+
+   .legacy {
+     background: var(--brown);
+     color: var(--white);
+     text-align: center;
+   }
+
+
+   .legacy .section-label {
+     color: var(--pink);
+   }
+
+
+   .legacy h2 {
+     max-width: 850px;
+     margin: auto auto 30px;
+   }
+
+
+   .legacy h2 em {
+     color: var(--pink);
+   }
+
+
+   .legacy p {
+     max-width: 750px;
+     margin: auto;
+     color: #ddd1cb;
+   }
+
+
+   .legacy-words {
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+     flex-wrap: wrap;
+     margin-top: 40px;
+   }
+
+
+   .legacy-words span {
+     padding: 10px 20px;
+     border: 1px solid #806f67;
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* ---------------- FOOTER ---------------- */
+
+
+   footer {
+     background: var(--brown);
+     border-top: 1px solid #6b5d56;
+     color: #cfc2bc;
+     text-align: center;
+     padding: 30px;
+     font-size: 12px;
+   }
+
+
+   /* ---------------- RESPONSIVE ---------------- */
+
+
+   @media (max-width: 850px) {
+
+
+     nav {
+       padding: 15px 5%;
+     }
+
+
+     nav .links {
+       display: none;
+     }
+
+
+     .hero {
+       grid-template-columns: 1fr;
+       padding: 130px 7% 70px;
+     }
+
+
+     .hero-image {
+       height: 400px;
+     }
+
+
+     .two-columns,
+     .ada {
+       grid-template-columns: 1fr;
+       gap: 40px;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr 1fr;
+     }
+
+
+     .timeline-container::before {
+       left: 7px;
+     }
+
+
+     .timeline-item,
+     .timeline-item:nth-child(even) {
+       width: 100%;
+       margin-left: 0;
+       padding-left: 40px;
+     }
+
+
+     .timeline-item:nth-child(odd) .timeline-dot,
+     .timeline-item:nth-child(even) .timeline-dot {
+       left: 1px;
+       right: auto;
+     }
+   }
+
+
+   @media (max-width: 550px) {
+     section {
+       padding: 80px 6%;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr;
+     }
+
+
+     h1 {
+       font-size: 65px;
+     }
+
+
+     .hero-image {
+       height: 330px;
+     }
+   }
+ </style>
 </head>
+
+
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 04 · Pensamiento Computacional</span>
-  </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
-        <h1>Máquina Analítica</h1>
-        <p class="fecha">1837</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
+ <!-- NAVEGACIÓN -->
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+ <nav>
+   <div class="logo">Máquina Analítica</div>
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.sciencemuseum.org.uk/objects-and-stories/charles-babbages-difference-engines-and-science-museum">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=M%C3%A1quina%20Anal%C3%ADtica">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
-  </main>
-  <footer>La verdad a través de la razón</footer>
+   <div class="links">
+     <a href="#historia">Historia</a>
+     <a href="#componentes">Componentes</a>
+     <a href="#timeline">Cronología</a>
+     <a href="#ada">Ada Lovelace</a>
+     <a href="#legado">Legado</a>
+   </div>
+ </nav>
+
+
+
+
+ <!-- PORTADA -->
+
+
+ <header class="hero">
+
+
+   <div>
+     <div class="eyebrow">Historia de la computación · Siglo XIX</div>
+
+
+     <h1>
+       La Máquina<br>
+       <span>Analítica</span>
+     </h1>
+
+
+     <p class="hero-description">
+       El proyecto de una máquina que imaginó, mucho antes de las computadoras modernas,
+       cómo una máquina podía calcular, almacenar información y seguir instrucciones.
+     </p>
+
+
+     <div class="date">
+       Charles Babbage · 1837
+     </div>
+   </div>
+
+
+   <!--
+     AQUÍ PUEDES CAMBIAR LA IMAGEN.
+     Reemplaza el enlace de abajo por la URL de una imagen
+     de la Máquina Analítica.
+   -->
+
+
+   <div class="hero-image">
+     <img
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Babbage_Difference_Engine_%28Rankin%29.jpg/800px-Babbage_Difference_Engine_%28Rankin%29.jpg"
+       alt="Representación de una máquina de Babbage">
+   </div>
+
+
+ </header>
+
+
+
+
+ <!-- ¿QUÉ FUE? -->
+
+
+ <section class="what" id="historia">
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <div class="section-label">01 · El comienzo</div>
+
+
+       <h2>
+         Una idea demasiado
+         <em>avanzada</em> para su época
+       </h2>
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La Máquina Analítica fue un proyecto de computadora mecánica diseñado
+         por el inventor inglés <strong>Charles Babbage</strong> a partir de 1837.
+         Aunque nunca llegó a construirse completamente, su diseño anticipó
+         muchas de las características de las computadoras actuales.
+       </p>
+
+
+       <div class="quote">
+         Una máquina capaz no solo de calcular, sino de seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- COMPONENTES -->
+
+
+ <section id="componentes">
+
+
+   <div class="section-label">02 · La máquina</div>
+
+
+   <h2>
+     Cuatro piezas para una
+     <em>revolución</em>
+   </h2>
+
+
+   <p class="intro">
+     Babbage imaginó una máquina digital, mecánica, automática y de propósito
+     general. Su estructura tenía elementos que recuerdan claramente a los
+     componentes de una computadora moderna.
+   </p>
+
+
+
+
+   <div class="components">
+
+
+     <div class="card">
+       <div class="icon">⚙</div>
+       <h3>El molino</h3>
+       <p>
+         Era la unidad encargada de realizar los cálculos.
+         Puede compararse con la CPU de una computadora moderna.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▦</div>
+       <h3>La memoria</h3>
+       <p>
+         Almacenaba los números y datos que la máquina necesitaba
+         antes y durante el procesamiento.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▤</div>
+       <h3>El lector</h3>
+       <p>
+         Permitía introducir datos e instrucciones mediante
+         tarjetas perforadas.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▣</div>
+       <h3>La impresora</h3>
+       <p>
+         Era el dispositivo de salida encargado de registrar
+         los resultados obtenidos por la máquina.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- CRONOLOGÍA -->
+
+
+ <section class="timeline" id="timeline">
+
+
+   <div class="section-label">03 · Una historia en el tiempo</div>
+
+
+   <h2>
+     De una máquina de cálculo
+     a una <em>computadora</em>
+   </h2>
+
+
+   <div class="timeline-container">
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1833</div>
+       <h3>Una nueva idea</h3>
+       <p>
+         Mientras trabajaba en la Máquina Diferencial, Babbage comenzó
+         a imaginar una máquina mucho más ambiciosa y general.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1837</div>
+       <h3>La Máquina Analítica</h3>
+       <p>
+         Babbage presenta el diseño de una máquina mecánica de propósito
+         general capaz de seguir instrucciones.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1843</div>
+       <h3>Ada Lovelace</h3>
+       <p>
+         Ada Lovelace escribe sus notas sobre la máquina y explica cómo
+         podría utilizarse para calcular los números de Bernoulli.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1871</div>
+       <h3>El final de Babbage</h3>
+       <p>
+         Charles Babbage muere sin haber conseguido completar la
+         Máquina Analítica.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- TARJETAS PERFORADAS -->
+
+
+ <section class="cards-section">
+
+
+   <div class="section-label">04 · Programación</div>
+
+
+   <h2>
+     Antes del código,
+     <em>las tarjetas</em>
+   </h2>
+
+
+   <p class="intro" style="margin: auto;">
+     La máquina utilizaría tarjetas perforadas inspiradas en el sistema
+     desarrollado para los telares de Joseph-Marie Jacquard.
+     Estas tarjetas podían contener tanto datos como instrucciones.
+   </p>
+
+
+   <div class="punched-card">
+
+
+     <div class="holes">
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+     </div>
+
+
+     <p>
+       Datos + instrucciones = una máquina programable.
+     </p>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- ADA LOVELACE -->
+
+
+ <section id="ada">
+
+
+   <div class="ada">
+
+
+     <div class="ada-image">
+
+
+       <!--
+         Reemplaza esta imagen por un retrato de Ada Lovelace.
+       -->
+
+
+       <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+         alt="Retrato de Ada Lovelace">
+
+
+     </div>
+
+
+     <div>
+
+
+       <div class="section-label">05 · Ada Lovelace</div>
+
+
+       <h2>
+         La mujer que vio
+         el <em>potencial</em>
+       </h2>
+
+
+       <p class="intro">
+
+
+         En 1843, la matemática inglesa <strong>Ada Lovelace</strong>
+         escribió una serie de notas sobre la Máquina Analítica.
+         En ellas explicó cómo podía utilizarse para seguir un programa
+         y realizar cálculos complejos.
+
+
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+
+
+         Entre sus aportes se encuentra un algoritmo para calcular
+         los números de Bernoulli. Por este trabajo, Ada Lovelace
+         es considerada por muchos como la <strong>primera programadora
+         de computadoras</strong>.
+
+
+       </p>
+
+
+       <div class="highlight">
+         La máquina podía hacer mucho más que calcular números:
+         podía seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- PROGRAMACIÓN -->
+
+
+ <section class="what">
+
+
+   <div class="section-label">06 · Una idea revolucionaria</div>
+
+
+   <h2>
+     Una máquina que podía
+     <em>tomar decisiones</em>
+   </h2>
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <p class="intro">
+         Una de las características más sorprendentes del diseño era
+         la posibilidad de ejecutar instrucciones en un orden diferente
+         al estrictamente secuencial.
+       </p>
+     </div>
+
+
+     <div>
+       <p style="color: var(--brown-light);">
+         La llamada <strong>ramificación condicional</strong> permitía
+         que la máquina cambiara de instrucción dependiendo del valor
+         de determinados datos. Esta idea es fundamental en la
+         programación moderna y estaba extraordinariamente adelantada
+         para el siglo XIX.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- POR QUÉ NO SE CONSTRUYÓ -->
+
+
+ <section>
+
+
+   <div class="two-columns">
+
+
+     <div>
+
+
+       <div class="section-label">07 · El obstáculo</div>
+
+
+       <h2>
+         El problema no era
+         la <em>idea</em>
+       </h2>
+
+
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La enorme complejidad de la Máquina Analítica hizo que su
+         construcción fuera extremadamente difícil con la tecnología
+         disponible en el siglo XIX.
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+         Además, Babbage tuvo dificultades para conseguir financiación
+         y apoyo gubernamental. El fracaso de su proyecto anterior,
+         la Máquina Diferencial, también había reducido el entusiasmo
+         por financiar una nueva máquina todavía más ambiciosa.
+       </p>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- LEGADO -->
+
+
+ <section class="legacy" id="legado">
+
+
+   <div class="section-label">08 · El legado</div>
+
+
+   <h2>
+     Una máquina que nunca terminó,
+     pero que <em>cambió la historia</em>
+   </h2>
+
+
+   <p>
+     Aunque la Máquina Analítica nunca fue completada durante la vida
+     de Babbage, su diseño contenía muchos de los principios que
+     posteriormente formarían parte de las computadoras modernas.
+   </p>
+
+
+   <div class="legacy-words">
+
+
+     <span>Memoria</span>
+     <span>Procesamiento</span>
+     <span>Programación</span>
+     <span>Datos</span>
+     <span>Instrucciones</span>
+     <span>Entrada y salida</span>
+     <span>Decisiones</span>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- FOOTER -->
+
+
+ <footer>
+
+
+   La Máquina Analítica · Charles Babbage · 1837
+
+
+ </footer>
+
+
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- TIPOGRAFÍAS -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+
+
+   /* =========================
+      COLORES
+   ========================= */
+
+
+   :root {
+     --beige: #F7F1EB;
+     --beige-dark: #E9DDD2;
+     --white: #FFFDF9;
+     --pink: #E8CBD0;
+     --pink-dark: #C99CA6;
+     --pink-light: #F3DFE2;
+     --brown: #514844;
+     --brown-light: #796D67;
+     --line: #DFD1C8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+
+
+   /* =========================
+      MENÚ
+   ========================= */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     background: rgba(255, 253, 249, 0.94);
+     backdrop-filter: blur(10px);
+
+
+     border-bottom: 1px solid var(--line);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+
+
+   /* =========================
+      PORTADA
+   ========================= */
+
+
+   .hero {
+     min-height: 100vh;
+
+
+     padding: 150px 8% 80px;
+
+
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+
+
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+
+
+     width: 420px;
+     height: 420px;
+
+
+     background: var(--pink-light);
+
+
+     border-radius: 50%;
+
+
+     position: absolute;
+     right: -150px;
+     top: 100px;
+
+
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(65px, 9vw, 120px);
+
+
+     line-height: 0.85;
+
+
+     font-weight: 600;
+
+
+     letter-spacing: -3px;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+
+
+     font-size: 17px;
+
+
+     color: var(--brown-light);
+
+
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+
+
+     padding: 9px 18px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 30px;
+
+
+     font-size: 13px;
+   }
+
+
+
+
+   /* =========================
+      IMAGEN PRINCIPAL
+   ========================= */
+
+
+   .hero-image {
+     height: 560px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 5px;
+
+
+     padding: 15px;
+
+
+     transform: rotate(2deg);
+
+
+     box-shadow:
+       0 20px 50px rgba(85, 67, 58, 0.10);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+
+
+     object-fit: cover;
+
+
+     border-radius: 2px;
+
+
+     filter: sepia(10%) saturate(80%);
+   }
+
+
+
+
+   /* =========================
+      SECCIONES
+   ========================= */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+
+
+     text-transform: uppercase;
+
+
+     letter-spacing: 3px;
+
+
+     font-size: 11px;
+
+
+     margin-bottom: 10px;
+
+
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(45px, 6vw, 75px);
+
+
+     line-height: 1;
+
+
+     font-weight: 600;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+
+
+     font-size: 18px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      INTRODUCCIÓN
+   ========================= */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+
+
+     grid-template-columns: 1fr 1fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+
+
+     padding: 25px 30px;
+
+
+     margin-top: 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 22px;
+
+
+     font-style: italic;
+
+
+     background: var(--beige);
+   }
+
+
+
+
+   /* =========================
+      COMPONENTES
+   ========================= */
+
+
+   .components {
+     display: grid;
+
+
+     grid-template-columns: repeat(4, 1fr);
+
+
+     gap: 20px;
+
+
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+
+
+     padding: 35px 25px;
+
+
+     border: 1px solid var(--line);
+
+
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+
+
+     box-shadow:
+       0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-light);
+
+
+     display: flex;
+
+
+     justify-content: center;
+
+
+     align-items: center;
+
+
+     font-size: 24px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 28px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      LÍNEA DEL TIEMPO
+   ========================= */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+
+
+     max-width: 950px;
+
+
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+
+
+     position: absolute;
+
+
+     left: 50%;
+
+
+     top: 0;
+
+
+     bottom: 0;
+
+
+     width: 1px;
+
+
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+
+
+     padding: 0 45px 60px;
+
+
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+
+
+     width: 13px;
+     height: 13px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-dark);
+
+
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 42px;
+
+
+     color: var(--pink-dark);
+
+
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 20px;
+
+
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+
+
+     font-size: 14px;
+   }
+
+
+
+
+   /* =========================
+      TARJETAS PERFORADAS
+   ========================= */
+
+
+   .cards-section {
+     background: var(--white);
+
+
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+
+
+     margin: 50px auto 0;
+
+
+     background: #EFE4DB;
+
+
+     padding: 30px;
+
+
+     box-shadow:
+       0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+
+
+     grid-template-columns: repeat(20, 1fr);
+
+
+     gap: 8px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+
+
+     background: var(--brown);
+
+
+     border-radius: 50%;
+
+
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 25px;
+   }
+
+
+
+
+   /* =========================
+      ADA LOVELACE
+   ========================= */
+
+
+   .ada {
+     display: grid;
+
+
+     grid-template-columns: 0.8fr 1.2fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .ada-box {
+     height: 450px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 15px;
+
+
+     border: 1px solid var(--line);
+
+
+     display: flex;
+
+
+     align-items: center;
+
+
+     justify-content: center;
+   }
+
+
+   .ada-box div {
+     text-align: center;
+
+
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 38px;
+
+
+     color: var(--pink-dark);
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 25px 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-style: italic;
+
+
+     font-size: 20px;
+   }
+
+
+
+
+   /* =========================
+      PROGRAMACIÓN
+   ========================= */
+
+
+   .programming {
+     background: var(--white);
+   }
+
+
+   .program-box {
+     margin-top: 45px;
+
+
+     display: grid;
+
+
+     grid-template-columns: repeat(3, 1fr);
+
+
+     gap: 20px;
+   }
+
+
+   .program-card {
+     padding: 30px;
+
+
+     background: var(--beige);
+
+
+     border: 1px solid var(--line);
+   }
+
+
+   .program-card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 30px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .program-card p {
+     font-size: 14px
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- Tipografías -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+   :root {
+     --beige: #f7f1eb;
+     --beige-dark: #e9ddd2;
+     --white: #fffdf9;
+     --pink: #e8cbd0;
+     --pink-dark: #c99ca6;
+     --pink-light: #f3dfe2;
+     --brown: #514844;
+     --brown-light: #796d67;
+     --line: #dfd1c8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+   /* ---------------- NAVEGACIÓN ---------------- */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: rgba(255, 253, 249, 0.92);
+     backdrop-filter: blur(10px);
+     border-bottom: 1px solid rgba(223, 209, 200, 0.6);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+   /* ---------------- PORTADA ---------------- */
+
+
+   .hero {
+     min-height: 100vh;
+     padding: 150px 8% 80px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+     width: 420px;
+     height: 420px;
+     background: var(--pink-light);
+     border-radius: 50%;
+     position: absolute;
+     right: -150px;
+     top: 100px;
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(65px, 9vw, 120px);
+     line-height: 0.85;
+     font-weight: 600;
+     letter-spacing: -3px;
+     margin-bottom: 30px;
+   }
+
+
+   .hero h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+     font-size: 17px;
+     color: var(--brown-light);
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+     padding: 9px 18px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* IMAGEN PRINCIPAL */
+
+
+   .hero-image {
+     height: 560px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 5px;
+     padding: 15px;
+     transform: rotate(2deg);
+     box-shadow: 0 20px 50px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: sepia(12%);
+     border-radius: 2px;
+   }
+
+
+   /* ---------------- SECCIONES ---------------- */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 11px;
+     margin-bottom: 10px;
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(45px, 6vw, 75px);
+     line-height: 1;
+     font-weight: 600;
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+     font-size: 18px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- QUÉ FUE ---------------- */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+     padding: 25px 30px;
+     margin-top: 30px;
+     font-family: "Playfair Display", serif;
+     font-size: 22px;
+     font-style: italic;
+     background: var(--beige);
+   }
+
+
+   /* ---------------- COMPONENTES ---------------- */
+
+
+   .components {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+     padding: 35px 25px;
+     border: 1px solid var(--line);
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     background: var(--pink-light);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 24px;
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 28px;
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- LÍNEA DEL TIEMPO ---------------- */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+     max-width: 950px;
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+     position: absolute;
+     left: 50%;
+     top: 0;
+     bottom: 0;
+     width: 1px;
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+     padding: 0 45px 60px;
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+     width: 13px;
+     height: 13px;
+     border-radius: 50%;
+     background: var(--pink-dark);
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 42px;
+     color: var(--pink-dark);
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+     font-size: 20px;
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+     font-size: 14px;
+   }
+
+
+   /* ---------------- TARJETAS PERFORADAS ---------------- */
+
+
+   .cards-section {
+     background: var(--white);
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+     margin: 50px auto 0;
+     background: #efe4db;
+     padding: 30px;
+     position: relative;
+     box-shadow: 0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+     grid-template-columns: repeat(20, 1fr);
+     gap: 8px;
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+     background: var(--brown);
+     border-radius: 50%;
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+   }
+
+
+   /* ---------------- ADA ---------------- */
+
+
+   .ada {
+     display: grid;
+     grid-template-columns: 0.8fr 1.2fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .ada-image {
+     height: 500px;
+     background: var(--pink-light);
+     padding: 15px;
+     border: 1px solid var(--line);
+   }
+
+
+   .ada-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+     background: var(--pink-light);
+     padding: 25px 30px;
+     font-family: "Playfair Display", serif;
+     font-style: italic;
+     font-size: 20px;
+   }
+
+
+   /* ---------------- LEGADO ---------------- */
+
+
+   .legacy {
+     background: var(--brown);
+     color: var(--white);
+     text-align: center;
+   }
+
+
+   .legacy .section-label {
+     color: var(--pink);
+   }
+
+
+   .legacy h2 {
+     max-width: 850px;
+     margin: auto auto 30px;
+   }
+
+
+   .legacy h2 em {
+     color: var(--pink);
+   }
+
+
+   .legacy p {
+     max-width: 750px;
+     margin: auto;
+     color: #ddd1cb;
+   }
+
+
+   .legacy-words {
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+     flex-wrap: wrap;
+     margin-top: 40px;
+   }
+
+
+   .legacy-words span {
+     padding: 10px 20px;
+     border: 1px solid #806f67;
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* ---------------- FOOTER ---------------- */
+
+
+   footer {
+     background: var(--brown);
+     border-top: 1px solid #6b5d56;
+     color: #cfc2bc;
+     text-align: center;
+     padding: 30px;
+     font-size: 12px;
+   }
+
+
+   /* ---------------- RESPONSIVE ---------------- */
+
+
+   @media (max-width: 850px) {
+
+
+     nav {
+       padding: 15px 5%;
+     }
+
+
+     nav .links {
+       display: none;
+     }
+
+
+     .hero {
+       grid-template-columns: 1fr;
+       padding: 130px 7% 70px;
+     }
+
+
+     .hero-image {
+       height: 400px;
+     }
+
+
+     .two-columns,
+     .ada {
+       grid-template-columns: 1fr;
+       gap: 40px;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr 1fr;
+     }
+
+
+     .timeline-container::before {
+       left: 7px;
+     }
+
+
+     .timeline-item,
+     .timeline-item:nth-child(even) {
+       width: 100%;
+       margin-left: 0;
+       padding-left: 40px;
+     }
+
+
+     .timeline-item:nth-child(odd) .timeline-dot,
+     .timeline-item:nth-child(even) .timeline-dot {
+       left: 1px;
+       right: auto;
+     }
+   }
+
+
+   @media (max-width: 550px) {
+     section {
+       padding: 80px 6%;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr;
+     }
+
+
+     h1 {
+       font-size: 65px;
+     }
+
+
+     .hero-image {
+       height: 330px;
+     }
+   }
+ </style>
+</head>
+
+
+<body>
+
+
+ <!-- NAVEGACIÓN -->
+
+
+ <nav>
+   <div class="logo">Máquina Analítica</div>
+
+
+   <div class="links">
+     <a href="#historia">Historia</a>
+     <a href="#componentes">Componentes</a>
+     <a href="#timeline">Cronología</a>
+     <a href="#ada">Ada Lovelace</a>
+     <a href="#legado">Legado</a>
+   </div>
+ </nav>
+
+
+
+
+ <!-- PORTADA -->
+
+
+ <header class="hero">
+
+
+   <div>
+     <div class="eyebrow">Historia de la computación · Siglo XIX</div>
+
+
+     <h1>
+       La Máquina<br>
+       <span>Analítica</span>
+     </h1>
+
+
+     <p class="hero-description">
+       El proyecto de una máquina que imaginó, mucho antes de las computadoras modernas,
+       cómo una máquina podía calcular, almacenar información y seguir instrucciones.
+     </p>
+
+
+     <div class="date">
+       Charles Babbage · 1837
+     </div>
+   </div>
+
+
+   <!--
+     AQUÍ PUEDES CAMBIAR LA IMAGEN.
+     Reemplaza el enlace de abajo por la URL de una imagen
+     de la Máquina Analítica.
+   -->
+
+
+   <div class="hero-image">
+     <img
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Babbage_Difference_Engine_%28Rankin%29.jpg/800px-Babbage_Difference_Engine_%28Rankin%29.jpg"
+       alt="Representación de una máquina de Babbage">
+   </div>
+
+
+ </header>
+
+
+
+
+ <!-- ¿QUÉ FUE? -->
+
+
+ <section class="what" id="historia">
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <div class="section-label">01 · El comienzo</div>
+
+
+       <h2>
+         Una idea demasiado
+         <em>avanzada</em> para su época
+       </h2>
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La Máquina Analítica fue un proyecto de computadora mecánica diseñado
+         por el inventor inglés <strong>Charles Babbage</strong> a partir de 1837.
+         Aunque nunca llegó a construirse completamente, su diseño anticipó
+         muchas de las características de las computadoras actuales.
+       </p>
+
+
+       <div class="quote">
+         Una máquina capaz no solo de calcular, sino de seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- COMPONENTES -->
+
+
+ <section id="componentes">
+
+
+   <div class="section-label">02 · La máquina</div>
+
+
+   <h2>
+     Cuatro piezas para una
+     <em>revolución</em>
+   </h2>
+
+
+   <p class="intro">
+     Babbage imaginó una máquina digital, mecánica, automática y de propósito
+     general. Su estructura tenía elementos que recuerdan claramente a los
+     componentes de una computadora moderna.
+   </p>
+
+
+
+
+   <div class="components">
+
+
+     <div class="card">
+       <div class="icon">⚙</div>
+       <h3>El molino</h3>
+       <p>
+         Era la unidad encargada de realizar los cálculos.
+         Puede compararse con la CPU de una computadora moderna.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▦</div>
+       <h3>La memoria</h3>
+       <p>
+         Almacenaba los números y datos que la máquina necesitaba
+         antes y durante el procesamiento.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▤</div>
+       <h3>El lector</h3>
+       <p>
+         Permitía introducir datos e instrucciones mediante
+         tarjetas perforadas.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▣</div>
+       <h3>La impresora</h3>
+       <p>
+         Era el dispositivo de salida encargado de registrar
+         los resultados obtenidos por la máquina.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- CRONOLOGÍA -->
+
+
+ <section class="timeline" id="timeline">
+
+
+   <div class="section-label">03 · Una historia en el tiempo</div>
+
+
+   <h2>
+     De una máquina de cálculo
+     a una <em>computadora</em>
+   </h2>
+
+
+   <div class="timeline-container">
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1833</div>
+       <h3>Una nueva idea</h3>
+       <p>
+         Mientras trabajaba en la Máquina Diferencial, Babbage comenzó
+         a imaginar una máquina mucho más ambiciosa y general.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1837</div>
+       <h3>La Máquina Analítica</h3>
+       <p>
+         Babbage presenta el diseño de una máquina mecánica de propósito
+         general capaz de seguir instrucciones.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1843</div>
+       <h3>Ada Lovelace</h3>
+       <p>
+         Ada Lovelace escribe sus notas sobre la máquina y explica cómo
+         podría utilizarse para calcular los números de Bernoulli.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1871</div>
+       <h3>El final de Babbage</h3>
+       <p>
+         Charles Babbage muere sin haber conseguido completar la
+         Máquina Analítica.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- TARJETAS PERFORADAS -->
+
+
+ <section class="cards-section">
+
+
+   <div class="section-label">04 · Programación</div>
+
+
+   <h2>
+     Antes del código,
+     <em>las tarjetas</em>
+   </h2>
+
+
+   <p class="intro" style="margin: auto;">
+     La máquina utilizaría tarjetas perforadas inspiradas en el sistema
+     desarrollado para los telares de Joseph-Marie Jacquard.
+     Estas tarjetas podían contener tanto datos como instrucciones.
+   </p>
+
+
+   <div class="punched-card">
+
+
+     <div class="holes">
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+     </div>
+
+
+     <p>
+       Datos + instrucciones = una máquina programable.
+     </p>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- ADA LOVELACE -->
+
+
+ <section id="ada">
+
+
+   <div class="ada">
+
+
+     <div class="ada-image">
+
+
+       <!--
+         Reemplaza esta imagen por un retrato de Ada Lovelace.
+       -->
+
+
+       <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+         alt="Retrato de Ada Lovelace">
+
+
+     </div>
+
+
+     <div>
+
+
+       <div class="section-label">05 · Ada Lovelace</div>
+
+
+       <h2>
+         La mujer que vio
+         el <em>potencial</em>
+       </h2>
+
+
+       <p class="intro">
+
+
+         En 1843, la matemática inglesa <strong>Ada Lovelace</strong>
+         escribió una serie de notas sobre la Máquina Analítica.
+         En ellas explicó cómo podía utilizarse para seguir un programa
+         y realizar cálculos complejos.
+
+
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+
+
+         Entre sus aportes se encuentra un algoritmo para calcular
+         los números de Bernoulli. Por este trabajo, Ada Lovelace
+         es considerada por muchos como la <strong>primera programadora
+         de computadoras</strong>.
+
+
+       </p>
+
+
+       <div class="highlight">
+         La máquina podía hacer mucho más que calcular números:
+         podía seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- PROGRAMACIÓN -->
+
+
+ <section class="what">
+
+
+   <div class="section-label">06 · Una idea revolucionaria</div>
+
+
+   <h2>
+     Una máquina que podía
+     <em>tomar decisiones</em>
+   </h2>
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <p class="intro">
+         Una de las características más sorprendentes del diseño era
+         la posibilidad de ejecutar instrucciones en un orden diferente
+         al estrictamente secuencial.
+       </p>
+     </div>
+
+
+     <div>
+       <p style="color: var(--brown-light);">
+         La llamada <strong>ramificación condicional</strong> permitía
+         que la máquina cambiara de instrucción dependiendo del valor
+         de determinados datos. Esta idea es fundamental en la
+         programación moderna y estaba extraordinariamente adelantada
+         para el siglo XIX.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- POR QUÉ NO SE CONSTRUYÓ -->
+
+
+ <section>
+
+
+   <div class="two-columns">
+
+
+     <div>
+
+
+       <div class="section-label">07 · El obstáculo</div>
+
+
+       <h2>
+         El problema no era
+         la <em>idea</em>
+       </h2>
+
+
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La enorme complejidad de la Máquina Analítica hizo que su
+         construcción fuera extremadamente difícil con la tecnología
+         disponible en el siglo XIX.
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+         Además, Babbage tuvo dificultades para conseguir financiación
+         y apoyo gubernamental. El fracaso de su proyecto anterior,
+         la Máquina Diferencial, también había reducido el entusiasmo
+         por financiar una nueva máquina todavía más ambiciosa.
+       </p>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- LEGADO -->
+
+
+ <section class="legacy" id="legado">
+
+
+   <div class="section-label">08 · El legado</div>
+
+
+   <h2>
+     Una máquina que nunca terminó,
+     pero que <em>cambió la historia</em>
+   </h2>
+
+
+   <p>
+     Aunque la Máquina Analítica nunca fue completada durante la vida
+     de Babbage, su diseño contenía muchos de los principios que
+     posteriormente formarían parte de las computadoras modernas.
+   </p>
+
+
+   <div class="legacy-words">
+
+
+     <span>Memoria</span>
+     <span>Procesamiento</span>
+     <span>Programación</span>
+     <span>Datos</span>
+     <span>Instrucciones</span>
+     <span>Entrada y salida</span>
+     <span>Decisiones</span>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- FOOTER -->
+
+
+ <footer>
+
+
+   La Máquina Analítica · Charles Babbage · 1837
+
+
+ </footer>
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- TIPOGRAFÍAS -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+
+
+   /* =========================
+      COLORES
+   ========================= */
+
+
+   :root {
+     --beige: #F7F1EB;
+     --beige-dark: #E9DDD2;
+     --white: #FFFDF9;
+     --pink: #E8CBD0;
+     --pink-dark: #C99CA6;
+     --pink-light: #F3DFE2;
+     --brown: #514844;
+     --brown-light: #796D67;
+     --line: #DFD1C8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+
+
+   /* =========================
+      MENÚ
+   ========================= */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     background: rgba(255, 253, 249, 0.94);
+     backdrop-filter: blur(10px);
+
+
+     border-bottom: 1px solid var(--line);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+
+
+   /* =========================
+      PORTADA
+   ========================= */
+
+
+   .hero {
+     min-height: 100vh;
+
+
+     padding: 150px 8% 80px;
+
+
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+
+
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+
+
+     width: 420px;
+     height: 420px;
+
+
+     background: var(--pink-light);
+
+
+     border-radius: 50%;
+
+
+     position: absolute;
+     right: -150px;
+     top: 100px;
+
+
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(65px, 9vw, 120px);
+
+
+     line-height: 0.85;
+
+
+     font-weight: 600;
+
+
+     letter-spacing: -3px;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+
+
+     font-size: 17px;
+
+
+     color: var(--brown-light);
+
+
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+
+
+     padding: 9px 18px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 30px;
+
+
+     font-size: 13px;
+   }
+
+
+
+
+   /* =========================
+      IMAGEN PRINCIPAL
+   ========================= */
+
+
+   .hero-image {
+     height: 560px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 5px;
+
+
+     padding: 15px;
+
+
+     transform: rotate(2deg);
+
+
+     box-shadow:
+       0 20px 50px rgba(85, 67, 58, 0.10);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+
+
+     object-fit: cover;
+
+
+     border-radius: 2px;
+
+
+     filter: sepia(10%) saturate(80%);
+   }
+
+
+
+
+   /* =========================
+      SECCIONES
+   ========================= */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+
+
+     text-transform: uppercase;
+
+
+     letter-spacing: 3px;
+
+
+     font-size: 11px;
+
+
+     margin-bottom: 10px;
+
+
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(45px, 6vw, 75px);
+
+
+     line-height: 1;
+
+
+     font-weight: 600;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+
+
+     font-size: 18px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      INTRODUCCIÓN
+   ========================= */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+
+
+     grid-template-columns: 1fr 1fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+
+
+     padding: 25px 30px;
+
+
+     margin-top: 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 22px;
+
+
+     font-style: italic;
+
+
+     background: var(--beige);
+   }
+
+
+
+
+   /* =========================
+      COMPONENTES
+   ========================= */
+
+
+   .components {
+     display: grid;
+
+
+     grid-template-columns: repeat(4, 1fr);
+
+
+     gap: 20px;
+
+
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+
+
+     padding: 35px 25px;
+
+
+     border: 1px solid var(--line);
+
+
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+
+
+     box-shadow:
+       0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-light);
+
+
+     display: flex;
+
+
+     justify-content: center;
+
+
+     align-items: center;
+
+
+     font-size: 24px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 28px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      LÍNEA DEL TIEMPO
+   ========================= */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+
+
+     max-width: 950px;
+
+
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+
+
+     position: absolute;
+
+
+     left: 50%;
+
+
+     top: 0;
+
+
+     bottom: 0;
+
+
+     width: 1px;
+
+
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+
+
+     padding: 0 45px 60px;
+
+
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+
+
+     width: 13px;
+     height: 13px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-dark);
+
+
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 42px;
+
+
+     color: var(--pink-dark);
+
+
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 20px;
+
+
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+
+
+     font-size: 14px;
+   }
+
+
+
+
+   /* =========================
+      TARJETAS PERFORADAS
+   ========================= */
+
+
+   .cards-section {
+     background: var(--white);
+
+
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+
+
+     margin: 50px auto 0;
+
+
+     background: #EFE4DB;
+
+
+     padding: 30px;
+
+
+     box-shadow:
+       0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+
+
+     grid-template-columns: repeat(20, 1fr);
+
+
+     gap: 8px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+
+
+     background: var(--brown);
+
+
+     border-radius: 50%;
+
+
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 25px;
+   }
+
+
+
+
+   /* =========================
+      ADA LOVELACE
+   ========================= */
+
+
+   .ada {
+     display: grid;
+
+
+     grid-template-columns: 0.8fr 1.2fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .ada-box {
+     height: 450px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 15px;
+
+
+     border: 1px solid var(--line);
+
+
+     display: flex;
+
+
+     align-items: center;
+
+
+     justify-content: center;
+   }
+
+
+   .ada-box div {
+     text-align: center;
+
+
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 38px;
+
+
+     color: var(--pink-dark);
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 25px 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-style: italic;
+
+
+     font-size: 20px;
+   }
+
+
+
+
+   /* =========================
+      PROGRAMACIÓN
+   ========================= */
+
+
+   .programming {
+     background: var(--white);
+   }
+
+
+   .program-box {
+     margin-top: 45px;
+
+
+     display: grid;
+
+
+     grid-template-columns: repeat(3, 1fr);
+
+
+     gap: 20px;
+   }
+
+
+   .program-card {
+     padding: 30px;
+
+
+     background: var(--beige);
+
+
+     border: 1px solid var(--line);
+   }
+
+
+   .program-card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 30px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .program-card p {
+     font-size:<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- Tipografías -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+   :root {
+     --beige: #f7f1eb;
+     --beige-dark: #e9ddd2;
+     --white: #fffdf9;
+     --pink: #e8cbd0;
+     --pink-dark: #c99ca6;
+     --pink-light: #f3dfe2;
+     --brown: #514844;
+     --brown-light: #796d67;
+     --line: #dfd1c8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+   /* ---------------- NAVEGACIÓN ---------------- */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: rgba(255, 253, 249, 0.92);
+     backdrop-filter: blur(10px);
+     border-bottom: 1px solid rgba(223, 209, 200, 0.6);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+   /* ---------------- PORTADA ---------------- */
+
+
+   .hero {
+     min-height: 100vh;
+     padding: 150px 8% 80px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+     width: 420px;
+     height: 420px;
+     background: var(--pink-light);
+     border-radius: 50%;
+     position: absolute;
+     right: -150px;
+     top: 100px;
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(65px, 9vw, 120px);
+     line-height: 0.85;
+     font-weight: 600;
+     letter-spacing: -3px;
+     margin-bottom: 30px;
+   }
+
+
+   .hero h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+     font-size: 17px;
+     color: var(--brown-light);
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+     padding: 9px 18px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* IMAGEN PRINCIPAL */
+
+
+   .hero-image {
+     height: 560px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 5px;
+     padding: 15px;
+     transform: rotate(2deg);
+     box-shadow: 0 20px 50px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: sepia(12%);
+     border-radius: 2px;
+   }
+
+
+   /* ---------------- SECCIONES ---------------- */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 11px;
+     margin-bottom: 10px;
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(45px, 6vw, 75px);
+     line-height: 1;
+     font-weight: 600;
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+     font-size: 18px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- QUÉ FUE ---------------- */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+     padding: 25px 30px;
+     margin-top: 30px;
+     font-family: "Playfair Display", serif;
+     font-size: 22px;
+     font-style: italic;
+     background: var(--beige);
+   }
+
+
+   /* ---------------- COMPONENTES ---------------- */
+
+
+   .components {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+     padding: 35px 25px;
+     border: 1px solid var(--line);
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     background: var(--pink-light);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 24px;
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 28px;
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- LÍNEA DEL TIEMPO ---------------- */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+     max-width: 950px;
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+     position: absolute;
+     left: 50%;
+     top: 0;
+     bottom: 0;
+     width: 1px;
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+     padding: 0 45px 60px;
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+     width: 13px;
+     height: 13px;
+     border-radius: 50%;
+     background: var(--pink-dark);
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 42px;
+     color: var(--pink-dark);
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+     font-size: 20px;
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+     font-size: 14px;
+   }
+
+
+   /* ---------------- TARJETAS PERFORADAS ---------------- */
+
+
+   .cards-section {
+     background: var(--white);
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+     margin: 50px auto 0;
+     background: #efe4db;
+     padding: 30px;
+     position: relative;
+     box-shadow: 0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+     grid-template-columns: repeat(20, 1fr);
+     gap: 8px;
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+     background: var(--brown);
+     border-radius: 50%;
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+   }
+
+
+   /* ---------------- ADA ---------------- */
+
+
+   .ada {
+     display: grid;
+     grid-template-columns: 0.8fr 1.2fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .ada-image {
+     height: 500px;
+     background: var(--pink-light);
+     padding: 15px;
+     border: 1px solid var(--line);
+   }
+
+
+   .haBBBBda-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+     background: var(--pink-light);
+     padding: 25px 30px;
+     font-family: "Playfair Display", serif;
+     font-style: italic;
+     font-size: 20px;
+   }
+
+
+   /* ---------------- LEGADO ---------------- */
+
+
+   .legacy {
+     background: var(--brown);
+     color: var(--white);
+     text-align: center;
+   }
+
+
+   .legacy .section-label {
+     color: var(--pink);
+   }
+
+
+   .legacy h2 {
+     max-width: 850px;
+     margin: auto auto 30px;
+   }
+
+
+   .legacy h2 em {
+     color: var(--pink);
+   }
+
+
+   .legacy p {
+     max-width: 750px;
+     margin: auto;
+     color: #ddd1cb;
+   }
+
+
+   .legacy-words {
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+     flex-wrap: wrap;
+     margin-top: 40px;
+   }
+
+
+   .legacy-words span {
+     padding: 10px 20px;
+     border: 1px solid #806f67;
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* ---------------- FOOTER ---------------- */
+
+
+   footer {
+     background: var(--brown);
+     border-top: 1px solid #6b5d56;
+     color: #cfc2bc;
+     text-align: center;
+     padding: 30px;
+     font-size: 12px;
+   }
+
+
+   /* ---------------- RESPONSIVE ---------------- */
+
+
+   @media (max-width: 850px) {
+
+
+     nav {
+       padding: 15px 5%;
+     }
+
+
+     nav .links {
+       display: none;
+     }
+
+
+     .hero {
+       grid-template-columns: 1fr;
+       padding: 130px 7% 70px;
+     }
+
+
+     .hero-image {
+       height: 400px;
+     }
+
+
+     .two-columns,
+     .ada {
+       grid-template-columns: 1fr;
+       gap: 40px;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr 1fr;
+     }
+
+
+     .timeline-container::before {
+       left: 7px;
+     }
+
+
+     .timeline-item,
+     .timeline-item:nth-child(even) {
+       width: 100%;
+       margin-left: 0;
+       padding-left: 40px;
+     }
+
+
+     .timeline-item:nth-child(odd) .timeline-dot,
+     .timeline-item:nth-child(even) .timeline-dot {
+       left: 1px;
+       right: auto;
+     }
+   }
+
+
+   @media (max-width: 550px) {
+     section {
+       padding: 80px 6%;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr;
+     }
+
+
+     h1 {
+       font-size: 65px;
+     }
+
+
+     .hero-image {
+       height: 330px;
+     }
+   }
+ </style>
+</head>
+
+
+<body>
+
+
+ <!-- NAVEGACIÓN -->
+
+
+ <nav>
+   <div class="logo">Máquina Analítica</div>
+
+
+   <div class="links">
+     <a href="#historia">Historia</a>
+     <a href="#componentes">Componentes</a>
+     <a href="#timeline">Cronología</a>
+     <a href="#ada">Ada Lovelace</a>
+     <a href="#legado">Legado</a>
+   </div>
+ </nav>
+
+
+
+
+ <!-- PORTADA -->
+
+
+ <header class="hero">
+
+
+   <div>
+     <div class="eyebrow">Historia de la computación · Siglo XIX</div>
+
+
+     <h1>
+       La Máquina<br>
+       <span>Analítica</span>
+     </h1>
+
+
+     <p class="hero-description">
+       El proyecto de una máquina que imaginó, mucho antes de las computadoras modernas,
+       cómo una máquina podía calcular, almacenar información y seguir instrucciones.
+     </p>
+
+
+     <div class="date">
+       Charles Babbage · 1837
+     </div>
+   </div>
+
+
+   <!--
+     AQUÍ PUEDES CAMBIAR LA IMAGEN.
+     Reemplaza el enlace de abajo por la URL de una imagen
+     de la Máquina Analítica.
+   -->
+
+
+   <div class="hero-image">
+     <img
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Babbage_Difference_Engine_%28Rankin%29.jpg/800px-Babbage_Difference_Engine_%28Rankin%29.jpg"
+       alt="Representación de una máquina de Babbage">
+   </div>
+
+
+ </header>
+
+
+
+
+ <!-- ¿QUÉ FUE? -->
+
+
+ <section class="what" id="historia">
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <div class="section-label">01 · El comienzo</div>
+
+
+       <h2>
+         Una idea demasiado
+         <em>avanzada</em> para su época
+       </h2>
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La Máquina Analítica fue un proyecto de computadora mecánica diseñado
+         por el inventor inglés <strong>Charles Babbage</strong> a partir de 1837.
+         Aunque nunca llegó a construirse completamente, su diseño anticipó
+         muchas de las características de las computadoras actuales.
+       </p>
+
+
+       <div class="quote">
+         Una máquina capaz no solo de calcular, sino de seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- COMPONENTES -->
+
+
+ <section id="componentes">
+
+
+   <div class="section-label">02 · La máquina</div>
+
+
+   <h2>
+     Cuatro piezas para una
+     <em>revolución</em>
+   </h2>
+
+
+   <p class="intro">
+     Babbage imaginó una máquina digital, mecánica, automática y de propósito
+     general. Su estructura tenía elementos que recuerdan claramente a los
+     componentes de una computadora moderna.
+   </p>
+
+
+
+
+   <div class="components">
+
+
+     <div class="card">
+       <div class="icon">⚙</div>
+       <h3>El molino</h3>
+       <p>
+         Era la unidad encargada de realizar los cálculos.
+         Puede compararse con la CPU de una computadora moderna.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▦</div>
+       <h3>La memoria</h3>
+       <p>
+         Almacenaba los números y datos que la máquina necesitaba
+         antes y durante el procesamiento.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▤</div>
+       <h3>El lector</h3>
+       <p>
+         Permitía introducir datos e instrucciones mediante
+         tarjetas perforadas.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▣</div>
+       <h3>La impresora</h3>
+       <p>
+         Era el dispositivo de salida encargado de registrar
+         los resultados obtenidos por la máquina.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- CRONOLOGÍA -->
+
+
+ <section class="timeline" id="timeline">
+
+
+   <div class="section-label">03 · Una historia en el tiempo</div>
+
+
+   <h2>
+     De una máquina de cálculo
+     a una <em>computadora</em>
+   </h2>
+
+
+   <div class="timeline-container">
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1833</div>
+       <h3>Una nueva idea</h3>
+       <p>
+         Mientras trabajaba en la Máquina Diferencial, Babbage comenzó
+         a imaginar una máquina mucho más ambiciosa y general.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1837</div>
+       <h3>La Máquina Analítica</h3>
+       <p>
+         Babbage presenta el diseño de una máquina mecánica de propósito
+         general capaz de seguir instrucciones.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1843</div>
+       <h3>Ada Lovelace</h3>
+       <p>
+         Ada Lovelace escribe sus notas sobre la máquina y explica cómo
+         podría utilizarse para calcular los números de Bernoulli.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1871</div>
+       <h3>El final de Babbage</h3>
+       <p>
+         Charles Babbage muere sin haber conseguido completar la
+         Máquina Analítica.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- TARJETAS PERFORADAS -->
+
+
+ <section class="cards-section">
+
+
+   <div class="section-label">04 · Programación</div>
+
+
+   <h2>
+     Antes del código,
+     <em>las tarjetas</em>
+   </h2>
+
+
+   <p class="intro" style="margin: auto;">
+     La máquina utilizaría tarjetas perforadas inspiradas en el sistema
+     desarrollado para los telares de Joseph-Marie Jacquard.
+     Estas tarjetas podían contener tanto datos como instrucciones.
+   </p>
+
+
+   <div class="punched-card">
+
+
+     <div class="holes">
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+     </div>
+
+
+     <p>
+       Datos + instrucciones = una máquina programable.
+     </p>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- ADA LOVELACE -->
+
+
+ <section id="ada">
+
+
+   <div class="ada">
+
+
+     <div class="ada-image">
+
+
+       <!--
+         Reemplaza esta imagen por un retrato de Ada Lovelace.
+       -->
+
+
+       <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+         alt="Retrato de Ada Lovelace">
+
+
+     </div>
+
+
+     <div>
+
+
+       <div class="section-label">05 · Ada Lovelace</div>
+
+
+       <h2>
+         La mujer que vio
+         el <em>potencial</em>
+       </h2>
+
+
+       <p class="intro">
+
+
+         En 1843, la matemática inglesa <strong>Ada Lovelace</strong>
+         escribió una serie de notas sobre la Máquina Analítica.
+         En ellas explicó cómo podía utilizarse para seguir un programa
+         y realizar cálculos complejos.
+
+
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+
+
+         Entre sus aportes se encuentra un algoritmo para calcular
+         los números de Bernoulli. Por este trabajo, Ada Lovelace
+         es considerada por muchos como la <strong>primera programadora
+         de computadoras</strong>.
+
+
+       </p>
+
+
+       <div class="highlight">
+         La máquina podía hacer mucho más que calcular números:
+         podía seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- PROGRAMACIÓN -->
+
+
+ <section class="what">
+
+
+   <div class="section-label">06 · Una idea revolucionaria</div>
+
+
+   <h2>
+     Una máquina que podía
+     <em>tomar decisiones</em>
+   </h2>
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <p class="intro">
+         Una de las características más sorprendentes del diseño era
+         la posibilidad de ejecutar instrucciones en un orden diferente
+         al estrictamente secuencial.
+       </p>
+     </div>
+
+
+     <div>
+       <p style="color: var(--brown-light);">
+         La llamada <strong>ramificación condicional</strong> permitía
+         que la máquina cambiara de instrucción dependiendo del valor
+         de determinados datos. Esta idea es fundamental en la
+         programación moderna y estaba extraordinariamente adelantada
+         para el siglo XIX.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- POR QUÉ NO SE CONSTRUYÓ -->
+
+
+ <section>
+
+
+   <div class="two-columns">
+
+
+     <div>
+
+
+       <div class="section-label">07 · El obstáculo</div>
+
+
+       <h2>
+         El problema no era
+         la <em>idea</em>
+       </h2>
+
+
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La enorme complejidad de la Máquina Analítica hizo que su
+         construcción fuera extremadamente difícil con la tecnología
+         disponible en el siglo XIX.
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+         Además, Babbage tuvo dificultades para conseguir financiación
+         y apoyo gubernamental. El fracaso de su proyecto anterior,
+         la Máquina Diferencial, también había reducido el entusiasmo
+         por financiar una nueva máquina todavía más ambiciosa.
+       </p>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- LEGADO -->
+
+
+ <section class="legacy" id="legado">
+
+
+   <div class="section-label">08 · El legado</div>
+
+
+   <h2>
+     Una máquina que nunca terminó,
+     pero que <em>cambió la historia</em>
+   </h2>
+
+
+   <p>
+     Aunque la Máquina Analítica nunca fue completada durante la vida
+     de Babbage, su diseño contenía muchos de los principios que
+     posteriormente formarían parte de las computadoras modernas.
+   </p>
+
+
+   <div class="legacy-words">
+
+
+     <span>Memoria</span>
+     <span>Procesamiento</span>
+     <span>Programación</span>
+     <span>Datos</span>
+     <span>Instrucciones</span>
+     <span>Entrada y salida</span>
+     <span>Decisiones</span>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- FOOTER -->
+
+
+ <footer>
+
+
+   La Máquina Analítica · Charles Babbage · 1837
+
+
+ </footer>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- TIPOGRAFÍAS -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+
+
+   /* =========================
+      COLORES
+   ========================= */
+
+
+   :root {
+     --beige: #F7F1EB;
+     --beige-dark: #E9DDD2;
+     --white: #FFFDF9;
+     --pink: #E8CBD0;
+     --pink-dark: #C99CA6;
+     --pink-light: #F3DFE2;
+     --brown: #514844;
+     --brown-light: #796D67;
+     --line: #DFD1C8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+
+
+   /* =========================
+      MENÚ
+   ========================= */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     background: rgba(255, 253, 249, 0.94);
+     backdrop-filter: blur(10px);
+
+
+     border-bottom: 1px solid var(--line);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+
+
+   /* =========================
+      PORTADA
+   ========================= */
+
+
+   .hero {
+     min-height: 100vh;
+
+
+     padding: 150px 8% 80px;
+
+
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+
+
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+
+
+     width: 420px;
+     height: 420px;
+
+
+     background: var(--pink-light);
+
+
+     border-radius: 50%;
+
+
+     position: absolute;
+     right: -150px;
+     top: 100px;
+
+
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(65px, 9vw, 120px);
+
+
+     line-height: 0.85;
+
+
+     font-weight: 600;
+
+
+     letter-spacing: -3px;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+
+
+     font-size: 17px;
+
+
+     color: var(--brown-light);
+
+
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+
+
+     padding: 9px 18px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 30px;
+
+
+     font-size: 13px;
+   }
+
+
+
+
+   /* =========================
+      IMAGEN PRINCIPAL
+   ========================= */
+
+
+   .hero-image {
+     height: 560px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 5px;
+
+
+     padding: 15px;
+
+
+     transform: rotate(2deg);
+
+
+     box-shadow:
+       0 20px 50px rgba(85, 67, 58, 0.10);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+
+
+     object-fit: cover;
+
+
+     border-radius: 2px;
+
+
+     filter: sepia(10%) saturate(80%);
+   }
+
+
+
+
+   /* =========================
+      SECCIONES
+   ========================= */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+
+
+     text-transform: uppercase;
+
+
+     letter-spacing: 3px;
+
+
+     font-size: 11px;
+
+
+     margin-bottom: 10px;
+
+
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(45px, 6vw, 75px);
+
+
+     line-height: 1;
+
+
+     font-weight: 600;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+
+
+     font-size: 18px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      INTRODUCCIÓN
+   ========================= */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+
+
+     grid-template-columns: 1fr 1fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+
+
+     padding: 25px 30px;
+
+
+     margin-top: 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 22px;
+
+
+     font-style: italic;
+
+
+     background: var(--beige);
+   }
+
+
+
+
+   /* =========================
+      COMPONENTES
+   ========================= */
+
+
+   .components {
+     display: grid;
+
+
+     grid-template-columns: repeat(4, 1fr);
+
+
+     gap: 20px;
+
+
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+
+
+     padding: 35px 25px;
+
+
+     border: 1px solid var(--line);
+
+
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+
+
+     box-shadow:
+       0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-light);
+
+
+     display: flex;
+
+
+     justify-content: center;
+
+
+     align-items: center;
+
+
+     font-size: 24px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 28px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      LÍNEA DEL TIEMPO
+   ========================= */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+
+
+     max-width: 950px;
+
+
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+
+
+     position: absolute;
+
+
+     left: 50%;
+
+
+     top: 0;
+
+
+     bottom: 0;
+
+
+     width: 1px;
+
+
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+
+
+     padding: 0 45px 60px;
+
+
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+
+
+     width: 13px;
+     height: 13px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-dark);
+
+
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 42px;
+
+
+     color: var(--pink-dark);
+
+
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 20px;
+
+
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+
+
+     font-size: 14px;
+   }
+
+
+
+
+   /* =========================
+      TARJETAS PERFORADAS
+   ========================= */
+
+
+   .cards-section {
+     background: var(--white);
+
+
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+
+
+     margin: 50px auto 0;
+
+
+     background: #EFE4DB;
+
+
+     padding: 30px;
+
+
+     box-shadow:
+       0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+
+
+     grid-template-columns: repeat(20, 1fr);
+
+
+     gap: 8px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+
+
+     background: var(--brown);
+
+
+     border-radius: 50%;
+
+
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 25px;
+   }
+
+
+
+
+   /* =========================
+      ADA LOVELACE
+   ========================= */
+
+
+   .ada {
+     display: grid;
+
+
+     grid-template-columns: 0.8fr 1.2fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .ada-box {
+     height: 450px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 15px;
+
+
+     border: 1px solid var(--line);
+
+
+     display: flex;
+
+
+     align-items: center;
+
+
+     justify-content: center;
+   }
+
+
+   .ada-box div {
+     text-align: center;
+
+
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 38px;
+
+
+     color: var(--pink-dark);
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 25px 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-style: italic;
+
+
+     font-size: 20px;
+   }
+
+
+
+
+   /* =========================
+      PROGRAMACIÓN
+   ========================= */
+
+
+   .programming {
+     background: var(--white);
+   }
+
+
+   .program-box {
+     margin-top: 45px;
+
+
+     display: grid;
+
+
+     grid-template-columns: repeat(3, 1fr);
+
+
+     gap: 20px;
+   }
+
+
+   .program-card {
+     padding: 30px;
+
+
+     background: var(--beige);
+
+
+     border: 1px solid var(--line);
+   }
+
+
+   .program-card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 30px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .program-card p {
+     font-size: 14px
+ 14px
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- Tipografías -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+   :root {
+     --beige: #f7f1eb;
+     --beige-dark: #e9ddd2;
+     --white: #fffdf9;
+     --pink: #e8cbd0;
+     --pink-dark: #c99ca6;
+     --pink-light: #f3dfe2;
+     --brown: #514844;
+     --brown-light: #796d67;
+     --line: #dfd1c8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+   /* ---------------- NAVEGACIÓN ---------------- */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: rgba(255, 253, 249, 0.92);
+     backdrop-filter: blur(10px);
+     border-bottom: 1px solid rgba(223, 209, 200, 0.6);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+   /* ---------------- PORTADA ---------------- */
+
+
+   .hero {
+     min-height: 100vh;
+     padding: 150px 8% 80px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+     width: 420px;
+     height: 420px;
+     background: var(--pink-light);
+     border-radius: 50%;
+     position: absolute;
+     right: -150px;
+     top: 100px;
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(65px, 9vw, 120px);
+     line-height: 0.85;
+     font-weight: 600;
+     letter-spacing: -3px;
+     margin-bottom: 30px;
+   }
+
+
+   .hero h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+     font-size: 17px;
+     color: var(--brown-light);
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+     padding: 9px 18px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* IMAGEN PRINCIPAL */
+
+
+   .hero-image {
+     height: 560px;
+     background: var(--white);
+     border: 1px solid var(--line);
+     border-radius: 5px;
+     padding: 15px;
+     transform: rotate(2deg);
+     box-shadow: 0 20px 50px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: sepia(12%);
+     border-radius: 2px;
+   }
+
+
+   /* ---------------- SECCIONES ---------------- */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 11px;
+     margin-bottom: 10px;
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: clamp(45px, 6vw, 75px);
+     line-height: 1;
+     font-weight: 600;
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+     font-size: 18px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- QUÉ FUE ---------------- */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+     padding: 25px 30px;
+     margin-top: 30px;
+     font-family: "Playfair Display", serif;
+     font-size: 22px;
+     font-style: italic;
+     background: var(--beige);
+   }
+
+
+   /* ---------------- COMPONENTES ---------------- */
+
+
+   .components {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+     padding: 35px 25px;
+     border: 1px solid var(--line);
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+     border-radius: 50%;
+     background: var(--pink-light);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 24px;
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 28px;
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+     color: var(--brown-light);
+   }
+
+
+   /* ---------------- LÍNEA DEL TIEMPO ---------------- */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+     max-width: 950px;
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+     position: absolute;
+     left: 50%;
+     top: 0;
+     bottom: 0;
+     width: 1px;
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+     padding: 0 45px 60px;
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+     width: 13px;
+     height: 13px;
+     border-radius: 50%;
+     background: var(--pink-dark);
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 42px;
+     color: var(--pink-dark);
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+     font-size: 20px;
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+     font-size: 14px;
+   }
+
+
+   /* ---------------- TARJETAS PERFORADAS ---------------- */
+
+
+   .cards-section {
+     background: var(--white);
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+     margin: 50px auto 0;
+     background: #efe4db;
+     padding: 30px;
+     position: relative;
+     box-shadow: 0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+     grid-template-columns: repeat(20, 1fr);
+     gap: 8px;
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+     background: var(--brown);
+     border-radius: 50%;
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+   }
+
+
+   /* ---------------- ADA ---------------- */
+
+
+   .ada {
+     display: grid;
+     grid-template-columns: 0.8fr 1.2fr;
+     gap: 70px;
+     align-items: center;
+   }
+
+
+   .ada-image {
+     height: 500px;
+     background: var(--pink-light);
+     padding: 15px;
+     border: 1px solid var(--line);
+   }
+
+
+   .ada-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+     background: var(--pink-light);
+     padding: 25px 30px;
+     font-family: "Playfair Display", serif;
+     font-style: italic;
+     font-size: 20px;
+   }
+
+
+   /* ---------------- LEGADO ---------------- */
+
+
+   .legacy {
+     background: var(--brown);
+     color: var(--white);
+     text-align: center;
+   }
+
+
+   .legacy .section-label {
+     color: var(--pink);
+   }
+
+
+   .legacy h2 {
+     max-width: 850px;
+     margin: auto auto 30px;
+   }
+
+
+   .legacy h2 em {
+     color: var(--pink);
+   }
+
+
+   .legacy p {
+     max-width: 750px;
+     margin: auto;
+     color: #ddd1cb;
+   }
+
+
+   .legacy-words {
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+     flex-wrap: wrap;
+     margin-top: 40px;
+   }
+
+
+   .legacy-words span {
+     padding: 10px 20px;
+     border: 1px solid #806f67;
+     border-radius: 30px;
+     font-size: 13px;
+   }
+
+
+   /* ---------------- FOOTER ---------------- */
+
+
+   footer {
+     background: var(--brown);
+     border-top: 1px solid #6b5d56;
+     color: #cfc2bc;
+     text-align: center;
+     padding: 30px;
+     font-size: 12px;
+   }
+
+
+   /* ---------------- RESPONSIVE ---------------- */
+
+
+   @media (max-width: 850px) {
+
+
+     nav {
+       padding: 15px 5%;
+     }
+
+
+     nav .links {
+       display: none;
+     }
+
+
+     .hero {
+       grid-template-columns: 1fr;
+       padding: 130px 7% 70px;
+     }
+
+
+     .hero-image {
+       height: 400px;
+     }
+
+
+     .two-columns,
+     .ada {
+       grid-template-columns: 1fr;
+       gap: 40px;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr 1fr;
+     }
+
+
+     .timeline-container::before {
+       left: 7px;
+     }
+
+
+     .timeline-item,
+     .timeline-item:nth-child(even) {
+       width: 100%;
+       margin-left: 0;
+       padding-left: 40px;
+     }
+
+
+     .timeline-item:nth-child(odd) .timeline-dot,
+     .timeline-item:nth-child(even) .timeline-dot {
+       left: 1px;
+       right: auto;
+     }
+   }
+
+
+   @media (max-width: 550px) {
+     section {
+       padding: 80px 6%;
+     }
+
+
+     .components {
+       grid-template-columns: 1fr;
+     }
+
+
+     h1 {
+       font-size: 65px;
+     }
+
+
+     .hero-image {
+       height: 330px;
+     }
+   }
+ </style>
+</head>
+
+
+<body>
+
+
+ <!-- NAVEGACIÓN -->
+
+
+ <nav>
+   <div class="logo">Máquina Analítica</div>
+
+
+   <div class="links">
+     <a href="#historia">Historia</a>
+     <a href="#componentes">Componentes</a>
+     <a href="#timeline">Cronología</a>
+     <a href="#ada">Ada Lovelace</a>
+     <a href="#legado">Legado</a>
+   </div>
+ </nav>
+
+
+
+
+ <!-- PORTADA -->
+
+
+ <header class="hero">
+
+
+   <div>
+     <div class="eyebrow">Historia de la computación · Siglo XIX</div>
+
+
+     <h1>
+       La Máquina<br>
+       <span>Analítica</span>
+     </h1>
+
+
+     <p class="hero-description">
+       El proyecto de una máquina que imaginó, mucho antes de las computadoras modernas,
+       cómo una máquina podía calcular, almacenar información y seguir instrucciones.
+     </p>
+
+
+     <div class="date">
+       Charles Babbage · 1837
+     </div>
+   </div>
+
+
+   <!--
+     AQUÍ PUEDES CAMBIAR LA IMAGEN.
+     Reemplaza el enlace de abajo por la URL de una imagen
+     de la Máquina Analítica.
+   -->
+
+
+   <div class="hero-image">
+     <img
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Babbage_Difference_Engine_%28Rankin%29.jpg/800px-Babbage_Difference_Engine_%28Rankin%29.jpg"
+       alt="Representación de una máquina de Babbage">
+   </div>
+
+
+ </header>
+
+
+
+
+ <!-- ¿QUÉ FUE? -->
+
+
+ <section class="what" id="historia">
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <div class="section-label">01 · El comienzo</div>
+
+
+       <h2>
+         Una idea demasiado
+         <em>avanzada</em> para su época
+       </h2>
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La Máquina Analítica fue un proyecto de computadora mecánica diseñado
+         por el inventor inglés <strong>Charles Babbage</strong> a partir de 1837.
+         Aunque nunca llegó a construirse completamente, su diseño anticipó
+         muchas de las características de las computadoras actuales.
+       </p>
+
+
+       <div class="quote">
+         Una máquina capaz no solo de calcular, sino de seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- COMPONENTES -->
+
+
+ <section id="componentes">
+
+
+   <div class="section-label">02 · La máquina</div>
+
+
+   <h2>
+     Cuatro piezas para una
+     <em>revolución</em>
+   </h2>
+
+
+   <p class="intro">
+     Babbage imaginó una máquina digital, mecánica, automática y de propósito
+     general. Su estructura tenía elementos que recuerdan claramente a los
+     componentes de una computadora moderna.
+   </p>
+
+
+
+
+   <div class="components">
+
+
+     <div class="card">
+       <div class="icon">⚙</div>
+       <h3>El molino</h3>
+       <p>
+         Era la unidad encargada de realizar los cálculos.
+         Puede compararse con la CPU de una computadora moderna.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▦</div>
+       <h3>La memoria</h3>
+       <p>
+         Almacenaba los números y datos que la máquina necesitaba
+         antes y durante el procesamiento.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▤</div>
+       <h3>El lector</h3>
+       <p>
+         Permitía introducir datos e instrucciones mediante
+         tarjetas perforadas.
+       </p>
+     </div>
+
+
+     <div class="card">
+       <div class="icon">▣</div>
+       <h3>La impresora</h3>
+       <p>
+         Era el dispositivo de salida encargado de registrar
+         los resultados obtenidos por la máquina.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- CRONOLOGÍA -->
+
+
+ <section class="timeline" id="timeline">
+
+
+   <div class="section-label">03 · Una historia en el tiempo</div>
+
+
+   <h2>
+     De una máquina de cálculo
+     a una <em>computadora</em>
+   </h2>
+
+
+   <div class="timeline-container">
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1833</div>
+       <h3>Una nueva idea</h3>
+       <p>
+         Mientras trabajaba en la Máquina Diferencial, Babbage comenzó
+         a imaginar una máquina mucho más ambiciosa y general.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1837</div>
+       <h3>La Máquina Analítica</h3>
+       <p>
+         Babbage presenta el diseño de una máquina mecánica de propósito
+         general capaz de seguir instrucciones.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1843</div>
+       <h3>Ada Lovelace</h3>
+       <p>
+         Ada Lovelace escribe sus notas sobre la máquina y explica cómo
+         podría utilizarse para calcular los números de Bernoulli.
+       </p>
+     </div>
+
+
+     <div class="timeline-item">
+       <div class="timeline-dot"></div>
+       <div class="year">1871</div>
+       <h3>El final de Babbage</h3>
+       <p>
+         Charles Babbage muere sin haber conseguido completar la
+         Máquina Analítica.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- TARJETAS PERFORADAS -->
+
+
+ <section class="cards-section">
+
+
+   <div class="section-label">04 · Programación</div>
+
+
+   <h2>
+     Antes del código,
+     <em>las tarjetas</em>
+   </h2>
+
+
+   <p class="intro" style="margin: auto;">
+     La máquina utilizaría tarjetas perforadas inspiradas en el sistema
+     desarrollado para los telares de Joseph-Marie Jacquard.
+     Estas tarjetas podían contener tanto datos como instrucciones.
+   </p>
+
+
+   <div class="punched-card">
+
+
+     <div class="holes">
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+       <span class="hole"></span>
+     </div>
+
+
+     <p>
+       Datos + instrucciones = una máquina programable.
+     </p>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- ADA LOVELACE -->
+
+
+ <section id="ada">
+
+
+   <div class="ada">
+
+
+     <div class="ada-image">
+
+
+       <!--
+         Reemplaza esta imagen por un retrato de Ada Lovelace.
+       -->
+
+
+       <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+         alt="Retrato de Ada Lovelace">
+
+
+     </div>
+
+
+     <div>
+
+
+       <div class="section-label">05 · Ada Lovelace</div>
+
+
+       <h2>
+         La mujer que vio
+         el <em>potencial</em>
+       </h2>
+
+
+       <p class="intro">
+
+
+         En 1843, la matemática inglesa <strong>Ada Lovelace</strong>
+         escribió una serie de notas sobre la Máquina Analítica.
+         En ellas explicó cómo podía utilizarse para seguir un programa
+         y realizar cálculos complejos.
+
+
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+
+
+         Entre sus aportes se encuentra un algoritmo para calcular
+         los números de Bernoulli. Por este trabajo, Ada Lovelace
+         es considerada por muchos como la <strong>primera programadora
+         de computadoras</strong>.
+
+
+       </p>
+
+
+       <div class="highlight">
+         La máquina podía hacer mucho más que calcular números:
+         podía seguir instrucciones.
+       </div>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- PROGRAMACIÓN -->
+
+
+ <section class="what">
+
+
+   <div class="section-label">06 · Una idea revolucionaria</div>
+
+
+   <h2>
+     Una máquina que podía
+     <em>tomar decisiones</em>
+   </h2>
+
+
+   <div class="two-columns">
+
+
+     <div>
+       <p class="intro">
+         Una de las características más sorprendentes del diseño era
+         la posibilidad de ejecutar instrucciones en un orden diferente
+         al estrictamente secuencial.
+       </p>
+     </div>
+
+
+     <div>
+       <p style="color: var(--brown-light);">
+         La llamada <strong>ramificación condicional</strong> permitía
+         que la máquina cambiara de instrucción dependiendo del valor
+         de determinados datos. Esta idea es fundamental en la
+         programación moderna y estaba extraordinariamente adelantada
+         para el siglo XIX.
+       </p>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- POR QUÉ NO SE CONSTRUYÓ -->
+
+
+ <section>
+
+
+   <div class="two-columns">
+
+
+     <div>
+
+
+       <div class="section-label">07 · El obstáculo</div>
+
+
+       <h2>
+         El problema no era
+         la <em>idea</em>
+       </h2>
+
+
+     </div>
+
+
+     <div>
+
+
+       <p class="intro">
+         La enorme complejidad de la Máquina Analítica hizo que su
+         construcción fuera extremadamente difícil con la tecnología
+         disponible en el siglo XIX.
+       </p>
+
+
+       <p style="margin-top: 20px; color: var(--brown-light);">
+         Además, Babbage tuvo dificultades para conseguir financiación
+         y apoyo gubernamental. El fracaso de su proyecto anterior,
+         la Máquina Diferencial, también había reducido el entusiasmo
+         por financiar una nueva máquina todavía más ambiciosa.
+       </p>
+
+
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- LEGADO -->
+
+
+ <section class="legacy" id="legado">
+
+
+   <div class="section-label">08 · El legado</div>
+
+
+   <h2>
+     Una máquina que nunca terminó,
+     pero que <em>cambió la historia</em>
+   </h2>
+
+
+   <p>
+     Aunque la Máquina Analítica nunca fue completada durante la vida
+     de Babbage, su diseño contenía muchos de los principios que
+     posteriormente formarían parte de las computadoras modernas.
+   </p>
+
+
+   <div class="legacy-words">
+
+
+     <span>Memoria</span>
+     <span>Procesamiento</span>
+     <span>Programación</span>
+     <span>Datos</span>
+     <span>Instrucciones</span>
+     <span>Entrada y salida</span>
+     <span>Decisiones</span>
+
+
+   </div>
+
+
+ </section>
+
+
+
+
+ <!-- FOOTER -->
+
+
+ <footer>
+
+
+   La Máquina Analítica · Charles Babbage · 1837
+
+
+ </footer>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <title>La Máquina Analítica</title>
+
+
+ <!-- TIPOGRAFÍAS -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+ <style>
+
+
+   /* =========================
+      COLORES
+   ========================= */
+
+
+   :root {
+     --beige: #F7F1EB;
+     --beige-dark: #E9DDD2;
+     --white: #FFFDF9;
+     --pink: #E8CBD0;
+     --pink-dark: #C99CA6;
+     --pink-light: #F3DFE2;
+     --brown: #514844;
+     --brown-light: #796D67;
+     --line: #DFD1C8;
+   }
+
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+
+   body {
+     background: var(--beige);
+     color: var(--brown);
+     font-family: "DM Sans", sans-serif;
+     line-height: 1.7;
+   }
+
+
+
+
+   /* =========================
+      MENÚ
+   ========================= */
+
+
+   nav {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 18px 7%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     background: rgba(255, 253, 249, 0.94);
+     backdrop-filter: blur(10px);
+
+
+     border-bottom: 1px solid var(--line);
+   }
+
+
+   .logo {
+     font-family: "Cormorant Garamond", serif;
+     font-size: 25px;
+     font-weight: 600;
+     letter-spacing: 1px;
+   }
+
+
+   nav a {
+     color: var(--brown);
+     text-decoration: none;
+     margin-left: 25px;
+     font-size: 13px;
+     transition: 0.3s;
+   }
+
+
+   nav a:hover {
+     color: var(--pink-dark);
+   }
+
+
+
+
+   /* =========================
+      PORTADA
+   ========================= */
+
+
+   .hero {
+     min-height: 100vh;
+
+
+     padding: 150px 8% 80px;
+
+
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 70px;
+     align-items: center;
+
+
+     position: relative;
+     overflow: hidden;
+   }
+
+
+   .hero::before {
+     content: "";
+
+
+     width: 420px;
+     height: 420px;
+
+
+     background: var(--pink-light);
+
+
+     border-radius: 50%;
+
+
+     position: absolute;
+     right: -150px;
+     top: 100px;
+
+
+     z-index: -1;
+   }
+
+
+   .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 11px;
+     color: var(--pink-dark);
+     font-weight: 600;
+     margin-bottom: 15px;
+   }
+
+
+   h1 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(65px, 9vw, 120px);
+
+
+     line-height: 0.85;
+
+
+     font-weight: 600;
+
+
+     letter-spacing: -3px;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h1 span {
+     color: var(--pink-dark);
+     font-style: italic;
+   }
+
+
+   .hero-description {
+     max-width: 530px;
+
+
+     font-size: 17px;
+
+
+     color: var(--brown-light);
+
+
+     margin-bottom: 30px;
+   }
+
+
+   .date {
+     display: inline-block;
+
+
+     padding: 9px 18px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 30px;
+
+
+     font-size: 13px;
+   }
+
+
+
+
+   /* =========================
+      IMAGEN PRINCIPAL
+   ========================= */
+
+
+   .hero-image {
+     height: 560px;
+
+
+     background: var(--white);
+
+
+     border: 1px solid var(--line);
+
+
+     border-radius: 5px;
+
+
+     padding: 15px;
+
+
+     transform: rotate(2deg);
+
+
+     box-shadow:
+       0 20px 50px rgba(85, 67, 58, 0.10);
+   }
+
+
+   .hero-image img {
+     width: 100%;
+     height: 100%;
+
+
+     object-fit: cover;
+
+
+     border-radius: 2px;
+
+
+     filter: sepia(10%) saturate(80%);
+   }
+
+
+
+
+   /* =========================
+      SECCIONES
+   ========================= */
+
+
+   section {
+     padding: 110px 8%;
+   }
+
+
+   .section-label {
+     color: var(--pink-dark);
+
+
+     text-transform: uppercase;
+
+
+     letter-spacing: 3px;
+
+
+     font-size: 11px;
+
+
+     margin-bottom: 10px;
+
+
+     font-weight: 600;
+   }
+
+
+   h2 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: clamp(45px, 6vw, 75px);
+
+
+     line-height: 1;
+
+
+     font-weight: 600;
+
+
+     margin-bottom: 30px;
+   }
+
+
+   h2 em {
+     color: var(--pink-dark);
+     font-weight: 500;
+   }
+
+
+   .intro {
+     max-width: 800px;
+
+
+     font-size: 18px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      INTRODUCCIÓN
+   ========================= */
+
+
+   .what {
+     background: var(--white);
+   }
+
+
+   .two-columns {
+     display: grid;
+
+
+     grid-template-columns: 1fr 1fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .quote {
+     border-left: 3px solid var(--pink);
+
+
+     padding: 25px 30px;
+
+
+     margin-top: 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 22px;
+
+
+     font-style: italic;
+
+
+     background: var(--beige);
+   }
+
+
+
+
+   /* =========================
+      COMPONENTES
+   ========================= */
+
+
+   .components {
+     display: grid;
+
+
+     grid-template-columns: repeat(4, 1fr);
+
+
+     gap: 20px;
+
+
+     margin-top: 50px;
+   }
+
+
+   .card {
+     background: var(--white);
+
+
+     padding: 35px 25px;
+
+
+     border: 1px solid var(--line);
+
+
+     transition: 0.3s;
+   }
+
+
+   .card:hover {
+     transform: translateY(-8px);
+
+
+     box-shadow:
+       0 15px 35px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .icon {
+     width: 55px;
+     height: 55px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-light);
+
+
+     display: flex;
+
+
+     justify-content: center;
+
+
+     align-items: center;
+
+
+     font-size: 24px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 28px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .card p {
+     font-size: 14px;
+
+
+     color: var(--brown-light);
+   }
+
+
+
+
+   /* =========================
+      LÍNEA DEL TIEMPO
+   ========================= */
+
+
+   .timeline {
+     background: var(--beige);
+   }
+
+
+   .timeline-container {
+     position: relative;
+
+
+     max-width: 950px;
+
+
+     margin: 60px auto 0;
+   }
+
+
+   .timeline-container::before {
+     content: "";
+
+
+     position: absolute;
+
+
+     left: 50%;
+
+
+     top: 0;
+
+
+     bottom: 0;
+
+
+     width: 1px;
+
+
+     background: var(--pink-dark);
+   }
+
+
+   .timeline-item {
+     width: 50%;
+
+
+     padding: 0 45px 60px;
+
+
+     position: relative;
+   }
+
+
+   .timeline-item:nth-child(even) {
+     margin-left: 50%;
+   }
+
+
+   .timeline-dot {
+     position: absolute;
+
+
+     width: 13px;
+     height: 13px;
+
+
+     border-radius: 50%;
+
+
+     background: var(--pink-dark);
+
+
+     top: 5px;
+   }
+
+
+   .timeline-item:nth-child(odd) .timeline-dot {
+     right: -7px;
+   }
+
+
+   .timeline-item:nth-child(even) .timeline-dot {
+     left: -7px;
+   }
+
+
+   .year {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 42px;
+
+
+     color: var(--pink-dark);
+
+
+     font-weight: 600;
+   }
+
+
+   .timeline-item h3 {
+     font-family: "Playfair Display", serif;
+
+
+     font-size: 20px;
+
+
+     margin-bottom: 8px;
+   }
+
+
+   .timeline-item p {
+     color: var(--brown-light);
+
+
+     font-size: 14px;
+   }
+
+
+
+
+   /* =========================
+      TARJETAS PERFORADAS
+   ========================= */
+
+
+   .cards-section {
+     background: var(--white);
+
+
+     text-align: center;
+   }
+
+
+   .punched-card {
+     max-width: 800px;
+
+
+     margin: 50px auto 0;
+
+
+     background: #EFE4DB;
+
+
+     padding: 30px;
+
+
+     box-shadow:
+       0 20px 40px rgba(85, 67, 58, 0.08);
+   }
+
+
+   .holes {
+     display: grid;
+
+
+     grid-template-columns: repeat(20, 1fr);
+
+
+     gap: 8px;
+
+
+     margin-bottom: 20px;
+   }
+
+
+   .hole {
+     height: 8px;
+
+
+     background: var(--brown);
+
+
+     border-radius: 50%;
+
+
+     opacity: 0.55;
+   }
+
+
+   .punched-card p {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 25px;
+   }
+
+
+
+
+   /* =========================
+      ADA LOVELACE
+   ========================= */
+
+
+   .ada {
+     display: grid;
+
+
+     grid-template-columns: 0.8fr 1.2fr;
+
+
+     gap: 70px;
+
+
+     align-items: center;
+   }
+
+
+   .ada-box {
+     height: 450px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 15px;
+
+
+     border: 1px solid var(--line);
+
+
+     display: flex;
+
+
+     align-items: center;
+
+
+     justify-content: center;
+   }
+
+
+   .ada-box div {
+     text-align: center;
+
+
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 38px;
+
+
+     color: var(--pink-dark);
+   }
+
+
+   .highlight {
+     margin-top: 30px;
+
+
+     background: var(--pink-light);
+
+
+     padding: 25px 30px;
+
+
+     font-family: "Playfair Display", serif;
+
+
+     font-style: italic;
+
+
+     font-size: 20px;
+   }
+
+
+
+
+   /* =========================
+      PROGRAMACIÓN
+   ========================= */
+
+
+   .programming {
+     background: var(--white);
+   }
+
+
+   .program-box {
+     margin-top: 45px;
+
+
+     display: grid;
+
+
+     grid-template-columns: repeat(3, 1fr);
+
+
+     gap: 20px;
+   }
+
+
+   .program-card {
+     padding: 30px;
+
+
+     background: var(--beige);
+
+
+     border: 1px solid var(--line);
+   }
+
+
+   .program-card h3 {
+     font-family: "Cormorant Garamond", serif;
+
+
+     font-size: 30px;
+
+
+     margin-bottom: 10px;
+   }
+
+
+   .program-card p {
+     font-size: 14px
+
+
+
+
+
+
+
+
