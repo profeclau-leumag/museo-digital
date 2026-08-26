@@ -57,103 +57,105 @@
       </article>
     </section>
 
-    <!-- Sección Mecanismo e Interactividad CSS -->
-    <section id="mecanismo" class="section">
-      <h2>Conceptos Computacionales y Simulación Interactiva</h2>
-      <p>La Pascalina introdujo el <strong>mecanismo de acarreo automático (Carry Operation)</strong> a través del <i>Sautoir</i>, el cual transfiere el movimiento a la rueda contigua al completar una vuelta. Este principio equivale al bit de acarreo en una ALU y a los registros de memoria modernos.</p>
+<!-- Sección 2: Mecanismo e Interactividad CSS con Acarreo Simulado -->
+<section id="mecanismo" class="section">
+  <h2>2. Conceptos Computacionales y Simulación Interactiva</h2>
+  <p>La Pascalina introdujo el <strong>mecanismo de acarreo automático (Carry Operation)</strong> a través del <i>Sautoir</i>, el cual transfiere el movimiento a la rueda contigua al completar una vuelta completa (de 9 a 0). Este principio equivale al bit de acarreo en una ALU y a los registros de memoria modernos.</p>
 
-      <p><strong>Simulador Mecánico (Haz clic en las ruedas para girar el dígito):</strong></p>
+  <p><strong>Simulador Mecánico:</strong> Haz clic sobre la rueda para avanzar dígitos. Al pasar de 9 a 0, verás cómo el acarreo transfiere el impulso al disco superior.</p>
 
-      <div class="pascalina-widget">
-        
-        <!-- Disco 1: Centenas -->
-        <div class="dial-container">
-          <small>Centenas</small>
-          <div class="interactive-dial">
-            <input type="radio" name="centenas" id="c0" checked>
-            <input type="radio" name="centenas" id="c1">
-            <input type="radio" name="centenas" id="c2">
-            <input type="radio" name="centenas" id="c3">
-            <input type="radio" name="centenas" id="c4">
-            <input type="radio" name="centenas" id="c5">
-            <input type="radio" name="centenas" id="c6">
-            <input type="radio" name="centenas" id="c7">
-            <input type="radio" name="centenas" id="c8">
-            <input type="radio" name="centenas" id="c9">
+  <div class="pascalina-widget">
+    
+    <!-- Disco 1: Centenas -->
+    <div class="dial-container">
+      <small>Centenas</small>
+      <div class="interactive-dial">
+        <input type="radio" name="centenas" id="c0" checked>
+        <input type="radio" name="centenas" id="c1">
+        <input type="radio" name="centenas" id="c2">
+        <input type="radio" name="centenas" id="c3">
+        <input type="radio" name="centenas" id="c4">
+        <input type="radio" name="centenas" id="c5">
+        <input type="radio" name="centenas" id="c6">
+        <input type="radio" name="centenas" id="c7">
+        <input type="radio" name="centenas" id="c8">
+        <input type="radio" name="centenas" id="c9">
 
-            <label for="c1" class="dial-btn b0">0</label>
-            <label for="c2" class="dial-btn b1">1</label>
-            <label for="c3" class="dial-btn b2">2</label>
-            <label for="c4" class="dial-btn b3">3</label>
-            <label for="c5" class="dial-btn b4">4</label>
-            <label for="c6" class="dial-btn b5">5</label>
-            <label for="c7" class="dial-btn b6">6</label>
-            <label for="c8" class="dial-btn b7">7</label>
-            <label for="c9" class="dial-btn b8">8</label>
-            <label for="c0" class="dial-btn b9">9</label>
-          </div>
-        </div>
-
-        <!-- Disco 2: Decenas -->
-        <div class="dial-container">
-          <small>Decenas</small>
-          <div class="interactive-dial">
-            <input type="radio" name="decenas" id="d0" checked>
-            <input type="radio" name="decenas" id="d1">
-            <input type="radio" name="decenas" id="d2">
-            <input type="radio" name="decenas" id="d3">
-            <input type="radio" name="decenas" id="d4">
-            <input type="radio" name="decenas" id="d5">
-            <input type="radio" name="decenas" id="d6">
-            <input type="radio" name="decenas" id="d7">
-            <input type="radio" name="decenas" id="d8">
-            <input type="radio" name="decenas" id="d9">
-
-            <label for="d1" class="dial-btn b0">0</label>
-            <label for="d2" class="dial-btn b1">1</label>
-            <label for="d3" class="dial-btn b2">2</label>
-            <label for="d4" class="dial-btn b3">3</label>
-            <label for="d5" class="dial-btn b4">4</label>
-            <label for="d6" class="dial-btn b5">5</label>
-            <label for="d7" class="dial-btn b6">6</label>
-            <label for="d8" class="dial-btn b7">7</label>
-            <label for="d9" class="dial-btn b8">8</label>
-            <label for="d0" class="dial-btn b9">9</label>
-          </div>
-        </div>
-
-        <!-- Disco 3: Unidades -->
-        <div class="dial-container">
-          <small>Unidades</small>
-          <div class="interactive-dial">
-            <input type="radio" name="unidades" id="u0" checked>
-            <input type="radio" name="unidades" id="u1">
-            <input type="radio" name="unidades" id="u2">
-            <input type="radio" name="unidades" id="u3">
-            <input type="radio" name="unidades" id="u4">
-            <input type="radio" name="unidades" id="u5">
-            <input type="radio" name="unidades" id="u6">
-            <input type="radio" name="unidades" id="u7">
-            <input type="radio" name="unidades" id="u8">
-            <input type="radio" name="unidades" id="u9">
-
-            <label for="u1" class="dial-btn b0">0</label>
-            <label for="u2" class="dial-btn b1">1</label>
-            <label for="u3" class="dial-btn b2">2</label>
-            <label for="u4" class="dial-btn b3">3</label>
-            <label for="u5" class="dial-btn b4">4</label>
-            <label for="u6" class="dial-btn b5">5</label>
-            <label for="u7" class="dial-btn b6">6</label>
-            <label for="u8" class="dial-btn b7">7</label>
-            <label for="u9" class="dial-btn b8">8</label>
-            <label for="u0" class="dial-btn b9">9</label>
-          </div>
-        </div>
-
+        <label for="c1" class="dial-btn b0">0</label>
+        <label for="c2" class="dial-btn b1">1</label>
+        <label for="c3" class="dial-btn b2">2</label>
+        <label for="c4" class="dial-btn b3">3</label>
+        <label for="c5" class="dial-btn b4">4</label>
+        <label for="c6" class="dial-btn b5">5</label>
+        <label for="c7" class="dial-btn b6">6</label>
+        <label for="c8" class="dial-btn b7">7</label>
+        <label for="c9" class="dial-btn b8">8</label>
+        <label for="c0" class="dial-btn b9">9</label>
       </div>
+    </div>
 
-      <p><i>Ejemplo:</i> Haz clic en los discos para simular la rotación de 36° que incrementa cada posición numérica.</p>
-    </section>
+    <!-- Disco 2: Decenas -->
+    <div class="dial-container">
+      <small>Decenas</small>
+      <div class="interactive-dial">
+        <input type="radio" name="decenas" id="d0" checked>
+        <input type="radio" name="decenas" id="d1">
+        <input type="radio" name="decenas" id="d2">
+        <input type="radio" name="decenas" id="d3">
+        <input type="radio" name="decenas" id="d4">
+        <input type="radio" name="decenas" id="d5">
+        <input type="radio" name="decenas" id="d6">
+        <input type="radio" name="decenas" id="d7">
+        <input type="radio" name="decenas" id="d8">
+        <input type="radio" name="decenas" id="d9">
+
+        <label for="d1" class="dial-btn b0">0</label>
+        <label for="d2" class="dial-btn b1">1</label>
+        <label for="d3" class="dial-btn b2">2</label>
+        <label for="d4" class="dial-btn b3">3</label>
+        <label for="d5" class="dial-btn b4">4</label>
+        <label for="d6" class="dial-btn b5">5</label>
+        <label for="d7" class="dial-btn b6">6</label>
+        <label for="d8" class="dial-btn b7">7</label>
+        <label for="d9" class="dial-btn b8">8</label>
+        <!-- Al pasar de 9 a 0 en decenas, transfiere el clic a la primera posición de centenas -->
+        <label for="d0" onclick="document.getElementById('c1').click();" class="dial-btn b9">9</label>
+      </div>
+    </div>
+
+    <!-- Disco 3: Unidades -->
+    <div class="dial-container">
+      <small>Unidades</small>
+      <div class="interactive-dial">
+        <input type="radio" name="unidades" id="u0" checked>
+        <input type="radio" name="unidades" id="u1">
+        <input type="radio" name="unidades" id="u2">
+        <input type="radio" name="unidades" id="u3">
+        <input type="radio" name="unidades" id="u4">
+        <input type="radio" name="unidades" id="u5">
+        <input type="radio" name="unidades" id="u6">
+        <input type="radio" name="unidades" id="u7">
+        <input type="radio" name="unidades" id="u8">
+        <input type="radio" name="unidades" id="u9">
+
+        <label for="u1" class="dial-btn b0">0</label>
+        <label for="u2" class="dial-btn b1">1</label>
+        <label for="u3" class="dial-btn b2">2</label>
+        <label for="u4" class="dial-btn b3">3</label>
+        <label for="u5" class="dial-btn b4">4</label>
+        <label for="u6" class="dial-btn b5">5</label>
+        <label for="u7" class="dial-btn b6">6</label>
+        <label for="u8" class="dial-btn b7">7</label>
+        <label for="u9" class="dial-btn b8">8</label>
+        <!-- Al llegar a 9 y volver a 0, reinicia unidades a 0 e incrementa decenas -->
+        <label for="u0" onclick="document.getElementById('d1').click();" class="dial-btn b9">9</label>
+      </div>
+    </div>
+
+  </div>
+
+  <p><i>Demostración:</i> Al pulsar repetidamente el disco de Unidades hasta llegar al dígito 9, la siguiente pulsación regresará el disco a 0 e incrementará automáticamente la rueda de Decenas a 1.</p>
+</section>
 
     
 
