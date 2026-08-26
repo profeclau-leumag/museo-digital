@@ -1,25 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root{
-  --bg:#F9B8FF;
-  --surface:#111522;
-  --surface2:#171c2c;
-  --text:#f5f7ff;
-  --muted:#a7aec2;
-  --line:rgba(255,255,255,.10);
-  --accent:#8de5b2;
-  --accent2:#9fb5ff;
-  --warm:#ffd980;
-  --shadow:0 24px 70px rgba(0,0,0,.35);
+  /* 🌿 Fondo general */
+  --bg:#F4EDE3;
+
+  /* 🤍 Tarjetas y superficies */
+  --surface:#FFF9F2;
+  --surface2:#E8DED0;
+
+  /* 📝 Letras */
+  --text:#3E4038;
+  --muted:#756F66;
+
+  /* ➖ Líneas */
+  --line:rgba(62,64,56,.14);
+
+  /* 🌿 Verde principal */
+  --accent:#7A9B76;
+
+  /* 🧡 Terracota */
+  --accent2:#D98262;
+
+  /* 🌼 Amarillo suave */
+  --warm:#E7B96A;
+
+  /* 🌑 Sombra */
+  --shadow:0 24px 70px rgba(76,65,52,.18);
 }
+
+
+/* ☀️ MODO CLARO */
 body.light{
-  --bg:#F9B8FF;
-  --surface:#ffffff;
-  --surface2:#eef2f8;
-  --text:#121722;
-  --muted:#626b7c;
-  --line:rgba(20,30,50,.11);
-  --shadow:0 24px 60px rgba(30,45,70,.12);
+  --bg:#FFF8EF;
+  --surface:#FFFFFF;
+  --surface2:#F0E5D7;
+
+  /* 📝 Letras */
+  --text:#3E4038;
+  --muted:#756F66;
+
+  /* ➖ Líneas */
+  --line:rgba(62,64,56,.12);
+
+  /* 🌑 Sombra */
+  --shadow:0 24px 60px rgba(76,65,52,.12);
+}
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
