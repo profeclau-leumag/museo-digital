@@ -1,0 +1,485 @@
+/* CONFIGURACIÓN GENERAL */
+body {
+    margin: 0;
+    background-color: #F5FAFC;
+    color: #12355B;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ENCABEZADO */
+header {
+    position: relative;
+    overflow: hidden;
+    background-color: #12355B;
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+    border-bottom: 8px solid #FFF0B3;
+    box-shadow: 0 8px 20px #B8C9CE;
+    animation: aparecer 1s;
+}
+
+/* CÍRCULOS DECORATIVOS */
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+}
+
+.circulo1 {
+    width: 220px;
+    height: 220px;
+    background-color: #FFF0B3;
+    top: -100px;
+    left: -70px;
+    animation: mover 5s infinite alternate;
+}
+
+.circulo2 {
+    width: 280px;
+    height: 280px;
+    background-color: #70D1E3;
+    right: -120px;
+    bottom: -150px;
+    animation: mover 6s infinite alternate-reverse;
+}
+
+/* TEXTOS DEL ENCABEZADO */
+.etiqueta {
+    color: #0f9bca;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header h1 {
+    color: #FFF0B3;
+    font-size: 60px;
+    margin: 15px;
+    animation: subir 1s;
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.linea {
+    width: 100px;
+    height: 5px;
+    background-color: #12355B;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+/* BOTONES */
+button {
+    background-color: #fff0b3;
+    color: #12355B;
+    border: none;
+    padding: 13px 23px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px #09243a;
+}
+
+button:hover {
+    background-color: #70D1E3;
+    transform: scale(1.08);
+}
+
+#mensaje {
+    color: #FFF0B3;
+    font-weight: bold;
+}
+
+/* CONTENIDO */
+main {
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+/* RECUADROS */
+.recuadro {
+    background-color: #1b6d89;
+    color: white;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 22px;
+    border-left: 8px solid #70D1E3;
+    box-shadow: 7px 8px 15px #B8C9CE;
+    transition: 0.4s;
+    animation: aparecer 1s;
+}
+
+.recuadro:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 12px 18px #9eb8bf;
+}
+
+.recuadro h2 {
+    color: white;
+    font-size: 28px;
+}
+
+.recuadro p {
+    line-height: 1.8;
+}
+
+.celeste {
+    background-color: #70D1E3;
+    color: #12355B;
+    border-left-color: #12355B;
+}
+
+.celeste h2 {
+    color: #12355B;
+}
+
+/* NÚMEROS */
+.numero {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF0B3;
+}
+
+/* DATO */
+.dato {
+    background-color: rgba(255,255,255,0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* PALABRAS DESTACADAS */
+.palabra {
+    background-color: #FFF0B3;
+    color: #12355B;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+}
+
+.palabra:hover {
+    background-color: #FFF0B3;
+}
+
+/* DEFINICIÓN */
+.palabra:hover::after {
+    content: attr(data-definicion);
+    position: absolute;
+    width: 240px;
+    background-color: #12355B;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border-radius: 10px;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: normal;
+    box-shadow: 5px 5px 12px #777;
+    z-index: 10;
+}
+
+.oscuro {
+    background-color: #FFF0B3;
+    color: #12355B;
+}
+
+/* LÍNEA DEL TIEMPO */
+.tiempo {
+    background-color: #E2F5F8;
+    padding: 35px;
+    margin: 45px 0;
+    border-radius: 25px;
+    box-shadow: 5px 7px 15px #c5d8dc;
+}
+
+.tiempo h2 {
+    font-size: 34px;
+}
+
+.evento {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border-left: 6px solid #1B6D89;
+    transition: 0.3s;
+}
+
+.evento:hover {
+    transform: translateX(10px);
+    background-color: #FFF0B3;
+}
+
+.año {
+    background-color: #12355b;
+    color: #FFF0B3;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* APORTE */
+
+.aporte {
+    background-color: #70d2e3;
+    padding: 40px;
+    margin: 50px 0;
+    border-radius: 25px;
+    text-align: center;
+    border: 4px solid #1c6f7e;
+    box-shadow: 10px 10px 0px #b3f4ff;
+    transition: 0.4s;
+}
+
+.aporte:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 12px 18px #9eb8bf;
+}
+
+.aporte h2 {
+    font-size: 36px;
+}
+
+.aporte p {
+    line-height: 1.8;
+}
+
+/* PASOS DEL ALGORITMO */
+.pasos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.paso {
+    background-color: #12355b;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 4px 4px 8px #A9B9BD;
+}
+
+.paso:hover {
+    background-color: #1B6D89;
+    transform: translateY(-7px);
+}
+
+.paso strong {
+    color: #FFF0B3;
+    font-size: 20px;
+}
+
+.flecha {
+    color: #1B6D89;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* TARJETAS */
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.tarjeta {
+    padding: 30px;
+    border-radius: 22px;
+    transition: 0.4s;
+    box-shadow: 6px 8px 15px #B8C9CE;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+}
+
+.tarjeta h2 {
+    font-size: 27px;
+}
+
+.tarjeta p {
+    line-height: 1.7;
+}
+
+.amarillo {
+    background-color: #FFF0B3;
+    color: #12355B;
+    border: 3px solid #70D1E3;
+}
+
+.amarillo .numero {
+    color: #1B6D89;
+}
+
+.azul {
+    background-color: #12355B;
+    color: white;
+    border: 3px solid #70D1E3;
+}
+
+/* CONCEPTOS */
+.conceptos {
+    background-color: #E2F5F8;
+    padding: 35px;
+    margin: 50px 0;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 5px 7px 15px #C5D8DC;
+}
+
+.conceptos h2 {
+    font-size: 35px;
+}
+
+.concepto {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border: 3px solid #70D1E3;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.concepto:hover {
+    background-color: #FFF0B3;
+    transform: translateY(-8px);
+    box-shadow: 6px 8px 12px #A9B9BD;
+}
+
+.icono {
+    font-size: 32px;
+}
+
+.concepto h3 {
+    color: #1B6D89;
+}
+
+/* ACTIVIDAD */
+.actividad {
+    background-color: #1B6D89;
+    color: white;
+    padding: 35px;
+    margin: 50px 0;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 7px 8px 15px #B8C9CE;
+}
+
+.actividad h2 {
+    font-size: 27px;
+}
+
+#respuesta {
+    color: #FFF0B3;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* FINAL */
+.final {
+    background-color: #12355B;
+    color: white;
+    padding: 55px 30px;
+    margin: 50px 0;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 8px 10px 18px #B8C9CE;
+}
+
+.final h2 {
+    color: #FFF0B3;
+    font-size: 40px;
+}
+
+/* FUENTES */
+.fuentes {
+    background-color: white;
+    padding: 30px;
+    border: 3px solid #70D1E3;
+    border-radius: 20px;
+    box-shadow: 5px 7px 12px #C5D8DC;
+}
+
+.fuentes h2 {
+    color: #12355B;
+}
+
+.fuentes a {
+    color: #1B6D89;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fuentes a:hover {
+    color: #12355B;
+    text-decoration: underline;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #12355B;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mover {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
