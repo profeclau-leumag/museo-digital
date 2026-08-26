@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Ábaco: Historia y Cálculo Visual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a href="../../index.html">← Volver al museo</a>
+    <span>Cuadro 03 · Pensamiento Computacional</span>
+    <div>
+      <h1 style="margin:0;">El Ábaco</h1>
+      <p style="margin:5px 0 0 0; opacity: 0.9;">Historia y Cálculo Visual</p>
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" onclick="showTab('que-es')">¿Qué es?</button>
+    <button class="tab-btn" onclick="showTab('tipos')">Tipos</button>
+    <button class="tab-btn" onclick="showTab('operaciones')">Operaciones Básicas</button>
+    <button class="tab-btn" onclick="showTab('simulador')">Simulador</button>
+  </nav>
+
+  <!-- Pestaña 1 -->
+  <div id="que-es" class="content-section active">
+    <h2>Origen e Historia</h2>
+    <p>El <strong>ábaco</strong> , considerado la primera calculadora mecánica de la historia, nació en Mesopotamia alrededor del año 2700 a. C. como una simple tabla cubierta de arena donde se trazaban líneas y se movían pequeñas piedras (llamadas calculi) para llevar la contabilidad del comercio y los impuestos. Con el paso de los siglos, esta idea evolucionó hacia las tablillas de bronce y piedra con ranuras de las civilizaciones griega y romana, hasta alcanzar su diseño más icónico hacia el siglo XII en China con el suanpan, un marco de madera con varillas y cuentas móviles dividido en dos secciones que permitía realizar operaciones matemáticas avanzadas a gran velocidad. Posteriormente, en el siglo XVI, llegó a Japón, donde fue perfeccionado en el soroban, una versión estilizada de cuatro cuentas inferiores y una superior que aún hoy se utiliza para entrenar el cálculo mental y la agilidad cognitiva.</p>
+    <ul>
+      <li><strong>Estructura básica:</strong> La estructura del ábaco consiste en un marco rectangular dividido por una barra horizontal central en dos secciones (superior e inferior), cruzado por varillas verticales que representan las posiciones decimales (unidades, decenas, centenas) sobre las cuales se deslizan las cuentas.</li>
+      
+      <li><strong>Funcionamiento:</strong> Para utilizarlo, se desplazan las cuentas hacia la barra central: en el estado inicial (cero) todas están alejadas de ella, mientras que cada cuenta inferior movida hacia la barra suma una unidad y cada cuenta superior suma cinco unidades en la columna correspondiente.</li>
+    </ul>
+  </div>
+
+  <!-- Pestaña 2 -->
+  <div id="tipos" class="content-section">
+    <h2>Variantes del Ábaco</h2>
+    <p>A lo largo de los siglos, diferentes culturas adaptaron el diseño:</p>
+    <ul>
+      <li><strong>Suanpan (China):</strong> Utiliza 2 cuentas en la parte superior y 5 en la inferior.</li>
+      <li><strong>Soroban (Japón):</strong> Versión simplificada con 1 cuenta superior y 4 inferiores.</li>
+      <li><strong>Ábaco Escolar:</strong> Formado por 10 filas con 10 cuentas de colores cada una.</li>
+    </ul>
+  </div>
+
+  <!-- Pestaña 3: Operaciones Básicas -->
+  <div id="operaciones" class="content-section">
+    <h2>Cómo Realizar las 4 Operaciones Básicas</h2>
+    <p>Aprende las instrucciones paso a paso para operar en el ábaco antes de probar el simulador visual:</p>
+    
+    <ul>
+      <li>
+        <strong>1. Suma (Adición):</strong>
+        <br>
+        - Representa el primer número en las varillas correspondientes (unidades, decenas, etc.).
+        <br>
+        - Para añadir el segundo número, desplaza hacia el centro tantas cuentas como indique cada dígito.
+        <br>
+        - Si en una columna alcanzas 10 (o 5 según la sección), realiza el "cambio": reinicia esa columna y suma 1 cuenta en la columna de la izquierda (decenas/centenas).
+      </li>
+      <br>
+      <li>
+        <strong>2. Resta (Sustracción):</strong>
+        <br>
+        - Registra primero el número mayor (minuendo) en el ábaco.
+        <br>
+        - Para restar el segundo número (sustraendo), aleja del centro el número de cuentas correspondiente de derecha a izquierda.
+        <br>
+        - Si no tienes suficientes cuentas en una columna, "pide prestado": resta 1 cuenta en la columna de la izquierda y añade su equivalente (10) en la columna actual.
+      </li>
+      <br>
+      <li>
+        <strong>3. Multiplicación:</strong>
+        <br>
+        - La multiplicación se realiza como una serie de sumas repetidas por posiciones.
+        <br>
+        - Multiplica el primer dígito del multiplicador por cada dígito del multiplicando de izquierda a derecha.
+        <br>
+        - Coloca los resultados parciales en las columnas correspondientes a sus valores posicionales y súmalos en el ábaco.
+      </li>
+      <br>
+      <li>
+        <strong>4. División:</strong>
+        <br>
+        - Se realiza como restas sucesivas del divisor sobre el dividendo.
+        <br>
+        - Coloca el dividendo a la derecha del ábaco y el divisor a la izquierda.
+        <br>
+        - Compara cuántas veces cabe el divisor en el primer grupo de dígitos del dividendo, anota ese cociente en una columna separada y resta el producto obtenido.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Pestaña 4 -->
+  <div id="simulador" class="content-section">
+    <h2>Simulador Visual</h2>
+    <p>Haz clic en las cuentas para moverlas de lado a lado:</p>
+    
+    <div class="abacus-frame">
+      <div class="wire">
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+      </div>
+      <div class="wire">
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+      </div>
+      <div class="wire">
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+        <div class="bead" onclick="toggleBead(this)"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cambio de pestañas
+    function showTab(tabId) {
+      document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // Interacción simple del ábaco
+    function toggleBead(element) {
+      element.classList.toggle('moved');
+    }
+
+    // Búsqueda simple
+    function filterContent() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let activeSection = document.querySelector('.content-section.active');
+      let text = activeSection.innerText.toLowerCase();
+      
+      if (input && !text.includes(input)) {
+        activeSection.style.opacity = '0.4';
+      } else {
+        activeSection.style.opacity = '1';
+      }
+    }
+  </script>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+<footer>
+    <div style="margin-top: 30px; padding: 15px; border-top: 1px solid #c999af; font-size: 0.85em;">
+      <p><strong>Créditos de Autoría:</strong> Proyecto desarrollado para el curso de Pensamiento Computacional y Programación, Departamento de Matemática - Liceo Experimental UMAG.</p>
+      <p><strong>Uso de Inteligencia Artificial:</strong> Se utilizó IA para la estructura base del código y resumen de texto. Todo el código, contenido e interacción fueron revisados, modificados y verificados manualmente por el estudiante.</p>
+      <p><strong>Fuentes Consultadas:</strong>
+        <a href="https://www.pibank.es/origen-abaco/" target="_blank">Pibank</a> | 
+        <a href="https://www.ee.torontomu.ca/~elf/abacus/espanol/history.html" target="_blank">Toronto Metropolitan University</a> | 
+        <a href="https://es.wikipedia.org/wiki/%C3%81baco" target="_blank">Wikipedia</a> |
+        <a href="https://www.lenovo.com/cl/es/glosario/abaco/" target="_blank">Lenovo Chile</a>
+      </p>
+    </div>
+  </footer>
