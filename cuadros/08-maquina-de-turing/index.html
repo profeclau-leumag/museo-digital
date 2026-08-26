@@ -1,54 +1,546 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cuadro 08: Máquina de Turing">
-  <title>Máquina de Turing · Museo Digital</title>
-  <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Máquina de Turing</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="barra">
-    <a href="../../index.html">← Volver al museo</a>
-    <span>Cuadro 08 · Pensamiento Computacional</span>
-  </header>
-  <main>
-    <article class="ficha">
-      <section>
-        <p class="ceja">Historia de la computación</p>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+      <a href="../../index.html">← Volver al museo</a>
+        <span>Cuadro 03 · Pensamiento Computacional</span>
+        <div class="etiqueta">
+            COMPUTACIÓN TEÓRICA
+        </div>
+
         <h1>Máquina de Turing</h1>
-        <p class="fecha">1936</p>
 
-        <h2>¿Qué problema buscaba resolver?</h2>
-        <p>Reemplaza este texto por una explicación de 60 a 90 palabras basada en tus fuentes.</p>
+        <p class="subtitulo">
+            Un modelo matemático que cambió nuestra forma de entender
+            la computación
+        </p>
+    </header>
 
-        <h2>¿Cómo funcionaba?</h2>
-        <p>Explícalo con tus propias palabras. Si usas un concepto técnico, defínelo.</p>
 
-        <h2>Una limitación o tensión</h2>
-        <p>Describe qué no podía hacer, qué riesgos produjo o quiénes quedaron fuera de su historia.</p>
+    <!-- CONTENIDO PRINCIPAL -->
 
-        <h2>Su legado hoy</h2>
-        <p>Conecta este hito con un dispositivo, lenguaje, algoritmo o práctica actual.</p>
+    <main class="contenedor">
 
-        <h2>Fuentes y créditos</h2>
-        <ol class="fuentes">
-          <li><a href="https://www.computerhistory.org/tdih/june/23/">Fuente inicial sugerida</a></li>
-          <li><a href="https://www.google.com/search?q=M%C3%A1quina%20de%20Turing">Agrega una segunda fuente confiable</a></li>
-        </ol>
-        <p class="nota"><strong>Uso de IA:</strong> Indica aquí si la utilizaste, para qué y qué verificaste o corregiste.</p>
-        <p><strong>Curaduría y código:</strong> Nombre(s) y curso.</p>
-      </section>
 
-      <aside>
-        <figure class="obra">
-          <!-- Reemplaza el texto por: <img src="imagen.jpg" alt="Descripción precisa de la imagen"> -->
-          <p>Aquí va una imagen relevante con texto alternativo y crédito.</p>
-        </figure>
-        <p><small>Crédito de la imagen: autor o institución, licencia y enlace.</small></p>
-      </aside>
-    </article>
-  </main>
-  <footer>La verdad a través de la razón</footer>
-</body>
+        <!-- INTRODUCCIÓN -->
+
+        <section class="tarjeta">
+
+            <span class="numero">01</span>
+
+            <h2>¿Qué es una Máquina de Turing?</h2>
+
+            <p>
+                La máquina de Turing es un dispositivo informático hipotético
+                introducido en 1936 por el matemático y lógico inglés
+                <strong>Alan M. Turing</strong>.
+            </p>
+
+            <p>
+                Originalmente concibió la máquina como una herramienta
+                matemática que pudiera reconocer
+
+                <details class="definicion">
+                    <summary>proposiciones indecidibles</summary>
+
+                    <div class="recuadro-definicion">
+
+                        <strong>Proposición indecidible</strong>
+
+                        <p>
+                            Es una afirmación que no puede demostrarse como
+                            verdadera o falsa utilizando las mismas reglas
+                            o axiomas del sistema.
+                        </p>
+
+                    </div>
+                </details>
+
+                , aquellas afirmaciones dentro de un sistema lógico o
+                informático que no se pueden demostrar verdaderas o falsas
+                usando las mismas reglas o
+
+                <details class="definicion">
+                    <summary>axiomas</summary>
+
+                    <div class="recuadro-definicion">
+
+                        <strong>Axioma</strong>
+
+                        <p>
+                            Regla o afirmación básica que se acepta como
+                            verdadera sin necesidad de prueba.
+                        </p>
+
+                    </div>
+                </details>
+
+                de ese mismo sistema.
+            </p>
+
+            <p>
+                Turing demostró que nunca podrá existir cualquier método
+                algorítmico para determinar si una proposición es indecidible.
+            </p>
+
+        </section>
+
+
+        <!-- CONCEPTOS -->
+
+        <section class="conceptos">
+
+            <article class="concepto-card">
+
+                <div class="icono">💡</div>
+
+                <h3>Axioma</h3>
+
+                <p>
+                    Regla o afirmación básica que se acepta como verdadera
+                    sin necesidad de prueba.
+                </p>
+
+            </article>
+
+
+            <article class="concepto-card">
+
+                <div class="icono">⚙️</div>
+
+                <h3>Estados internos</h3>
+
+                <p>
+                    Variables de un modelo dinámico que resumen la historia
+                    del sistema y determinan su evolución futura a partir
+                    de las entradas actuales.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- MODELO MATEMÁTICO -->
+
+        <section class="tarjeta">
+
+            <span class="numero">02</span>
+
+            <h2>Un modelo matemático</h2>
+
+            <p>
+                La máquina de Turing no es una máquina en el sentido ordinario,
+                sino un modelo matemático idealizado que reduce la estructura
+                lógica de cualquier dispositivo informático a sus partes
+                esenciales.
+            </p>
+
+            <p>
+                Como fue previsto por Turing, la máquina realiza sus funciones
+                en una secuencia de pasos discretos y asume solo uno de una
+                lista finita de
+
+                <details class="definicion">
+                    <summary>estados internos</summary>
+
+                    <div class="recuadro-definicion">
+
+                        <strong>Estados internos</strong>
+
+                        <p>
+                            Son variables de un modelo dinámico que resumen
+                            la historia del sistema y ayudan a determinar
+                            su evolución futura a partir de las entradas
+                            actuales.
+                        </p>
+
+                    </div>
+
+                </details>
+
+                en cualquier momento.
+            </p>
+
+        </section>
+
+
+        <!-- COMPONENTES -->
+
+        <section class="tarjeta">
+
+            <span class="numero">03</span>
+
+            <h2>¿Cómo está formada?</h2>
+
+            <p>
+                La máquina en sí consta de una cinta extensible infinitamente,
+                un cabezal capaz de realizar diversas operaciones sobre dicha
+                cinta y un mecanismo de control modificable situado en el
+                cabezal.
+            </p>
+
+
+            <div class="componentes-grid">
+
+
+                <article class="componente">
+
+                    <div class="componente-icono">
+                        ▤
+                    </div>
+
+                    <h3>Cinta</h3>
+
+                    <p>
+                        Está dividida en casillas. Cada una puede estar vacía
+                        o contener uno de los símbolos de un conjunto finito.
+                    </p>
+
+                </article>
+
+
+                <article class="componente">
+
+                    <div class="componente-icono">
+                        ◉
+                    </div>
+
+                    <h3>Cabezal</h3>
+
+                    <p>
+                        Puede moverse para leer, escribir y borrar cualquier
+                        casilla de la cinta.
+                    </p>
+
+                </article>
+
+
+                <article class="componente">
+
+                    <div class="componente-icono">
+                        ⚙
+                    </div>
+
+                    <h3>Mecanismo de control</h3>
+
+                    <p>
+                        Puede almacenar direcciones de un conjunto finito
+                        de instrucciones y modificar el estado interno.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FUNCIONAMIENTO -->
+
+        <section class="tarjeta">
+
+            <span class="numero">04</span>
+
+            <h2>¿Cómo funciona?</h2>
+
+            <p>
+                Cada acción de la máquina está determinada por su estado
+                interno y por la condición de la casilla examinada.
+            </p>
+
+
+            <div class="pasos">
+
+
+                <div class="paso">
+
+                    <span>1</span>
+
+                    <div>
+
+                        <h3>Leer</h3>
+
+                        <p>
+                            El cabezal observa el símbolo de la casilla actual.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>2</span>
+
+                    <div>
+
+                        <h3>Procesar</h3>
+
+                        <p>
+                            La máquina consulta su estado interno y sus
+                            instrucciones.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>3</span>
+
+                    <div>
+
+                        <h3>Actuar</h3>
+
+                        <p>
+                            Puede escribir, borrar o desplazarse hacia otra
+                            casilla.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>4</span>
+
+                    <div>
+
+                        <h3>Detenerse</h3>
+
+                        <p>
+                            Cuando termina, el resultado puede leerse en
+                            el sistema.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- REPRESENTACIÓN -->
+
+        <section class="tarjeta cinta-seccion">
+
+            <span class="numero">05</span>
+
+            <h2>Representación visual</h2>
+
+            <p>
+                Una forma sencilla de imaginar una Máquina de Turing es
+                mediante una cinta dividida en casillas.
+            </p>
+
+
+            <div class="cinta">
+
+                <div class="casilla">1</div>
+                <div class="casilla">0</div>
+                <div class="casilla">1</div>
+                <div class="casilla activa">1</div>
+                <div class="casilla">0</div>
+                <div class="casilla">0</div>
+                <div class="casilla">1</div>
+
+            </div>
+
+
+            <div class="cabezal-visual">
+
+                ▲
+
+                <span>
+                    Cabezal
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPORTANCIA -->
+
+        <section class="tarjeta importancia">
+
+            <span class="numero">06</span>
+
+            <h2>¿Por qué es importante?</h2>
+
+            <p>
+                Al incorporar todas las características esenciales del
+                procesamiento de información, la máquina de Turing se
+                convirtió en la base para las computadoras digitales
+                subsecuentes.
+            </p>
+
+            <p>
+                Estas computadoras comparten la esquemática básica de un
+                dispositivo
+
+                <details class="definicion">
+                    <summary>input/output</summary>
+
+                    <div class="recuadro-definicion">
+
+                        <strong>Input / Output</strong>
+
+                        <p>
+                            Describe la comunicación entre un sistema
+                            informático y el exterior. La entrada proporciona
+                            información al sistema y la salida presenta
+                            el resultado.
+                        </p>
+
+                    </div>
+
+                </details>
+
+                , memoria y una unidad central de procesamiento.
+            </p>
+
+
+            <div class="idea-final">
+
+                <span>✦</span>
+
+                <p>
+                    <strong>
+                        La Máquina de Turing ayudó a establecer las bases
+                        conceptuales de la computación moderna.
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUENTES -->
+
+        <section class="fuentes">
+
+            <h2>Fuentes consultadas</h2>
+
+
+            <div class="fuentes-grid">
+
+
+                <a
+                    href="https://www.britannica.com/technology/Turing-machine"
+                    target="_blank"
+                    class="fuente"
+                >
+
+                    <span>01</span>
+
+                    <div>
+
+                        <strong>
+                            Encyclopaedia Britannica
+                        </strong>
+
+                        <small>
+                            Turing Machine
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="https://dle.rae.es/axioma"
+                    target="_blank"
+                    class="fuente"
+                >
+
+                    <span>02</span>
+
+                    <div>
+
+                        <strong>
+                            Real Academia Española
+                        </strong>
+
+                        <small>
+                            Definición de axioma
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="https://es.mathworks.com/help/ident/ug/what-are-state-space-models.html"
+                    target="_blank"
+                    class="fuente"
+                >
+
+                    <span>03</span>
+
+                    <div>
+
+                        <strong>
+                            MathWorks
+                        </strong>
+
+                        <small>
+                            State-Space Models
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            Máquina de Turing · Página educativa
+        </p>
+
+        <p>
+            Hecho con HTML, CSS y JavaScript
+        </p>
+
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+
 </html>
