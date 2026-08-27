@@ -50,6 +50,39 @@
     ul { margin-left: 20px; line-height: 1.8; color: #ddd; font-size: 14px; }
     .destacado { color: #ff5555; font-weight: bold; } /* Polvo de Redstone */
 
+    /* ESTILOS DE LA PORTADA */
+    .contenedor-portada {
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .subtitulo-portada {
+      color: #ffff55; /* Amarillo Minecraft */
+      font-size: 14px;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px #000;
+    }
+
+    .btn-start {
+      background-color: #55ff55; /* Verde Esmeralda */
+      color: #000000;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      border: 3px solid #00aa00;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 4px 0px #006600;
+      margin-top: 15px;
+    }
+
+    .btn-start:hover {
+      background-color: #77ff77;
+      box-shadow: 0 2px 0px #006600;
+      transform: translateY(2px);
+    }
+
     /* ESTILOS DEL SIMULADOR INTERACTIVO (MECANISMO DE REDSTONE) */
     .simulador-container {
       background-color: #26160d;
@@ -161,8 +194,21 @@
   <main class="tarjeta">
     
     <div class="contenido-slide">
-      <!-- Diapositiva 1 -->
+      
+      <!-- Portada de Inicio -->
       <article class="diapositiva activa">
+        <div class="contenedor-portada">
+          <span class="etiqueta">[Bienvenido al Mundo Virtual]</span>
+          <h1 style="font-size: 26px;">LA TABULADORA DE HOLLERITH</h1>
+          <p class="subtitulo-portada">⚡ Historia de la Computación & Mecanismos Redstone ⚡</p>
+          <p>Explora la máquina electromecánica que revolucionó el procesamiento de datos en el Censo de EE. UU. de 1890.</p>
+          <br>
+          <button class="btn-start" onclick="iniciarRecorrido()">► INICIAR RECORRIDO</button>
+        </div>
+      </article>
+
+      <!-- Diapositiva 1 -->
+      <article class="diapositiva">
         <span class="etiqueta">[Nivel 1] Historia</span>
         <h1>La Tabuladora de Hollerith</h1>
         <p>El nacimiento del procesamiento automatizado de datos y la chispa que dio origen a la era digital moderna.</p>
@@ -248,7 +294,7 @@
     </div>
 
     <!-- Navegación -->
-    <div class="zona-inferior">
+    <div class="zona-inferior" id="panel-navegacion" style="display: none;">
       <nav class="botones">
         <button class="nav-btn" onclick="atras()">◄ Anterior</button>
         <button class="nav-btn" onclick="siguiente()">Siguiente ►</button>
@@ -266,12 +312,25 @@
     let estaPerforada = false;
     let conteo = 0;
 
+    function iniciarRecorrido() {
+      document.getElementById("panel-navegacion").style.display = "block";
+      numeroSlide = 1; // Salta de la portada (0) a la Diapositiva 1 (1)
+      mostrarSlide(numeroSlide);
+    }
+
     function mostrarSlide(posicion) {
       for (let i = 0; i < paginas.length; i++) {
         paginas[i].className = "diapositiva";
       }
       paginas[posicion].className = "diapositiva activa";
-      document.getElementById("contador").innerHTML = "Diapositiva " + (posicion + 1) + " de " + paginas.length;
+      
+      // Si estamos en la portada (índice 0), ocultamos el contador de navegación
+      if (posicion === 0) {
+        document.getElementById("panel-navegacion").style.display = "none";
+      } else {
+        document.getElementById("panel-navegacion").style.display = "block";
+        document.getElementById("contador").innerHTML = "Diapositiva " + posicion + " de " + (paginas.length - 1);
+      }
     }
 
     function siguiente() {
@@ -282,8 +341,11 @@
     }
 
     function atras() {
-      if (numeroSlide > 0) {
+      if (numeroSlide > 1) {
         numeroSlide--;
+        mostrarSlide(numeroSlide);
+      } else if (numeroSlide === 1) {
+        numeroSlide = 0; // Vuelve a la portada
         mostrarSlide(numeroSlide);
       }
     }
