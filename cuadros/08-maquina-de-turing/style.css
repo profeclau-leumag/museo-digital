@@ -89,7 +89,33 @@ body {
     bottom: -100px;
     left: -50px;
 }
+/* Barra superior del encabezado */
+.encabezado > a,
+.encabezado > span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    z-index: 5;
+}
 
+/* "Volver al museo" a la izquierda */
+.encabezado > a {
+    left: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Efecto al pasar el mouse */
+.encabezado > a:hover {
+    text-decoration: underline;
+}
+
+/* "Cuadro 03 · Pensamiento Computacional" a la derecha */
+.encabezado > span {
+    right: 30px;
+    color: white;
+}
 .etiqueta {
     background-color: #5b3027;
 
