@@ -5,28 +5,30 @@
   <span>Cuadro 07 · Pensamiento Computacional</span>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Tabuladora de Hollerith - Museo Digital</title>
+  <title>La Tabuladora de Hollerith - Museo Minecraft Edition</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #222222;
+      font-family: 'Courier New', Consolas, monospace;
+      background-color: #1e1e1e; /* Fondo estilo cueva / Nether */
       color: #ffffff;
       text-align: center;
       padding: 20px;
       margin: 0;
     }
 
+    /* Contenedor principal estilo Bloque de Madera/Piedra */
     main.tarjeta {
-      background-color: #333333;
+      background-color: #3c2415; /* Madera de Roble Oscuro */
       width: 90%;
       max-width: 650px;
       min-height: 520px;
       margin: 20px auto;
       padding: 25px;
-      border-radius: 10px;
-      border: 2px solid #555555;
+      border-radius: 4px;
+      border: 4px solid #1a0f09; /* Borde pixelado robusto */
       text-align: left;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 0px #000000;
+      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -36,108 +38,124 @@
     article.activa { display: block; }
 
     .etiqueta {
-      color: #00aaff;
+      color: #55ffff; /* Azul Diamante Minecraft */
       font-weight: bold;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    h1, h2 { color: #ffffff; margin-top: 10px; }
-    p { color: #cccccc; line-height: 1.5; }
-    ul { margin-left: 20px; line-height: 1.8; }
-    .destacado { color: #00aaff; font-weight: bold; }
+    h1 { color: #ffaa00; margin-top: 10px; font-size: 22px; text-shadow: 2px 2px #000; } /* Oro */
+    h2 { color: #ffaa00; margin-top: 10px; font-size: 18px; text-shadow: 2px 2px #000; }
+    p { color: #e0e0e0; line-height: 1.5; font-size: 14px; }
+    ul { margin-left: 20px; line-height: 1.8; color: #ddd; font-size: 14px; }
+    .destacado { color: #ff5555; font-weight: bold; } /* Polvo de Redstone */
 
-    /* ESTILOS DEL SIMULADOR INTERACTIVO */
+    /* ESTILOS DEL SIMULADOR INTERACTIVO (MECANISMO DE REDSTONE) */
     .simulador-container {
-      background-color: #1a1a1a;
-      border: 2px solid #00aaff;
-      border-radius: 8px;
+      background-color: #26160d;
+      border: 3px solid #555555;
       padding: 15px;
       text-align: center;
       margin-top: 10px;
     }
 
     .tarjeta-perforada {
-      width: 220px;
-      height: 100px;
-      background-color: #d2b48c;
+      width: 200px;
+      height: 90px;
+      background-color: #c4ab80; /* Madera Clara / Abedul */
       margin: 10px auto;
-      border-radius: 4px;
+      border: 3px solid #5c4a30;
       position: relative;
       cursor: pointer;
-      border: 2px solid #8b4513;
     }
 
     .agujero {
       width: 24px;
       height: 24px;
-      background-color: #8b4513;
-      border-radius: 50%;
+      background-color: #5c4a30;
       position: absolute;
-      top: 38px;
-      left: 98px;
+      top: 33px;
+      left: 88px;
       line-height: 24px;
       font-size: 10px;
       color: #fff;
+      font-weight: bold;
     }
 
     .agujero.perforado {
-      background-color: #1a1a1a;
-      border: 2px dashed #00aaff;
+      background-color: #1e1e1e;
+      border: 2px dashed #ff5555;
     }
 
     .reloj-contador {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: bold;
-      color: #00ff88;
-      background: #000;
-      padding: 5px 15px;
-      border-radius: 5px;
+      color: #55ff55; /* Esmeralda */
+      background: #000000;
+      padding: 4px 16px;
+      border: 2px solid #55ff55;
       display: inline-block;
       margin: 10px 0;
-      border: 1px solid #333;
     }
 
     .btn-accion {
-      background-color: #ff9900;
-      color: black;
+      background-color: #ff5555; /* Botón activador Redstone */
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
       font-weight: bold;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 4px;
+      border: 2px solid #aa0000;
+      padding: 10px 15px;
       cursor: pointer;
+      text-shadow: 1px 1px #000;
     }
 
-    .btn-accion:hover { background-color: #e68a00; }
+    .btn-accion:hover { background-color: #ff3333; }
 
     #explicacion-mecanismo {
-      font-size: 13px;
-      color: #00aaff;
+      font-size: 12px;
+      color: #55ffff;
       margin-top: 8px;
       min-height: 35px;
     }
 
-    /* NAVEGACIÓN */
+    /* NAVEGACIÓN ESTILO INVENTARIO */
     nav.botones { margin-top: 20px; text-align: center; }
+    
     .nav-btn {
-      background-color: #00aaff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
+      background-color: #727272; /* Botón estilo UI Minecraft */
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      border: 2px solid #373737;
+      border-top-color: #aeaeae;
+      border-left-color: #aeaeae;
+      padding: 8px 18px;
+      font-size: 14px;
       cursor: pointer;
-      margin: 0 5px;
+      margin: 0 4px;
+      text-shadow: 1px 1px #000;
     }
-    #contador { margin-top: 10px; color: #aaaaaa; text-align: center; font-size: 14px; }
-    footer.creditos { margin-top: 10px; border-top: 1px solid #444; padding-top: 10px; font-size: 0.8em; color: #bbb; }
-    footer.creditos a { color: #00aaff; }
+
+    .nav-btn:hover { background-color: #8b8b8b; }
+    
+    #contador { margin-top: 10px; color: #aaaaaa; text-align: center; font-size: 13px; }
+    
+    footer.creditos { 
+      margin-top: 15px; 
+      border-top: 2px solid #555555; 
+      padding-top: 10px; 
+      font-size: 0.8em; 
+      color: #aaaaaa; 
+    }
+    
+    footer.creditos a { color: #55ffff; text-decoration: none; }
+    footer.creditos a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
   <header>
-    <p style="color: #00aaff; font-weight: bold;">MUSEO DIGITAL DE INFORMÁTICA</p>
+    <p style="color: #ffaa00; font-weight: bold; text-shadow: 1px 1px #000;">⛏️ MUSEO DIGITAL DE INFORMÁTICA ⛏️</p>
   </header>
 
   <main class="tarjeta">
@@ -145,19 +163,19 @@
     <div class="contenido-slide">
       <!-- Diapositiva 1 -->
       <article class="diapositiva activa">
-        <span class="etiqueta">Historia de la Computación</span>
+        <span class="etiqueta">[Nivel 1] Historia</span>
         <h1>La Tabuladora de Hollerith</h1>
         <p>El nacimiento del procesamiento automatizado de datos y la chispa que dio origen a la era digital moderna.</p>
         <ul>
           <li><b>Creador:</b> Herman Hollerith (1860 - 1929)</li>
-          <li><b>Innovación:</b> Uso de tarjetas perforadas para procesar datos</li>
+          <li><b>Innovación:</b> Tarjetas perforadas para procesar datos</li>
           <li><b>Impacto:</b> Base tecnológica de lo que hoy es IBM</li>
         </ul>
       </article>
 
       <!-- Diapositiva 2 -->
       <article class="diapositiva">
-        <span class="etiqueta">El Desafío Histórico</span>
+        <span class="etiqueta">[Nivel 2] El Mision / Censo</span>
         <h2>El Censo de EE. UU. de 1890</h2>
         <p>A finales del siglo XIX, Estados Unidos enfrentaba un grave problema de escala en la recolección de información demográfica.</p>
         <ul>
@@ -167,32 +185,32 @@
         </ul>
       </article>
 
-      <!-- Diapositiva 3: SIMULADOR INTERACTIVO DEL MECANISMO -->
+      <!-- Diapositiva 3: SIMULADOR INTERACTIVO ESTILO REDSTONE -->
       <article class="diapositiva">
-        <span class="etiqueta">Simulador Interactivo</span>
-        <h2>¿Cómo funcionaba el mecanismo?</h2>
-        <p>Haz clic en la tarjeta para perforarla y luego baja la prensa de agujas para probar el circuito electromecánico:</p>
+        <span class="etiqueta">[Nivel 3] Mecanismo Redstone</span>
+        <h2>¿Cómo funcionaba el circuito?</h2>
+        <p>Haz clic en la tarjeta de madera para hacer un hueco. Luego presiona la palanca para bajar el pistón de agujas:</p>
         
         <div class="simulador-container">
           <div class="tarjeta-perforada" onclick="alternarPerforacion()">
             <div id="agujero-demo" class="agujero">Clic</div>
           </div>
           
-          <button class="btn-accion" onclick="procesarTarjeta()">Bajar Agujas de Prensa</button>
+          <button class="btn-accion" onclick="procesarTarjeta()">Activar Palanca (Bajar Agujas)</button>
           
           <div>
-            <span>Contador Electromecánico: </span>
+            <span style="font-size: 13px; color: #aaa;">Contador de Redstone: </span>
             <div id="reloj" class="reloj-contador">000</div>
           </div>
           
-          <div id="explicacion-mecanismo">Paso 1: Haz clic sobre la tarjeta de cartón para perforarla.</div>
+          <div id="explicacion-mecanismo">Paso 1: Haz clic sobre la madera para perforarla.</div>
         </div>
       </article>
 
       <!-- Diapositiva 4 -->
       <article class="diapositiva">
-        <span class="etiqueta">Limitaciones Técnicas</span>
-        <h2>Problemas y Desventajas de la Época</h2>
+        <span class="etiqueta">[Nivel 4] Dificultad / Límites</span>
+        <h2>Limitaciones Técnicas de la Época</h2>
         <p>A pesar de su éxito, la máquina tenía importantes limitaciones tecnológicas:</p>
         <ul>
           <li><span class="destacado">Peligro químico:</span> El baño de mercurio liberaba vapores tóxicos para los operadores.</li>
@@ -203,7 +221,7 @@
 
       <!-- Diapositiva 5 -->
       <article class="diapositiva">
-        <span class="etiqueta">Resultados y Legado</span>
+        <span class="etiqueta">[Nivel 5] Logros</span>
         <h2>De la Tabuladora a IBM</h2>
         <p>El éxito de la máquina superó las expectativas y transformó el tratamiento de datos:</p>
         <ul>
@@ -215,7 +233,7 @@
 
       <!-- Diapositiva 6: Fuentes e IA -->
       <article class="diapositiva">
-        <span class="etiqueta">Créditos y Transparencia</span>
+        <span class="etiqueta">[Nivel 6] Créditos</span>
         <h2>Fuentes y Declaración</h2>
         <footer class="creditos">
           <p><b>Fuentes consultadas:</b></p>
@@ -232,8 +250,8 @@
     <!-- Navegación -->
     <div class="zona-inferior">
       <nav class="botones">
-        <button class="nav-btn" onclick="atras()">Anterior</button>
-        <button class="nav-btn" onclick="siguiente()">Siguiente</button>
+        <button class="nav-btn" onclick="atras()">◄ Anterior</button>
+        <button class="nav-btn" onclick="siguiente()">Siguiente ►</button>
       </nav>
       <div id="contador">Diapositiva 1 de 6</div>
     </div>
@@ -270,7 +288,7 @@
       }
     }
 
-    /* LÓGICA DEL SIMULADOR DEL MECANISMO */
+    /* LÓGICA DEL SIMULADOR DEL MECANISMO ESTILO REDSTONE */
     function alternarPerforacion() {
       let agujero = document.getElementById("agujero-demo");
       let texto = document.getElementById("explicacion-mecanismo");
@@ -280,11 +298,13 @@
       if (estaPerforada) {
         agujero.className = "agujero perforado";
         agujero.innerHTML = "";
-        texto.innerHTML = "¡Tarjeta perforada! Ahora presiona 'Bajar Agujas de Prensa'.";
+        texto.innerHTML = "¡Madera perforada! Presiona la palanca.";
+        texto.style.color = "#55ff55";
       } else {
         agujero.className = "agujero";
         agujero.innerHTML = "Clic";
-        texto.innerHTML = "Tarjeta sellada (sin orificio).";
+        texto.innerHTML = "Bloque sellado (sin orificio).";
+        texto.style.color = "#55ffff";
       }
     }
 
@@ -295,32 +315,14 @@
       if (estaPerforada) {
         conteo++;
         reloj.innerHTML = conteo.toString().padStart(3, '0');
-        texto.innerHTML = "⚡ ¡La aguja atravesó el orificio, tocó el baño de mercurio y cerró el circuito! (+1 al contador)";
-        texto.style.color = "#00ff88";
+        texto.innerHTML = "⚡ ¡La aguja atravesó el bloque, tocó el mercurio y activó la señal de Redstone! (+1 al contador)";
+        texto.style.color = "#55ff55"; /* Verde Esmeralda */
       } else {
-        texto.innerHTML = "❌ La aguja chocó con el cartón intacto. No hubo contacto con el mercurio (Circuito abierto, no suma).";
-        texto.style.color = "#ff4444";
+        texto.innerHTML = "❌ La aguja chocó con la madera sólida. Circuito de Redstone apagado (no suma).";
+        texto.style.color = "#ff5555"; /* Rojo Redstone */
       }
     }
   </script>
 
 </body>
-</html>
-      if (numeroSlide < paginas.length - 1) {
-        numeroSlide = numeroSlide + 1;
-        mostrarSlide(numeroSlide);
-      }
-    }
-
-    // Botón Anterior
-    function atras() {
-      if (numeroSlide > 0) {
-        numeroSlide = numeroSlide - 1;
-        mostrarSlide(numeroSlide);
-      }
-    }
-  </script>
-
-    <script type="module" src="script.js"></script>
-  </body>
 </html>
