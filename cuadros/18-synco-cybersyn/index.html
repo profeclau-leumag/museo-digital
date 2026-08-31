@@ -1,68 +1,353 @@
 <!DOCTYPE html>
-<html lang = "es">
+<html lang="es">
+
   <head>
     <link type="text/css" rel="stylesheet" href="style.css"/>
   </head>
   <body>
- <h1> Proyecto synco </h1>
- <div class="recuadro">
-   <p>¿Que es el Proyecto Synco?</p>
- </div>
-    <script type="module" src="script.js"></script>
-  </body>
+
+<div id="inicio">
+
+  <h1>El Proyecto Synco</h1>
+
+  <div class="recuadro">
+    <p>¿Qué es el Proyecto Synco?</p>
+  </div>
+
+  <div class="recuadro3" id="botonContexto">
+  <p>Contexto histórico</p>
+</div>
+  
+  <div class="recuadro3" id="botonFuncionamiento">
+  <p>Funcionamiento</p>
+</div>
+
+<div class="recuadro3" id="botonProblemas">
+  <p>Problemas y Limitaciones</p>
+</div>
+
+<div class="recuadro3" id="botonLegado">
+  <p>Legado</p>
+</div>
+
+<footer>
+
+  <header>
+    <a href="../../index.html">← Volver al museo</a>
+    <span>Cuadro 03 · Pensamiento Computacional</span>
+  </header>
+
+  <div class="fuentes">
+
+    <h3>Fuentes</h3>
+
+    <a href="https://wiki.ead.pucv.cl/Proyecto_Synco_-_La_ciencia_y_el_dise%C3%B1o_al_servicio_del_pueblo#Introducci%C3%B3n" target="_blank">
+      Proyecto Synco — La ciencia y el diseño al servicio del pueblo
+    </a>
+
+    <a href="https://www.bbc.com/mundo/articles/cz4gljnvnnwo" target="_blank">
+      BBC Mundo — Proyecto Cybersyn
+    </a>
+
+    <a href="https://thereader.mitpress.mit.edu/project-cybersyn-chiles-radical-experiment-in-cybernetic-socialism/" target="_blank">
+      MIT Press Reader — Project Cybersyn
+    </a>
+
+    <a href="https://es.wired.com/articulos/el-internet-socialista-de-salvador-allende-y-las-lecciones-que-debemos-aprender-de-este-insolito-experimento-chileno" target="_blank">
+      WIRED en Español — El internet socialista de Salvador Allende
+    </a>
+
+  </div>
+
+</footer>
+
+
+</div>
+
+
+<div id="paginaQueEs">
+
+  <h2>¿Qué es el Proyecto Synco?</h2>
+
+  <div class="informacion">
+
+    <p>
+      En 1971, durante la presidencia de Salvador Allende en Chile,
+      se quería crear un sistema para administrar de manera eficiente
+      una economía socialista, aplicando la cibernética a la gestión
+      de las redes industriales chilenas.
+    </p>
+
+    <p>
+      Buscó implementar un sistema de información y control en industrias
+      con la creación de un prototipo de una sala de operaciones para
+      tomar decisiones mediante una red que recolectaba información
+      de estas industrias, recibiendo datos exactos sin desfase.
+    </p>
+
+    <p>
+      Con un sistema que leía y simplificaba la información, se buscaba
+      democratizar la ciencia, la tecnología y el diseño, poniéndolos
+      al servicio del pueblo.
+    </p>
+
+
+    <!-- IMÁGENES DENTRO DEL CUADRO -->
+
+    <div class="imagenes">
+
+      <img
+        src="https://media-front.elmostrador.cl/2016/04/Synco-Room-Foto-Copyright-Bonsiepe_EDIIMA20130910_0543_13-210x210.jpg"
+        class="mi-imagen">
+
+      <img
+        src="https://archivoluisdavidcruzocampo.udec.cl/uploads/r/null/4/2/7/427dd2f152f004ccf35d76f51115ac006f29caa9cc1ddba77a98b15fd573befe/Jm7g46hW_400x400_141.jpg"
+        class="mi-imagen">
+
+    </div>
+
+
+    <!-- BOTÓN DENTRO DEL CUADRO -->
+
+    <button id="volver">← Volver al inicio</button>
+
+  </div>
+
+</div>
+
+<div id="paginaContexto">
+
+  <h2>Contexto histórico</h2>
+
+  <div class="informacion">
+
+    <p>
+      Allende estaba comprometido con el cambio socialista pacífico y la
+      libre expresión de ideas contrastaba marcadamente con la situación
+      política de países vecinos como Argentina y Brasil.
+    </p>
+
+    <p>
+      En 1970, estas dos naciones contaban con gobiernos militares
+      represivos que habían tomado el poder, supuestamente para frenar
+      la amenaza del comunismo.
+    </p>
+
+    <p>
+      Chile estuvo en la disputa de la Guerra Fría y estuvo en el foco
+      de Estados Unidos. Entre 1962 y 1969, Chile recibió millones de
+      dólares en ayuda estadounidense por las Alianzas para el Progreso,
+      más que cualquier país latinoamericano.
+    </p>
+
+    <p>
+      Estados Unidos creía que estas ayudas lograron evitar que los
+      sectores más pobres se inclinaran al comunismo.
+    </p>
+     <img 
+    src="https://content-historia.nationalgeographic.com.es/medio/2025/07/22/guerra-fria_6a35157f_250722160456_1280x642.webp"
+    class="imagenContexto" > 
+
+    <button id="volverContexto">← Volver al inicio</button>
+
+  </div>
+
+</div>
+
+<div id="paginaFuncionamiento">
+
+  <h2>Funcionamiento del Proyecto Synco</h2>
+
+  <div class="informacion funcionamiento">
+
+    <h3>Cybernet — Red de Télex</h3>
+
+    <p>
+      Máquinas de télex instaladas en las fábricas estatales del país
+      que enviaban datos diarios sobre producción y materias primas
+      a Santiago.
+    </p>
+
+
+    <h3>Cyberstride — Software</h3>
+
+    <p>
+      Programa informático que procesaba los datos estadísticos y
+      destacaba anomalías o retrasos en la producción de forma automática.
+    </p>
+
+
+    <h3>CHECO — Simulador Económico</h3>
+
+    <p>
+      Un modelo computacional que simulaba la economía chilena para
+      predecir el impacto futuro de las decisiones del gobierno.
+    </p>
+
+
+    <h3>Sala de Operaciones — Opsroom</h3>
+
+    <p>
+      Una habitación hexagonal futurista en Santiago, con pantallas
+      y sillones con paneles de botones, diseñada para que directivos
+      y trabajadores vieran la información y tomaran decisiones rápidas.
+    </p>
+
+
+    <h3>Ejemplo: la huelga de los camioneros</h3>
+
+    <p>
+      Un ejemplo de su funcionamiento ocurrió durante la huelga de
+      los camioneros. A través de los télex de Cybernet, los operarios
+      reportaban qué fábricas tenían stock de alimentos listos y qué
+      pocos camiones estatales estaban disponibles.
+    </p>
+
+
+    <button id="volverFuncionamiento">
+      ← Volver al inicio
+    </button>
+
+  </div>
+
+</div>
+
+<div id="paginaProblemas">
+
+  <h2>Problemas y Limitaciones</h2>
+
+  <div class="informacion problemas">
+
+    <p>
+      Chile tenía cuatro computadores mainframe, pero todos ya estaban
+      siendo utilizados para otras actividades del país. En el proyecto
+      solo se usó uno de estos computadores.
+    </p>
+
+    <p>
+      Además, comenzaron a tener menos apoyo financiero extranjero,
+      lo que dificultaba transportar nuevos equipos. Por eso tuvieron
+      que buscar una solución alternativa: conectar una red de télex
+      al único computador disponible.
+    </p>
+
+    <p>
+      El trabajo en el Proyecto Cybersyn continuó durante todo 1972.
+      Sin embargo, en octubre, un acontecimiento trascendental
+      transformó al gobierno de Allende y al proyecto.
+    </p>
+
+    <p>
+      Una huelga nacional iniciada por miles de camioneros chilenos
+      sumió al país en un estado de emergencia. La huelga tenía como
+      objetivo demostrar el poder de la burguesía, paralizar la economía
+      y crear las condiciones para un golpe de Estado.
+    </p>
+    
+    
+    <div class="imagenes">
+
+     <img
+      src="https://static.eldiario.es/clip/72ad2f27-a5b6-4dd3-9cc2-ac0165b5a97f_16-9-aspect-ratio_default_0.jpg"
+      class="mi-imagen">
+
+     <img
+      src="https://cdn.prod.website-files.com/65c3e2124e0ae36491eed349/670e0224936692410eb7d9fc_Actualidad%20-%20Cincuenta%20y%20un%20veces%20once.webp"
+      class="mi-imagen">
+
+  </div>
+
+    <button id="volverProblemas">
+      ← Volver al inicio
+    </button>
+   
+
+  </div>
+
+</div>
+
+<div id="paginaLegado">
+
+  <h2>Legado del Proyecto Synco</h2>
+
+  <div class="informacion legado">
+
+    <p>
+      El Proyecto Synco dejó como legado la idea de que un país puede
+      desarrollar tecnologías propias para responder a sus necesidades.
+      Sin embargo, actualmente Chile depende en gran medida de
+      tecnologías y empresas extranjeras en diferentes áreas.
+    </p>
+
+    <h3>1. Infraestructura de Nube y Redes</h3>
+
+    <p>
+      <strong>Servidores y Cloud:</strong> Los datos de bancos, el Estado
+      y empresas se alojan en centros de datos extranjeros. Empresas como
+      Amazon Web Services (AWS), Google Cloud y Microsoft Azure tienen
+      una gran presencia en este mercado.
+    </p>
+
+    <p>
+      <strong>Telecomunicaciones:</strong> Las antenas y redes 5G
+      operativas en el país utilizan tecnología fabricada en el exterior
+      por empresas como Huawei, Ericsson y Nokia.
+    </p>
+
+
+    <h3>2. Software y Sistemas Operativos</h3>
+
+    <p>
+      <strong>Sistemas de usuario:</strong> Los computadores y celulares
+      utilizan principalmente sistemas como Microsoft Windows,
+      Apple macOS/iOS y Google Android.
+    </p>
+
+    <p>
+      <strong>Gestión corporativa:</strong> Grandes industrias como la
+      minería, el retail y la banca utilizan sistemas ERP extranjeros,
+      principalmente SAP y Oracle, para gestionar sus finanzas y logística.
+    </p>
+
+
+    <h3>3. Maquinaria Automatizada e Industria Pesada</h3>
+
+    <p>
+      <strong>Minería:</strong> Los camiones autónomos, palas mecánicas
+      y sistemas de perforación automatizados utilizados en la minería
+      dependen de fabricantes internacionales como Caterpillar, Komatsu
+      y Sandvik.
+    </p>
+
+    <p>
+      <strong>Energía:</strong> Parte de los paneles solares y
+      aerogeneradores utilizados en proyectos de energía renovable
+      son importados desde China y Europa, con empresas como Vestas
+      y Goldwind.
+    </p>
+
+
+    <h3>4. Ciberseguridad y Datos</h3>
+
+    <p>
+      <strong>Protección:</strong> Las herramientas de defensa contra
+      hackeos y los sistemas de seguridad utilizados por organismos
+      públicos y empresas incluyen soluciones de compañías globales
+      como Palo Alto Networks, Fortinet y CrowdStrike.
+    </p>
+
+
+    <button id="volverLegado">
+      ← Volver al inicio
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
- <img src="https://images.adsttc.com/media/images/59b6/bf9a/b22e/38e2/0300/00cc/medium_jpg/2261288102_32e56e8a55_o.jpg?1505148824" width="300" class="mi-imagen">>
-
-
-
-
-<div class="recuadro2">
- <p2>Era una idea de Allende de crear un sistema para administrar de manera eficiente una economía socialista, aplicando la cibernética a la gestión de las redes industriales chilenas.
- Busco implementar un sistema de información y control en industrias con la creación de un prototipo de una sala de operaciones para tomar decisiones
- mediante una red que recolecta información, de estas industrias recibiendo datos exactos sin desfase. Con un sistema  que leía y simplificaba la información. Con esto buscaba democratizar la ciencia, la tecnología y el diseño poniéndolos al servicio del pueblo.</p2>
-</div>
-<a href="https://wiki.ead.pucv.cl/Proyecto_Synco_-_La_ciencia_y_el_dise%C3%B1o_al_servicio_del_pueblo#Introducci%C3%B3n" target="_blank">CASIOPEA</a>
-
-<a href="https://www.bbc.com/mundo/articles/cz4gljnvnnwo " target="_blank">BBC</a>
-
-
-
-<div class="recuadro3">
- <p3> Contexto historico </p3>
-
-</div>
-
-<div class="recuadro4">
-  <p4> Allende estaba comprometido con el cambio socialista pacífico y la libre expresión de ideas contrastaba marcadamente con la situación política de países vecinos como Argentina y Brasil. En 1970, estas dos naciones contaban con gobiernos militares represivos que habían tomado el poder, supuestamente para frenar la amenaza del comunismo. También chile estuvo en la disputa de la Guerra Fría y estuvo en el foco de Estados Unidos. En 1962 a 1969 A Chile le entregaron millones de dólares en ayuda estadounidense por las alianzas para progreso , más que cualquier país latinoamericano. Estados Unidos creía que estas ayudas lograron evitar que los sectores más pobres se inclinaran al comunismo.</p4>
-</div>
-
-<a href="https://thereader.mitpress.mit.edu/project-cybersyn-chiles-radical-experiment-in-cybernetic-socialism/ " target="_blank">Mit Press</a>
-
-<div class="recuadro5">
-  <p5> Problemas y limitaciones </p5>
-</div>
-
-<div class="recuadro6">
-  <p6> Chile tenía cuatro computadores mainframe, pero todos ya estaban siendo utilizados para otras actividades del país. En el proyecto solo se uso uno de estos computadores. También empezaron a tener menos apoyo financiero extranjero teniendo más dificultad para transportar nuevos equipos. Por eso tuvieron que buscar una solución alternativa: conectar una red de télex al único computador disponible.</p6>
-</div>
-<a href="https://thereader.mitpress.mit.edu/project-cybersyn-chiles-radical-experiment-in-cybernetic-socialism/ " target="_blank">Abrir en otra pestaña</a>
-
-
-<div class="recuadro7">
-  <p7>El trabajo en el Proyecto Cybersyn continuó durante todo 1972. Sin embargo, en octubre, un acontecimiento trascendental transformó al gobierno de Allende y al proyecto. Una huelga nacional iniciada por miles de camioneros chilenos sumió al país en el estado de emergencia. La huelga tenía como objetivo demostrar el poder de la burguesía, paralizar la economía y crear las condiciones para un golpe de Estado.</p7>
-</div>
-<a href="https://thereader.mitpress.mit.edu/project-cybersyn-chiles-radical-experiment-in-cybernetic-socialism/ " target="_blank">Abrir en otra pestaña</a>
-
-<div class="recuadro8">
-  <p8> ¿Que legado dejo? </p8>
-</div>
-
-<div class="recuadro9">
-  <p9>El proyecto synco demostró cómo  podremos crear tecnologías propias para el control el desarrollo de la economía y las necesidades de un país sin depender de tecnologías extranjeras como lo hacen muchos países latinos ahora.
-</p9>
-
-</div>
-<a href="https://es.wired.com/articulos/el-internet-socialista-de-salvador-allende-y-las-lecciones-que-debemos-aprender-de-este-insolito-experimento-chileno 
-" target="_blank">Abrir en otra pestaña</a>
 
 
