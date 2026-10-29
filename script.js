@@ -1,3 +1,4 @@
+// 1. BASE DE DATOS DE LOS CUADROS EXPOSITIVOS
 const cuadros = [
   [1, 'Ábaco', 'origenes', 'Contar antes de las máquinas'],
   [2, 'Pascalina', 'origenes', 'Automatizar la suma'],
@@ -25,30 +26,62 @@ const cuadros = [
   [24, 'Arquitectura Transformer', 'actualidad', 'Aprender relaciones en los datos']
 ];
 
-const slug = texto => texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+// 2. FUNCIÓN PARA LIMPIAR TEXTO (Genera URLs amigables eliminando tildes y caracteres especiales)
+const slug = texto => texto
+  .toLowerCase()
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '') // Remueve acentos gráficos
+  .replace(/[^a-z0-9]+/g, '-')     // Reemplaza espacios y símbolos por guiones
+  .replace(/(^-|-$)/g, '');        // Limpia guiones sobrantes al inicio o final
+
+// 3. CAPTURA DE ELEMENTOS DEL HTML
 const galeria = document.querySelector('#galeria');
 const contador = document.querySelector('#contador');
 
+// 4. FUNCIÓN PRINCIPAL PARA RENDERIZAR LAS TARJETAS (CUADROS)
 function mostrar(filtro = 'todos') {
+  // Filtra los cuadros basados en la categoría seleccionada
   const visibles = cuadros.filter(c => filtro === 'todos' || c[2] === filtro);
-  galeria.innerHTML = visibles.map(([numero, titulo, sala, frase]) => `
-    <article class="cuadro" data-sala="${sala}">
-      <a href="cuadros/${String(numero).padStart(2, '0')}-${slug(titulo)}/index.html">
-        <div class="obra" aria-hidden="true"></div>
-        <span class="numero">Cuadro ${String(numero).padStart(2, '0')} · ${sala}</span>
-        <h3>${titulo}</h3>
-        <p>${frase}</p>
-      </a>
-    </article>`).join('');
-  contador.textContent = visibles.length;
+  
+  // Inserta dinámicamente las tarjetas estructuradas dentro del contenedor CSS Grid
+  galeria.innerHTML = visibles.map(([numero, titulo, sala, frase]) => {
+    const numeroFormateado = String(numero).padStart(2, '0');
+    return `
+      <article class="cuadro" data-sala="${sala}">
+        <a href="cuadros/${numeroFormateado}-${slug(titulo)}/index.html">
+          <div class="obra" aria-hidden="true"></div>
+          <span class="numero">Cuadro ${numeroFormateado} · ${sala}</span>
+          <h3>${titulo}</h3>
+          <p>${frase}</p>
+        </a>
+      </article>
+    `;
+  }).join('');
+  
+  // Actualiza el número total de cuadros visibles si el elemento contador existe en el HTML
+  if (contador) {
+    contador.textContent = visibles.length;
+  }
 }
 
+// 5. CONTROLADOR DE EVENTOS PARA LOS BOTONES DE FILTRADO
 document.querySelectorAll('[data-filtro]').forEach(boton => {
   boton.addEventListener('click', () => {
+    // Busca el botón que tenía la clase activa previamente y se la quita
     document.querySelector('.filtros .activo')?.classList.remove('activo');
+    
+    // Añade el estilo activo al botón presionado
     boton.classList.add('activo');
+    
+    // Ejecuta la función mostrando solo el grupo correspondiente
     mostrar(boton.dataset.filtro);
   });
+});
+
+// 6. INICIALIZACIÓN AUTOMÁTICA
+// Muestra todos los cuadros por defecto en cuanto la página se carga
+mostrar();
+
 });
 
 mostrar();
