@@ -82,7 +82,5 @@ document.querySelectorAll('[data-filtro]').forEach(boton => {
 // Muestra todos los cuadros por defecto en cuanto la página se carga
 mostrar();
 
-});
 
-mostrar();
 
